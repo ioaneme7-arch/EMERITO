@@ -712,6 +712,21 @@ function archiveGoal(id){const goal=goals.find(g=>String(g.id)===String(id));if(
 document.getElementById('goalForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('goalName').value.trim(),target=Number(document.getElementById('goalTarget').value),current=Number(document.getElementById('goalCurrent').value)||0;if(!name||!Number.isFinite(target)||target<=0||current<0)return;const isMain=document.getElementById('goalIsMain').checked;goals.unshift({id:String(Date.now()),name,area:document.getElementById('goalArea').value,unit:document.getElementById('goalUnit').value,target,current,deadline:document.getElementById('goalDeadline').value,isMain:isMain||!goals.some(g=>!g.archived&&g.isMain),archived:false,updatedAt:new Date().toISOString()});e.target.reset();document.getElementById('goalCurrent').value=0;persistGoals()});
 renderTraining();renderGoals();
 
+
+function renderNotifications(){
+const today=localDateString(new Date()),end=new Date(today+'T12:00:00');end.setDate(end.getDate()+7);const endKey=localDateString(end),alerts=[];
+tasks.filter(t=>!t.done&&t.dueDate&&t.dueDate<=endKey).forEach(t=>alerts.push({title:t.name,date:t.dueDate,kind:t.dueDate<today?'Tarea atrasada':'Tarea pendiente',time:'',priority:t.priority==='high'?0:1}));
+studyItems.filter(x=>x.status!=='done'&&x.date&&x.date<=endKey).forEach(x=>alerts.push({title:x.title,date:x.date,kind:'Examen o entrega',time:'',priority:0}));
+calendarEvents.filter(e=>!e.archived&&e.date&&e.date>=today&&e.date<=endKey).forEach(e=>alerts.push({title:e.title,date:e.date,kind:'Evento · '+(e.category||'Personal'),time:e.time||'',priority:1}));
+[['ITV',carProfile.itvDate],['Seguro',carProfile.insuranceDate],['Mantenimiento',carProfile.nextServiceDate]].filter(x=>x[1]&&x[1]<=endKey).forEach(([label,date])=>alerts.push({title:label,date,kind:'Fecha del vehículo',time:'',priority:0}));
+alerts.sort((a,b)=>(a.date||'').localeCompare(b.date||'')||a.priority-b.priority);
+const dot=document.getElementById('notificationDot');dot.hidden=!alerts.length;
+document.getElementById('notificationToggle').setAttribute('aria-label',alerts.length?'Notificaciones: '+alerts.length+' avisos':'Notificaciones: sin avisos');
+document.getElementById('notificationList').innerHTML=alerts.length?alerts.slice(0,12).map(x=>'<div class="notification-item"><span class="notification-item-bar"></span><div><strong>'+escapeHtml(x.title)+'</strong><div class="meta">'+escapeHtml(x.kind)+(x.time?' · '+x.time:'')+'</div></div><span class="notification-item-date">'+(x.date<today?'Atrasado':x.date===today?'Hoy':studyDateLabel(x.date))+'</span></div>').join(''):'<div class="training-empty">No tienes avisos pendientes.</div>';
+}
+function openNotifications(){renderNotifications();document.getElementById('notificationPanel').hidden=false;document.body.style.overflow='hidden'}
+function closeNotifications(){document.getElementById('notificationPanel').hidden=true;document.body.style.overflow=''}
+
 function renderHomeDashboard(){
 const today=localDateString(new Date()),month=today.slice(0,7),now=new Date(today+'T12:00:00'),weekStart=new Date(now);weekStart.setDate(now.getDate()-((now.getDay()+6)%7));
 const weekDates=Array.from({length:7},(_,i)=>{const d=new Date(weekStart);d.setDate(weekStart.getDate()+i);return localDateString(d)});
@@ -738,7 +753,20 @@ const budgetEntries=Object.entries(financeBudgets[month]||{}),budgetTotal=budget
 document.getElementById('homeBudgetPercent').textContent=budgetTotal?budgetPct+'%':'—';document.getElementById('homeBudgetProgress').style.width=(budgetTotal?Math.min(100,budgetPct):0)+'%';
 document.getElementById('homeBudgetNumbers').textContent=money(expenses)+' / '+(budgetTotal?money(budgetTotal):'Sin presupuesto');document.getElementById('homeBudgetNote').textContent=budgetTotal?(budgetPct>100?'Has superado el presupuesto mensual':budgetPct+'% del presupuesto utilizado'):'Configura presupuestos por categoría en Finanzas.';
 const goal=Number(monthlySavingGoal)||0,achieved=Math.max(0,balance),goalPct=goal?Math.round(achieved/goal*100):0;
-document.getElementById('homeGoalTitle').textContent=goal?'Ahorrar '+money(goal):'Sin objetivo definido';document.getElementById('homeGoalPercent').textContent=goal?Math.min(100,goalPct)+'%':'—';document.getElementById('homeGoalProgress').style.width=(goal?Math.min(100,goalPct):0)+'%';document.getElementById('homeGoalTotals').textContent=goal?money(achieved)+' / '+money(goal)+' ahorrados':'Configura tu objetivo mensual desde Finanzas.';
+const mainGoal=goals.find(g=>!g.archived&&g.isMain)||goals.find(g=>!g.archived);
+if(mainGoal){const target=Number(mainGoal.target)||0,current=Number(mainGoal.current)||0,pct=target?Math.min(100,Math.round(current/target*100)):0;document.getElementById('homeGoalTitle').textContent=mainGoal.name;document.getElementById('homeGoalPercent').textContent=pct+'%';document.getElementById('homeGoalProgress').style.width=pct+'%';document.getElementById('homeGoalTotals').textContent=goalValueLabel(current,mainGoal.unit)+' / '+goalValueLabel(target,mainGoal.unit);}
+else{document.getElementById('homeGoalTitle').textContent=goal?'Objetivo de ahorro mensual':'Define un objetivo desde Objetivos';document.getElementById('homeGoalPercent').textContent=goal?Math.min(100,goalPct)+'%':'—';document.getElementById('homeGoalProgress').style.width=(goal?Math.min(100,goalPct):0)+'%';document.getElementById('homeGoalTotals').textContent=goal?money(achieved)+' / '+money(goal)+' ahorrados':'Todavía no tienes una meta principal.';}
+const weekStartDate=new Date(now);weekStartDate.setDate(now.getDate()-((now.getDay()+6)%7));const weekEndDate=new Date(weekStartDate);weekEndDate.setDate(weekStartDate.getDate()+6);
+const trainingThisWeek=trainingSessions.filter(s=>!s.archived&&s.date>=localDateString(weekStartDate)&&s.date<=localDateString(weekEndDate)),trainingMinutes=trainingThisWeek.reduce((sum,s)=>sum+(Number(s.minutes)||0),0);
+document.getElementById('homeTrainingSessions').textContent=trainingThisWeek.length+' '+(trainingThisWeek.length===1?'sesión':'sesiones');
+document.getElementById('homeTrainingMinutes').textContent=trainingMinutes+' min';
+const lastTraining=[...trainingSessions].filter(s=>!s.archived).sort((a,b)=>(b.date||'').localeCompare(a.date||''))[0];
+document.getElementById('homeTrainingLast').textContent=lastTraining?'Último: '+lastTraining.type+' · '+studyDateLabel(lastTraining.date):'Registra tu primera sesión.';
+const activeGoals=goals.filter(g=>!g.archived),goalPcts=activeGoals.map(g=>Number(g.target)>0?Math.min(100,Number(g.current||0)/Number(g.target)*100):0),averageGoal=goalPcts.length?Math.round(goalPcts.reduce((a,b)=>a+b,0)/goalPcts.length):0;
+document.getElementById('homeGoalsCount').textContent=activeGoals.length+' '+(activeGoals.length===1?'meta activa':'metas activas');
+document.getElementById('homeGoalsProgress').textContent=averageGoal+'% medio';
+document.getElementById('homeGoalsNext').textContent=activeGoals.length?(activeGoals.find(g=>g.isMain)||activeGoals[0]).name:'Crea una meta para empezar.';
+renderNotifications();
 }
 
 function save(){localStorage.setItem('emerito_tasks',JSON.stringify(tasks));render();if(typeof renderCalendar==='function'&&document.getElementById('calendarDays'))renderCalendar();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
