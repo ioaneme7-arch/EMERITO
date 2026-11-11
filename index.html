@@ -601,7 +601,7 @@
 </main></div><nav class="mobile-nav" id="bottomNav"></nav>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0"></script>
 <script>
-const items=[['home','⌂','Inicio'],['tasks','✓','Tareas'],['calendar','▦','Calendario'],['finance','€','Finanzas'],['car','♧','Mi coche'],['studies','▤','Estudios'],['habits','◷','Hábitos']];
+const items=[['home','home','Inicio'],['tasks','tasks','Tareas'],['calendar','calendar','Calendario'],['finance','finance','Finanzas'],['car','car','Mi coche'],['studies','studies','Estudios'],['habits','habits','Hábitos'],['training','training','Entrenamiento'],['goals','goals','Objetivos']];
 let tasks=JSON.parse(localStorage.getItem('emerito_tasks')||'[]');
 let studySubjects=JSON.parse(localStorage.getItem('emerito_study_subjects')||'null');
 if(!Array.isArray(studySubjects))studySubjects=[{id:'dam-programacion',name:'Programación',teacher:''},{id:'dam-sistemas',name:'Sistemas informáticos',teacher:''}];
@@ -613,7 +613,9 @@ let calendarEvents=JSON.parse(localStorage.getItem('emerito_calendar_events')||'
 let calendarViewDate=new Date(new Date().getFullYear(),new Date().getMonth(),1);
 let selectedCalendarDate=localDateString(new Date());
 
-function navButton(x){return '<button data-view="'+x[0]+'"><b>'+x[1]+'</b>'+x[2]+'</button>'}
+const iconPaths={home:'<path d="M3 10l9-7 9 7"/>',tasks:'<rect x="4" y="3" width="16" height="18" rx="2"/>',calendar:'<rect x="3" y="4" width="18" height="17" rx="2"/>',finance:'<rect x="3" y="5" width="18" height="15" rx="2"/>',car:'<path d="M5 11l2-6h10l2 6"/>',studies:'<path d="m2 9 10-5 10 5-10 5z"/>',habits:'<path d="M4 19V9m5 10V4m5 15v-8"/>',training:'<path d="M6 9v6m12-6v6M3 12h18"/>',goals:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/>'};
+function iconSvg(name){return '<svg viewBox="0 0 24 24">'+iconPaths[name]+'</svg>'}
+function navButton(x){return '<button data-view="'+x[0]+'"><span class="nav-icon">'+iconSvg(x[1])+'</span><span>'+x[2]+'</span></button>'}
 document.getElementById('sideNav').innerHTML=items.map(navButton).join('');
 document.getElementById('bottomNav').innerHTML='<button data-view="home" class="active"><b>⌂</b><span>Inicio</span></button><button data-view="calendar"><b>▦</b><span>Calendario</span></button><button type="button" class="mobile-add" id="mobileQuickAdd" aria-label="Añadir tarea"><b>+</b></button><button data-view="habits"><b>◷</b><span>Hábitos</span></button><button type="button" id="mobileSettings"><b>⚙</b><span>Ajustes</span></button>';
 document.getElementById('shortcuts').innerHTML='';
