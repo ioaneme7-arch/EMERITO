@@ -785,7 +785,9 @@ document.getElementById('taskCategoryFilter').addEventListener('change',render);
 function persistStudies(){localStorage.setItem('emerito_study_subjects',JSON.stringify(studySubjects));localStorage.setItem('emerito_study_items',JSON.stringify(studyItems));localStorage.setItem('emerito_study_sessions',JSON.stringify(studySessions));
 localStorage.setItem('emerito_habits',JSON.stringify(habits));
 localStorage.setItem('emerito_habit_checks',JSON.stringify(habitChecks));
-localStorage.setItem('emerito_calendar_events',JSON.stringify(calendarEvents));renderStudies();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+localStorage.setItem('emerito_calendar_events',JSON.stringify(calendarEvents));
+localStorage.setItem('emerito_training_sessions',JSON.stringify(trainingSessions));
+localStorage.setItem('emerito_goals',JSON.stringify(goals));renderStudies();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function studySubjectName(id){const subject=studySubjects.find(x=>String(x.id)===String(id));return subject?subject.name:'Sin asignatura'}
 function populateStudySubjects(selectId){const select=document.getElementById(selectId),previous=select.value;select.innerHTML='<option value="">Sin asignatura</option>'+studySubjects.map(s=>'<option value="'+escapeHtml(String(s.id))+'">'+escapeHtml(s.name)+'</option>').join('');if([...select.options].some(o=>o.value===previous))select.value=previous;else select.value=''}
 function studyDateLabel(value){if(!value)return 'Sin fecha';return new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short',year:'numeric'}).format(new Date(value+'T12:00:00'))}
@@ -902,7 +904,7 @@ const events=calendarEventsForDate(selectedCalendarDate);
 document.getElementById('calendarSelectedCount').textContent=events.length+' '+(events.length===1?'evento':'eventos');
 document.getElementById('calendarEventsList').innerHTML=events.length?events.map(e=>'<div class="calendar-event"><span class="calendar-event-bar '+(e.category||'other')+'"></span><div><strong>'+escapeHtml(e.title)+'</strong><div class="meta">'+(e.time?e.time+' · ':'')+({class:'Clase',work:'Trabajo',study:'Estudios',personal:'Personal',appointment:'Cita',other:'Otro'}[e.category]||'Evento')+(e.notes?' · '+escapeHtml(e.notes):'')+'</div>'+(e.source==='study'?'<span class="calendar-event-source">Vinculado a Estudios</span>':e.source==='task'?'<span class="calendar-event-source">Vinculado a Tareas</span>':'')+'</div>'+(e.source==='manual'?'<button type="button" class="calendar-event-delete" aria-label="Eliminar evento" onclick="archiveCalendarEvent(\''+String(e.id)+'\')">×</button>':'<span class="calendar-event-time">'+(e.time||'')+'</span>')+'</div>').join(''):'<div class="calendar-empty">No tienes eventos para este día. Puedes añadir uno con el formulario.</div>';
 }
-function persistCalendarEvents(){localStorage.setItem('emerito_calendar_events',JSON.stringify(calendarEvents));renderCalendar();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function persistCalendarEvents(){localStorage.setItem('emerito_calendar_events',JSON.stringify(calendarEvents));renderCalendar();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function archiveCalendarEvent(id){const event=calendarEvents.find(x=>String(x.id)===String(id));if(!event)return;event.archived=true;event.updatedAt=new Date().toISOString();persistCalendarEvents()}
 document.getElementById('calendarPrev').addEventListener('click',()=>calendarChangeMonth(-1));
 document.getElementById('calendarNext').addEventListener('click',()=>calendarChangeMonth(1));
@@ -1025,7 +1027,7 @@ authPanel.hidden=true;
 document.body.style.overflow='';
 document.getElementById('accountToggle').focus();
 }
-function collectAppData(){return {tasks,financeTransactions,financeBudgets,fixedExpenses,monthlySavingGoal,carProfile,carRecords,studySubjects,studyItems,studySessions,habits,habitChecks,calendarEvents};}
+function collectAppData(){return {tasks,financeTransactions,financeBudgets,fixedExpenses,monthlySavingGoal,carProfile,carRecords,studySubjects,studyItems,studySessions,habits,habitChecks,calendarEvents,trainingSessions,goals};}
 function saveLocalAppData(data){
 tasks=Array.isArray(data.tasks)?data.tasks:[];
 financeTransactions=Array.isArray(data.financeTransactions)?data.financeTransactions:[];
@@ -1040,6 +1042,8 @@ studySessions=Array.isArray(data.studySessions)?data.studySessions:studySessions
 habits=Array.isArray(data.habits)?data.habits:habits;
 habitChecks=Array.isArray(data.habitChecks)?data.habitChecks:habitChecks;
 calendarEvents=Array.isArray(data.calendarEvents)?data.calendarEvents:calendarEvents;
+trainingSessions=Array.isArray(data.trainingSessions)?data.trainingSessions:trainingSessions;
+goals=Array.isArray(data.goals)?data.goals:goals;
 localStorage.setItem('emerito_car_profile',JSON.stringify(carProfile));
 localStorage.setItem('emerito_car_records',JSON.stringify(carRecords));
 localStorage.setItem('emerito_tasks',JSON.stringify(tasks));
@@ -1047,7 +1051,7 @@ localStorage.setItem('emerito_finance',JSON.stringify(financeTransactions));
 localStorage.setItem('emerito_finance_budgets',JSON.stringify(financeBudgets));
 localStorage.setItem('emerito_fixed_expenses',JSON.stringify(fixedExpenses));
 localStorage.setItem('emerito_saving_goal',String(monthlySavingGoal));
-render();renderFinance();renderCar();renderStudies();renderHabits();renderCalendar();renderHomeDashboard();
+render();renderFinance();renderCar();renderStudies();renderHabits();renderCalendar();renderTraining();renderGoals();renderHomeDashboard();
 }
 function mergeItems(remoteItems,localItems){
 const map=new Map();
@@ -1072,7 +1076,9 @@ studyItems:mergeItems(remote.studyItems,local.studyItems),
 studySessions:mergeItems(remote.studySessions,local.studySessions),
 habits:mergeLatestItems(remote.habits,local.habits),
 habitChecks:mergeLatestItems(remote.habitChecks,local.habitChecks),
-calendarEvents:mergeLatestItems(remote.calendarEvents,local.calendarEvents)
+calendarEvents:mergeLatestItems(remote.calendarEvents,local.calendarEvents),
+trainingSessions:mergeLatestItems(remote.trainingSessions,local.trainingSessions),
+goals:mergeLatestItems(remote.goals,local.goals)
 };
 }
 let cloudSaveQueue=Promise.resolve();
@@ -1178,16 +1184,20 @@ setAuthFeedback(authMode==='signup'?'Crea una cuenta con tu correo y una contras
 document.getElementById('accountToggle').addEventListener('click',openAuthScreen);
 document.getElementById('homeAccountButton').addEventListener('click',openAuthScreen);
 document.getElementById('mobileSettings').addEventListener('click',openAuthScreen);
+document.getElementById('sidebarSettings').addEventListener('click',openAuthScreen);
+document.getElementById('notificationToggle').addEventListener('click',openNotifications);
+document.getElementById('notificationClose').addEventListener('click',closeNotifications);
+document.getElementById('notificationPanel').addEventListener('click',e=>{if(e.target.id==='notificationPanel')closeNotifications()});
 document.getElementById('homeAddTask').addEventListener('click',()=>{go('tasks');document.getElementById('taskName').focus()});
 document.getElementById('mobileQuickAdd').addEventListener('click',()=>{go('tasks');document.getElementById('taskName').focus()});
 document.getElementById('authClose').addEventListener('click',closeAuthScreen);
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!authPanel.hidden)closeAuthScreen()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!authPanel.hidden)closeAuthScreen();if(e.key==='Escape'&&!document.getElementById('notificationPanel').hidden)closeNotifications()});
 authPanel.addEventListener('click',e=>{if(e.target===authPanel)closeAuthScreen()});
 document.getElementById('signOutButton').addEventListener('click',async()=>{
 const {error}=await cloudClient.auth.signOut();
 if(error)setAuthFeedback('No se pudo cerrar sesión: '+error.message,'error');
 });
 
-const now=new Date();document.getElementById('today').textContent=new Intl.DateTimeFormat('es-ES',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);document.getElementById('shortDate').textContent=new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short'}).format(now);document.getElementById('homeDateLabel').textContent=new Intl.DateTimeFormat('es-ES',{weekday:'short',day:'numeric',month:'short'}).format(now);render();
+const now=new Date();document.getElementById('today').textContent=new Intl.DateTimeFormat('es-ES',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);document.getElementById('shortDate').textContent=new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short'}).format(now);document.getElementById('homeDateLabel').textContent=new Intl.DateTimeFormat('es-ES',{weekday:'short',day:'numeric',month:'short'}).format(now);render();renderTraining();renderGoals();renderNotifications();
 </script>
 </body></html>
