@@ -24,6 +24,48 @@
 .auth-screen{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:22px;background:radial-gradient(ellipse at 75% 0%,#351116 0,transparent 42%),rgba(5,5,7,.97);backdrop-filter:blur(18px);overflow-y:auto}.auth-screen[hidden]{display:none}.auth-card{width:min(100%,520px);border:1px solid #55272d;border-radius:22px;background:linear-gradient(145deg,#1b1115,#111115 70%);padding:clamp(22px,4vw,34px);box-shadow:0 24px 90px #0009;margin:auto}.auth-back{display:inline-flex;align-items:center;gap:9px;border:0;background:transparent;color:#aaa;padding:5px 0 18px;font-size:13px}.auth-back:hover{color:#fff}.auth-back span{font-size:20px;color:var(--red2)}.auth-heading{display:flex;justify-content:space-between;gap:20px;align-items:start}.auth-heading h2{font-size:clamp(20px,4vw,26px);margin:7px 0}.auth-heading p{margin:0;max-width:400px;line-height:1.6}.auth-lock{font-size:25px;color:var(--red2);padding:8px 12px;background:#2c1116;border-radius:12px}.auth-form{display:grid;grid-template-columns:1fr;gap:14px;margin-top:23px}.auth-form label{display:grid;gap:7px;color:#ccc;font-size:13px}.auth-form input{background:#0d0d11;color:#fff;border:1px solid var(--line);border-radius:10px;padding:13px 14px;min-width:0;width:100%}.auth-form input:focus{outline:2px solid #ed1c2466;border-color:var(--red)}.auth-actions{display:flex;align-items:center;gap:17px;flex-wrap:wrap;margin-top:3px}.auth-actions .btn{min-width:145px}.auth-link{border:0;background:none;color:#ff777d;font-size:13px}.auth-link:hover{text-decoration:underline}.auth-feedback{font-size:12px;color:var(--muted);margin-top:15px;line-height:1.5}.auth-feedback.error{color:#ff797f}.auth-feedback.success{color:#61c995}.cloud-account{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}.cloud-account strong{font-size:14px}.cloud-account[hidden]{display:none}
 .car-stats .stat{font-size:clamp(22px,2.4vw,30px);overflow-wrap:anywhere}.car-panel{padding:18px}.car-profile-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.car-profile-form label,.car-record-form label{display:grid;gap:6px;color:#c9c9d0;font-size:12px}.car-profile-form input,.car-profile-form select,.car-record-form input,.car-record-form select{width:100%;min-width:0;background:#111115;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px}.car-form-actions{display:flex;align-items:center;gap:12px;grid-column:1/-1;flex-wrap:wrap}.car-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:15px}.car-record-form{display:grid;gap:12px}.car-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.car-reminders{display:grid;gap:9px}.car-reminder{display:flex;justify-content:space-between;gap:12px;align-items:center;border-top:1px solid var(--line);padding:12px 0}.car-reminder:first-child{border-top:0}.car-reminder strong{display:block;font-size:13px}.car-reminder .meta{font-size:12px;color:var(--muted)}.car-reminder .due{font-size:11px;padding:5px 8px;border-radius:8px;background:#2c1116;color:#ff9297;white-space:nowrap}.car-reminder .due.ok{background:#14261e;color:#77d7a6}.car-reminder .due.none{background:#202026;color:#a3a3ad}.car-hint{font-size:11px;color:var(--muted);margin:14px 0 0}.car-history-card{padding:8px 16px}.car-history{display:grid}.car-history-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:14px;padding:13px 2px;border-bottom:1px solid var(--line)}.car-history-row:last-child{border-bottom:0}.car-history-row strong{display:block;font-size:13px}.car-history-row .meta{font-size:12px;color:var(--muted)}.car-history-row .amount{font-weight:800;white-space:nowrap}.car-history-row .delete{border:0;background:none;color:#888;font-size:18px;padding:5px}.car-history-row .delete:hover{color:var(--red2)}.car-history-empty{padding:22px;text-align:center;color:var(--muted)}
 .cloud-account[hidden]{display:none}
+
+.study-stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+.study-columns{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:15px}
+.study-panel{padding:18px;min-width:0}
+.study-form{display:grid;gap:11px;margin:12px 0 15px}
+.study-form label{display:grid;gap:6px;color:#c9c9d0;font-size:12px}
+.study-form input,.study-form select,.study-form textarea,.study-task-controls select{width:100%;min-width:0;background:#111115;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit}
+.study-form textarea{min-height:70px;resize:vertical}
+.study-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.study-subject-list,.study-items-list,.study-session-list,.study-upcoming-list{display:grid;gap:9px}
+.study-subject{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px}
+.study-subject-top,.study-upcoming-row,.study-session-row{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.study-subject strong,.study-upcoming-row strong,.study-session-row strong{font-size:13px}
+.study-subject .meta,.study-upcoming-row .meta,.study-session-row .meta{font-size:11px;color:var(--muted);margin-top:2px}
+.study-subject-progress{display:flex;align-items:center;gap:9px;margin-top:10px}
+.study-subject-progress .progress-track{height:6px;flex:1}
+.study-subject-progress .muted{font-size:11px;white-space:nowrap}
+.study-remove{border:0;background:none;color:#888;font-size:18px;padding:3px 5px}
+.study-remove:hover{color:var(--red2)}
+.study-task{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px 2px;border-bottom:1px solid var(--line)}
+.study-task:last-child{border-bottom:0}
+.study-task strong{font-size:13px}
+.study-task .meta{font-size:11px;color:var(--muted);margin-top:3px}
+.study-task-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.study-tag{font-size:10px;border:1px solid var(--line);background:#202026;border-radius:6px;padding:3px 7px;color:#c6c6ce}
+.study-tag.high{border-color:#713037;background:#321318;color:#ff9297}
+.study-tag.done{border-color:#28543c;background:#14261e;color:#77d7a6}
+.study-task-controls{display:flex;align-items:center;gap:7px}
+.study-task-controls select{font-size:11px;padding:7px 8px;max-width:130px}
+.study-upcoming-row,.study-session-row{padding:11px 0;border-top:1px solid var(--line)}
+.study-upcoming-row:first-child,.study-session-row:first-child{border-top:0}
+.study-due{font-size:10px;padding:5px 8px;border-radius:7px;background:#202026;color:#bbb;white-space:nowrap}
+.study-due.overdue{background:#321318;color:#ff9297}
+.study-due.soon{background:#2a2414;color:#f0ce7c}
+.study-session-duration{font-size:12px;font-weight:800;white-space:nowrap}
+.study-section-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 10px}
+.study-section-heading h2{font-size:17px;margin:0}
+.study-note{font-size:11px;color:var(--muted);margin-top:10px}
+.study-empty{border:1px dashed var(--line);border-radius:11px;padding:17px;text-align:center;color:var(--muted);font-size:12px}
+@media(max-width:850px){.study-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.study-columns{grid-template-columns:1fr}}
+@media(max-width:440px){.study-form-grid{grid-template-columns:1fr}.study-task{grid-template-columns:1fr}.study-task-controls{justify-content:space-between}.study-task-controls select{max-width:none;flex:1}.study-upcoming-row,.study-session-row{align-items:flex-start}}
+
 .mobile-nav{display:none}
 @media(max-width:850px){.top-actions{gap:9px}.top-actions .date-desktop{display:none}.auth-screen{padding:16px}.car-profile-form{grid-template-columns:repeat(2,minmax(0,1fr))}.car-columns{grid-template-columns:1fr}.shell{display:block}.sidebar{display:none}.content{padding:18px 15px 95px}.mobilebar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.mobilebar .logo{padding:0;font-size:23px}.top{margin-bottom:18px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:14px}.shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.shortcut{padding:13px}.shortcut .icon{width:35px;height:35px}.mobile-nav{display:flex;position:fixed;z-index:5;bottom:0;left:0;right:0;justify-content:space-around;background:#111116ed;border-top:1px solid var(--line);padding:8px 4px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(14px)}.mobile-nav button{border:0;background:none;color:#888;display:grid;justify-items:center;gap:2px;font-size:10px}.mobile-nav button.active{color:#ff444b}.mobile-nav b{font-size:18px}}
 @media(max-width:850px){.finance-columns,.finance-extra{grid-template-columns:1fr}.finance-extra .distribution-panel{grid-column:auto}.goal-form{grid-template-columns:1fr auto}.budget-form{grid-template-columns:1fr 1fr}.budget-form button{grid-column:1/-1}}\n@media(max-width:440px){.top{gap:8px}.top-actions{gap:6px}.account-toggle{padding:8px 10px;font-size:11px}.auth-card{border-radius:17px;padding:20px}.auth-heading{gap:10px}.auth-lock{font-size:20px;padding:6px 9px}.auth-actions{align-items:stretch;flex-direction:column;gap:12px}.auth-actions .btn{width:100%}.cloud-account{align-items:flex-start;flex-direction:column}.car-profile-form{grid-template-columns:1fr}.car-form-row{grid-template-columns:1fr}.car-history-row{grid-template-columns:minmax(0,1fr) auto auto;gap:8px}.car-history-row .meta{font-size:11px}.trend-month{grid-template-columns:65px minmax(0,1fr);gap:8px}.trend-net{grid-column:2;text-align:left}.trend-summary{grid-template-columns:1fr 1fr}.finance-form-row,.fixed-form-row{grid-template-columns:1fr}.goal-form,.budget-form{grid-template-columns:1fr}.budget-form button{grid-column:auto}.goal-form{grid-template-columns:1fr}.finance-row{gap:8px;grid-template-columns:minmax(0,1fr) auto auto}.finance-row .meta{font-size:11px}.fixed-item{grid-template-columns:1fr}.fixed-controls{justify-content:space-between}.taskform{flex-direction:column}.taskform .btn{width:100%}.hero{border-radius:16px}}
@@ -141,13 +183,72 @@
 <div class="section"><h2>Historial del vehículo</h2><span class="muted" id="carHistoryCount">0 operaciones</span></div>
 <div class="card car-history-card"><div id="carHistory" class="car-history"><div class="empty">Todavía no has registrado operaciones.</div></div></div>
 </section>
-<section class="view" id="studies"><div class="hero"><div class="eyebrow">APRENDIZAJE</div><h2>Estudios</h2><p>Asignaturas, trabajos, exámenes y progreso.</p></div></section>
+<section class="view" id="studies">
+<div class="hero"><div class="eyebrow">APRENDIZAJE · DAM</div><h2>Organiza tus estudios.</h2><p>Controla tus asignaturas, prepara exámenes, gestiona entregas y registra el tiempo que dedicas a estudiar.</p></div>
+<div class="grid study-stats">
+<div class="card"><div class="muted">ASIGNATURAS</div><div class="stat" id="studySubjectsStat">0</div><div class="muted">En tu ciclo</div></div>
+<div class="card"><div class="muted">PENDIENTES</div><div class="stat" id="studyPendingStat">0</div><div class="muted">Trabajos y tareas</div></div>
+<div class="card"><div class="muted">PRÓXIMOS EXÁMENES</div><div class="stat" id="studyExamsStat">0</div><div class="muted">Por realizar</div></div>
+<div class="card"><div class="muted">ESTUDIO ESTE MES</div><div class="stat" id="studyHoursStat">0 h</div><div class="muted" id="studySessionsStat">0 sesiones</div></div>
+</div>
+<div class="study-columns">
+<div class="card study-panel">
+<div class="study-section-heading"><h2>Mis asignaturas</h2><span class="muted" id="studySubjectCount">0 asignaturas</span></div>
+<form id="studySubjectForm" class="study-form">
+<div class="study-form-grid"><label>Nombre de la asignatura<input id="studySubjectName" maxlength="55" placeholder="Ej. Bases de datos" required></label><label>Profesor (opcional)<input id="studySubjectTeacher" maxlength="55" placeholder="Nombre del profesor"></label></div>
+<button class="btn secondary" type="submit">+ Añadir asignatura</button>
+</form>
+<div id="studySubjectsList" class="study-subject-list"></div>
+</div>
+<div class="card study-panel">
+<div class="study-section-heading"><h2>Próximas fechas</h2><span class="muted">Entregas y exámenes</span></div>
+<div id="studyUpcomingList" class="study-upcoming-list"><div class="study-empty">Todavía no tienes fechas registradas.</div></div>
+<p class="study-note">Las fechas se calculan a partir de los trabajos y exámenes que añadas.</p>
+</div>
+</div>
+<div class="section"><h2>Trabajos, tareas y exámenes</h2><span class="muted" id="studyItemCount">0 elementos</span></div>
+<div class="card study-panel">
+<form id="studyItemForm" class="study-form">
+<label>Nombre del trabajo, tarea o examen<input id="studyItemTitle" maxlength="100" placeholder="Ej. Práctica de programación" required></label>
+<div class="study-form-grid">
+<label>Asignatura<select id="studyItemSubject"></select></label>
+<label>Tipo<select id="studyItemType"><option value="Tarea">Tarea</option><option value="Trabajo">Trabajo</option><option value="Práctica">Práctica</option><option value="Examen">Examen</option><option value="Entrega">Entrega</option></select></label>
+<label>Fecha límite<input id="studyItemDate" type="date"></label>
+<label>Prioridad<select id="studyItemPriority"><option value="normal">Normal</option><option value="high">Alta</option><option value="low">Baja</option></select></label>
+</div>
+<label>Notas (opcional)<input id="studyItemNotes" maxlength="160" placeholder="Temas que entran, material que necesitas..."></label>
+<button class="btn" type="submit">+ Añadir a mis estudios</button>
+</form>
+<div id="studyItemsList" class="study-items-list"><div class="study-empty">Añade tu primer trabajo o examen.</div></div>
+</div>
+<div class="study-columns">
+<div class="card study-panel">
+<div class="study-section-heading"><h2>Registrar sesión de estudio</h2></div>
+<form id="studySessionForm" class="study-form">
+<label>Asignatura<select id="studySessionSubject"></select></label>
+<div class="study-form-grid"><label>Fecha<input id="studySessionDate" type="date" required></label><label>Duración (minutos)<input id="studySessionMinutes" type="number" min="5" max="600" step="5" value="60" required></label></div>
+<label>Qué has estudiado (opcional)<input id="studySessionNotes" maxlength="120" placeholder="Ej. Arrays y bucles"></label>
+<button class="btn" type="submit">+ Guardar sesión</button>
+</form>
+<p class="study-note">Puedes registrar sesiones de entre 5 minutos y 10 horas.</p>
+</div>
+<div class="card study-panel">
+<div class="study-section-heading"><h2>Últimas sesiones</h2><span class="muted" id="studySessionCount">0 sesiones</span></div>
+<div id="studySessionList" class="study-session-list"><div class="study-empty">Todavía no has registrado sesiones.</div></div>
+</div>
+</div>
+</section>
 <section class="view" id="habits"><div class="hero"><div class="eyebrow">RUTINAS</div><h2>Hábitos</h2><p>Hábitos diarios y seguimiento de objetivos.</p></div></section>
 </main></div><nav class="mobile-nav" id="bottomNav"></nav>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0"></script>
 <script>
 const items=[['home','⌂','Inicio'],['tasks','✓','Tareas'],['calendar','▦','Calendario'],['finance','€','Finanzas'],['car','♧','Mi coche'],['studies','▤','Estudios'],['habits','◷','Hábitos']];
 let tasks=JSON.parse(localStorage.getItem('emerito_tasks')||'[]');
+let studySubjects=JSON.parse(localStorage.getItem('emerito_study_subjects')||'null');
+if(!Array.isArray(studySubjects))studySubjects=[{id:'dam-programacion',name:'Programación',teacher:''},{id:'dam-sistemas',name:'Sistemas informáticos',teacher:''}];
+let studyItems=JSON.parse(localStorage.getItem('emerito_study_items')||'[]');
+let studySessions=JSON.parse(localStorage.getItem('emerito_study_sessions')||'[]');
+
 function navButton(x){return '<button data-view="'+x[0]+'"><b>'+x[1]+'</b>'+x[2]+'</button>'}
 document.getElementById('sideNav').innerHTML=items.map(navButton).join('');
 document.getElementById('bottomNav').innerHTML=items.slice(0,5).map(navButton).join('');
@@ -161,6 +262,40 @@ function save(){localStorage.setItem('emerito_tasks',JSON.stringify(tasks));rend
 function toggleTask(id){const t=tasks.find(x=>x.id===id);if(t)t.done=!t.done;save()}
 function deleteTask(id){tasks=tasks.filter(x=>x.id!==id);save()}
 document.getElementById('taskForm').addEventListener('submit',e=>{e.preventDefault();const input=document.getElementById('taskName'),name=input.value.trim();if(!name)return;tasks.unshift({id:Date.now(),name,done:false});input.value='';save()});
+
+
+function persistStudies(){localStorage.setItem('emerito_study_subjects',JSON.stringify(studySubjects));localStorage.setItem('emerito_study_items',JSON.stringify(studyItems));localStorage.setItem('emerito_study_sessions',JSON.stringify(studySessions));renderStudies();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function studySubjectName(id){const subject=studySubjects.find(x=>String(x.id)===String(id));return subject?subject.name:'Sin asignatura'}
+function populateStudySubjects(selectId){const select=document.getElementById(selectId),previous=select.value;select.innerHTML='<option value="">Sin asignatura</option>'+studySubjects.map(s=>'<option value="'+escapeHtml(String(s.id))+'">'+escapeHtml(s.name)+'</option>').join('');if([...select.options].some(o=>o.value===previous))select.value=previous;else select.value=''}
+function studyDateLabel(value){if(!value)return 'Sin fecha';return new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short',year:'numeric'}).format(new Date(value+'T12:00:00'))}
+function renderStudies(){
+const month=localDateString(new Date()).slice(0,7),monthSessions=studySessions.filter(s=>s.date&&s.date.slice(0,7)===month),minutes=monthSessions.reduce((sum,s)=>sum+(Number(s.minutes)||0),0),hours=minutes/60;
+document.getElementById('studySubjectsStat').textContent=studySubjects.length;
+document.getElementById('studyPendingStat').textContent=studyItems.filter(x=>x.status!=='done').length;
+document.getElementById('studyExamsStat').textContent=studyItems.filter(x=>x.type==='Examen'&&x.status!=='done'&&x.date&&x.date>=localDateString(new Date())).length;
+document.getElementById('studyHoursStat').textContent=hours.toLocaleString('es-ES',{maximumFractionDigits:1})+' h';
+document.getElementById('studySessionsStat').textContent=monthSessions.length+' '+(monthSessions.length===1?'sesión':'sesiones');
+document.getElementById('studySubjectCount').textContent=studySubjects.length+' '+(studySubjects.length===1?'asignatura':'asignaturas');
+document.getElementById('studySubjectsList').innerHTML=studySubjects.length?studySubjects.map(s=>{const related=studyItems.filter(x=>String(x.subjectId||'')===String(s.id)),done=related.filter(x=>x.status==='done').length,pct=related.length?Math.round(done/related.length*100):0;return '<div class="study-subject"><div class="study-subject-top"><div><strong>'+escapeHtml(s.name)+'</strong><div class="meta">'+(s.teacher?escapeHtml(s.teacher):'Sin profesor indicado')+'</div></div><button class="study-remove" aria-label="Eliminar asignatura" onclick="deleteStudySubject(\''+String(s.id)+'\')">×</button></div><div class="study-subject-progress"><div class="progress-track"><div class="progress-fill" style="width:'+pct+'%"></div></div><span class="muted">'+done+'/'+related.length+' completadas</span></div></div>'}).join(''):'<div class="study-empty">Añade tus asignaturas para empezar.</div>';
+populateStudySubjects('studyItemSubject');populateStudySubjects('studySessionSubject');
+const ordered=[...studyItems].filter(x=>x.status!=='done').sort((a,b)=>{if(!a.date)return 1;if(!b.date)return -1;return a.date.localeCompare(b.date)});
+document.getElementById('studyUpcomingList').innerHTML=ordered.filter(x=>x.date).slice(0,5).length?ordered.filter(x=>x.date).slice(0,5).map(x=>{const delta=Math.ceil((new Date(x.date+'T12:00:00')-new Date(localDateString(new Date())+'T12:00:00'))/86400000),state=delta<0?'overdue':delta<=3?'soon':'';return '<div class="study-upcoming-row"><div><strong>'+escapeHtml(x.title)+'</strong><div class="meta">'+escapeHtml(studySubjectName(x.subjectId))+' · '+escapeHtml(x.type)+'</div></div><span class="study-due '+state+'">'+(delta<0?'Atrasado '+Math.abs(delta)+' d':delta===0?'Hoy':delta===1?'Mañana':studyDateLabel(x.date))+'</span></div>'}).join(''):'<div class="study-empty">Todavía no tienes fechas registradas.</div>';
+document.getElementById('studyItemCount').textContent=studyItems.length+' '+(studyItems.length===1?'elemento':'elementos');
+const sortedItems=[...studyItems].sort((a,b)=>{if(a.status==='done'&&b.status!=='done')return 1;if(b.status==='done'&&a.status!=='done')return -1;if(!a.date)return 1;if(!b.date)return -1;return a.date.localeCompare(b.date)});
+document.getElementById('studyItemsList').innerHTML=sortedItems.length?sortedItems.map(x=>'<div class="study-task"><div><strong>'+escapeHtml(x.title)+'</strong><div class="study-task-tags"><span class="study-tag">'+escapeHtml(x.type)+'</span><span class="study-tag '+(x.priority==='high'?'high':'')+'">Prioridad '+(x.priority==='high'?'alta':x.priority==='low'?'baja':'normal')+'</span>'+(x.status==='done'?'<span class="study-tag done">Completado</span>':'')+'</div><div class="meta">'+escapeHtml(studySubjectName(x.subjectId))+' · '+studyDateLabel(x.date)+(x.notes?' · '+escapeHtml(x.notes):'')+'</div></div><div class="study-task-controls"><select aria-label="Estado de la tarea" onchange="setStudyItemStatus('+Number(x.id)+',this.value)"><option value="pending" '+(x.status==='pending'?'selected':'')+'>Pendiente</option><option value="progress" '+(x.status==='progress'?'selected':'')+'>En curso</option><option value="done" '+(x.status==='done'?'selected':'')+'>Hecho</option></select><button class="study-remove" aria-label="Eliminar elemento" onclick="deleteStudyItem('+Number(x.id)+')">×</button></div></div>').join(''):'<div class="study-empty">Añade tu primer trabajo o examen.</div>';
+const recent=[...studySessions].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||b.id-a.id).slice(0,6);
+document.getElementById('studySessionCount').textContent=studySessions.length+' '+(studySessions.length===1?'sesión':'sesiones');
+document.getElementById('studySessionList').innerHTML=recent.length?recent.map(s=>'<div class="study-session-row"><div><strong>'+escapeHtml(studySubjectName(s.subjectId))+'</strong><div class="meta">'+studyDateLabel(s.date)+(s.notes?' · '+escapeHtml(s.notes):'')+'</div></div><div class="study-session-duration">'+(Number(s.minutes)/60).toLocaleString('es-ES',{maximumFractionDigits:1})+' h <button class="study-remove" aria-label="Eliminar sesión" onclick="deleteStudySession('+Number(s.id)+')">×</button></div></div>').join(''):'<div class="study-empty">Todavía no has registrado sesiones.</div>';
+}
+function deleteStudySubject(id){studySubjects=studySubjects.filter(x=>String(x.id)!==String(id));studyItems=studyItems.map(x=>String(x.subjectId||'')===String(id)?{...x,subjectId:''}:x);studySessions=studySessions.map(x=>String(x.subjectId||'')===String(id)?{...x,subjectId:''}:x);persistStudies()}
+function setStudyItemStatus(id,status){if(!['pending','progress','done'].includes(status))return;const item=studyItems.find(x=>x.id===id);if(item){item.status=status;persistStudies()}}
+function deleteStudyItem(id){studyItems=studyItems.filter(x=>x.id!==id);persistStudies()}
+function deleteStudySession(id){studySessions=studySessions.filter(x=>x.id!==id);persistStudies()}
+document.getElementById('studySubjectForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('studySubjectName').value.trim(),teacher=document.getElementById('studySubjectTeacher').value.trim();if(!name)return;if(studySubjects.some(s=>s.name.toLocaleLowerCase('es')===name.toLocaleLowerCase('es'))){document.getElementById('studySubjectName').setCustomValidity('Esa asignatura ya está añadida.');document.getElementById('studySubjectName').reportValidity();return}document.getElementById('studySubjectName').setCustomValidity('');studySubjects.push({id:Date.now(),name,teacher});e.target.reset();persistStudies()});
+document.getElementById('studyItemForm').addEventListener('submit',e=>{e.preventDefault();const title=document.getElementById('studyItemTitle').value.trim();if(!title)return;studyItems.unshift({id:Date.now(),title,subjectId:document.getElementById('studyItemSubject').value,type:document.getElementById('studyItemType').value,date:document.getElementById('studyItemDate').value,priority:document.getElementById('studyItemPriority').value,status:'pending',notes:document.getElementById('studyItemNotes').value.trim()});e.target.reset();persistStudies()});
+document.getElementById('studySessionForm').addEventListener('submit',e=>{e.preventDefault();const minutes=Number(document.getElementById('studySessionMinutes').value);if(!Number.isFinite(minutes)||minutes<5||minutes>600)return;studySessions.unshift({id:Date.now(),subjectId:document.getElementById('studySessionSubject').value,date:document.getElementById('studySessionDate').value,minutes,notes:document.getElementById('studySessionNotes').value.trim()});e.target.reset();document.getElementById('studySessionDate').value=localDateString(new Date());document.getElementById('studySessionMinutes').value=60;persistStudies()});
+document.getElementById('studySessionDate').value=localDateString(new Date());
+renderStudies();
 
 let carProfile=JSON.parse(localStorage.getItem('emerito_car_profile')||'null')||{brand:'Hyundai',model:'i30',year:2014,fuel:'Diésel',transmission:'Manual',mileage:'',registration:'',itvDate:'',insuranceDate:'',nextServiceDate:''};
 let carRecords=JSON.parse(localStorage.getItem('emerito_car_records')||'[]');
@@ -221,7 +356,10 @@ document.getElementById('financeMonth').value=localDateString(new Date()).slice(
 
 
 
-function persistCar(){localStorage.setItem('emerito_car_profile',JSON.stringify(carProfile));localStorage.setItem('emerito_car_records',JSON.stringify(carRecords));renderCar();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function persistCar(){localStorage.setItem('emerito_car_profile',JSON.stringify(carProfile));localStorage.setItem('emerito_car_records',JSON.stringify(carRecords));
+localStorage.setItem('emerito_study_subjects',JSON.stringify(studySubjects));
+localStorage.setItem('emerito_study_items',JSON.stringify(studyItems));
+localStorage.setItem('emerito_study_sessions',JSON.stringify(studySessions));renderCar();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function renderCar(){
 const mileage=carProfile.mileage!==''&&carProfile.mileage!==null&&carProfile.mileage!==undefined?Number(carProfile.mileage):null;
 document.getElementById('carMileageStat').textContent=mileage!==null&&Number.isFinite(mileage)?new Intl.NumberFormat('es-ES').format(mileage)+' km':'Sin indicar';
@@ -266,7 +404,7 @@ authPanel.hidden=true;
 document.body.style.overflow='';
 document.getElementById('accountToggle').focus();
 }
-function collectAppData(){return {tasks,financeTransactions,financeBudgets,fixedExpenses,monthlySavingGoal,carProfile,carRecords};}
+function collectAppData(){return {tasks,financeTransactions,financeBudgets,fixedExpenses,monthlySavingGoal,carProfile,carRecords,studySubjects,studyItems,studySessions};}
 function saveLocalAppData(data){
 tasks=Array.isArray(data.tasks)?data.tasks:[];
 financeTransactions=Array.isArray(data.financeTransactions)?data.financeTransactions:[];
@@ -275,6 +413,9 @@ fixedExpenses=Array.isArray(data.fixedExpenses)?data.fixedExpenses:[];
 monthlySavingGoal=Number(data.monthlySavingGoal)||0;
 carProfile=data.carProfile&&typeof data.carProfile==='object'?data.carProfile:carProfile;
 carRecords=Array.isArray(data.carRecords)?data.carRecords:carRecords;
+studySubjects=Array.isArray(data.studySubjects)?data.studySubjects:studySubjects;
+studyItems=Array.isArray(data.studyItems)?data.studyItems:studyItems;
+studySessions=Array.isArray(data.studySessions)?data.studySessions:studySessions;
 localStorage.setItem('emerito_car_profile',JSON.stringify(carProfile));
 localStorage.setItem('emerito_car_records',JSON.stringify(carRecords));
 localStorage.setItem('emerito_tasks',JSON.stringify(tasks));
@@ -282,7 +423,7 @@ localStorage.setItem('emerito_finance',JSON.stringify(financeTransactions));
 localStorage.setItem('emerito_finance_budgets',JSON.stringify(financeBudgets));
 localStorage.setItem('emerito_fixed_expenses',JSON.stringify(fixedExpenses));
 localStorage.setItem('emerito_saving_goal',String(monthlySavingGoal));
-render();renderFinance();renderCar();
+render();renderFinance();renderCar();renderStudies();
 }
 function mergeItems(remoteItems,localItems){
 const map=new Map();
@@ -300,7 +441,10 @@ fixedExpenses:mergeItems(remote.fixedExpenses,local.fixedExpenses),
 financeBudgets:budgets,
 monthlySavingGoal:remote.monthlySavingGoal!==undefined?remote.monthlySavingGoal:local.monthlySavingGoal,
 carProfile:{...(local.carProfile||{}),...(remote.carProfile||{})},
-carRecords:mergeItems(remote.carRecords,local.carRecords)
+carRecords:mergeItems(remote.carRecords,local.carRecords),
+studySubjects:mergeItems(remote.studySubjects,local.studySubjects),
+studyItems:mergeItems(remote.studyItems,local.studyItems),
+studySessions:mergeItems(remote.studySessions,local.studySessions)
 };
 }
 let cloudSaveQueue=Promise.resolve();
