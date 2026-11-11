@@ -670,6 +670,48 @@ renderHomeDashboard();
 }
 
 function openHomeCalendarDate(date){selectCalendarDate(date);go('calendar')}
+
+function goalValueLabel(value,unit){const number=Number(value||0),formatted=number.toLocaleString('es-ES',{maximumFractionDigits:2});return unit==='€'?money(number):formatted+(unit?' '+unit:'')}
+function persistTraining(){localStorage.setItem('emerito_training_sessions',JSON.stringify(trainingSessions));renderTraining();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function renderTraining(){
+const today=localDateString(new Date()),month=today.slice(0,7),start=new Date(today+'T12:00:00');start.setDate(start.getDate()-((start.getDay()+6)%7));const weekStart=localDateString(start);
+const live=trainingSessions.filter(s=>!s.archived),monthRows=live.filter(s=>s.date&&s.date.slice(0,7)===month),weekRows=live.filter(s=>s.date>=weekStart&&s.date<=today),monthMinutes=monthRows.reduce((sum,s)=>sum+(Number(s.minutes)||0),0),weekMinutes=weekRows.reduce((sum,s)=>sum+(Number(s.minutes)||0),0);
+document.getElementById('trainingMonthSessions').textContent=monthRows.length;
+document.getElementById('trainingMonthMinutes').textContent=(monthMinutes/60).toLocaleString('es-ES',{maximumFractionDigits:1})+' h';
+document.getElementById('trainingWeekSessions').textContent=weekRows.length;
+document.getElementById('trainingWeekMinutes').textContent=weekMinutes+' min';
+const days=Array.from({length:7},(_,i)=>{const d=new Date(start);d.setDate(start.getDate()+i);const date=localDateString(d),rows=live.filter(s=>s.date===date);return {label:new Intl.DateTimeFormat('es-ES',{weekday:'short'}).format(d).replace('.',''),minutes:rows.reduce((sum,s)=>sum+(Number(s.minutes)||0),0)}});
+const max=Math.max(30,...days.map(x=>x.minutes));
+document.getElementById('trainingWeekChart').innerHTML=days.some(x=>x.minutes)?days.map(x=>'<div class="training-day"><span class="training-day-name">'+x.label+'</span><div class="training-day-track"><span style="width:'+Math.round(x.minutes/max*100)+'%"></span></div><span class="training-day-min">'+x.minutes+' min</span></div>').join(''):'<div class="training-empty">Todavía no hay entrenamientos esta semana.</div>';
+const sorted=[...live].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||String(b.id).localeCompare(String(a.id)));
+document.getElementById('trainingHistoryCount').textContent=sorted.length+' '+(sorted.length===1?'sesión':'sesiones');
+document.getElementById('trainingHistory').innerHTML=sorted.length?sorted.slice(0,30).map(s=>'<article class="training-entry"><div class="training-entry-top"><div><strong>'+escapeHtml(s.type)+'</strong><div class="meta">'+studyDateLabel(s.date)+' · '+Number(s.minutes)+' min</div></div><button class="training-delete" type="button" data-training-delete="'+escapeHtml(String(s.id))+'" aria-label="Eliminar entrenamiento">×</button></div><div class="training-badges"><span class="training-badge">Intensidad '+escapeHtml(s.intensity||'Moderada')+'</span>'+(s.notes?'<span class="training-badge">'+escapeHtml(s.notes)+'</span>':'')+'</div></article>').join(''):'<div class="training-empty">Todavía no has registrado sesiones.</div>';
+document.querySelectorAll('[data-training-delete]').forEach(button=>button.addEventListener('click',()=>deleteTrainingSession(button.dataset.trainingDelete)));
+}
+function deleteTrainingSession(id){const session=trainingSessions.find(s=>String(s.id)===String(id));if(!session)return;session.archived=true;session.updatedAt=new Date().toISOString();persistTraining()}
+document.getElementById('trainingForm').addEventListener('submit',e=>{e.preventDefault();const minutes=Number(document.getElementById('trainingMinutes').value);if(!Number.isFinite(minutes)||minutes<5||minutes>600)return;trainingSessions.unshift({id:String(Date.now()),type:document.getElementById('trainingType').value,date:document.getElementById('trainingDate').value,minutes,intensity:document.getElementById('trainingIntensity').value,notes:document.getElementById('trainingNotes').value.trim(),archived:false,updatedAt:new Date().toISOString()});e.target.reset();document.getElementById('trainingDate').value=localDateString(new Date());document.getElementById('trainingMinutes').value=60;persistTraining()});
+document.getElementById('trainingDate').value=localDateString(new Date());
+function persistGoals(){localStorage.setItem('emerito_goals',JSON.stringify(goals));renderGoals();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function renderGoals(){
+const active=goals.filter(g=>!g.archived),done=active.filter(g=>Number(g.target)>0&&Number(g.current)>=Number(g.target)).length;
+const rates=active.map(g=>Number(g.target)>0?Math.min(100,Number(g.current||0)/Number(g.target)*100):0),average=rates.length?Math.round(rates.reduce((a,b)=>a+b,0)/rates.length):0;
+const next=active.filter(g=>g.deadline&&Number(g.current)<Number(g.target)).sort((a,b)=>a.deadline.localeCompare(b.deadline))[0];
+document.getElementById('goalsActiveStat').textContent=active.length;document.getElementById('goalsDoneStat').textContent=done;
+document.getElementById('goalsAverageStat').textContent=average+'%';
+document.getElementById('goalsNextDateStat').textContent=next?new Date(next.deadline+'T12:00:00').toLocaleDateString('es-ES',{day:'2-digit',month:'short'}):'—';
+const sorted=[...active].sort((a,b)=>Number(!!b.isMain)-Number(!!a.isMain)||(a.deadline||'9999').localeCompare(b.deadline||'9999'));
+document.getElementById('goalListCount').textContent=active.length+' '+(active.length===1?'meta':'metas');
+document.getElementById('goalList').innerHTML=sorted.length?sorted.map(g=>{const target=Number(g.target)||0,current=Number(g.current)||0,pct=target?Math.min(100,Math.round(current/target*100)):0,achieved=target>0&&current>=target;return '<article class="goal-entry '+(achieved?'achieved':'')+'"><div class="goal-entry-top"><div><strong>'+escapeHtml(g.name)+'</strong>'+(g.isMain?'<span class="goal-main-badge">PRINCIPAL</span>':'')+'<div class="meta">'+escapeHtml(g.area)+' · '+(g.deadline?'Fecha objetivo '+studyDateLabel(g.deadline):'Sin fecha objetivo')+'</div></div><button class="goal-delete" type="button" data-goal-archive="'+escapeHtml(String(g.id))+'" aria-label="Archivar objetivo">×</button></div><div class="goal-progress-row"><span>'+goalValueLabel(current,g.unit)+' / '+goalValueLabel(target,g.unit)+'</span><strong>'+pct+'%</strong></div><div class="progress-track"><div class="progress-fill" style="width:'+pct+'%"></div></div><div class="goal-entry-footer"><label>Actualizar progreso<input class="goal-update-input" type="number" min="0" step="0.01" id="goalProgressInput_'+escapeHtml(String(g.id))+'" value="'+current+'"></label><div class="goal-entry-actions"><button class="btn secondary" type="button" data-goal-update="'+escapeHtml(String(g.id))+'">Actualizar</button><button class="btn secondary" type="button" data-goal-main="'+escapeHtml(String(g.id))+'">'+(g.isMain?'Principal':'Hacer principal')+'</button></div></div></article>'}).join(''):'<div class="goal-empty">Todavía no tienes objetivos. Crea el primero para empezar.</div>';
+document.querySelectorAll('[data-goal-archive]').forEach(button=>button.addEventListener('click',()=>archiveGoal(button.dataset.goalArchive)));
+document.querySelectorAll('[data-goal-update]').forEach(button=>button.addEventListener('click',()=>updateGoalProgress(button.dataset.goalUpdate)));
+document.querySelectorAll('[data-goal-main]').forEach(button=>button.addEventListener('click',()=>setMainGoal(button.dataset.goalMain)));
+}
+function updateGoalProgress(id){const goal=goals.find(g=>String(g.id)===String(id)),input=document.getElementById('goalProgressInput_'+id);if(!goal||!input)return;const value=Number(input.value);if(!Number.isFinite(value)||value<0)return;goal.current=value;goal.updatedAt=new Date().toISOString();persistGoals()}
+function setMainGoal(id){goals.forEach(g=>{g.isMain=String(g.id)===String(id);g.updatedAt=new Date().toISOString()});persistGoals()}
+function archiveGoal(id){const goal=goals.find(g=>String(g.id)===String(id));if(!goal)return;goal.archived=true;goal.updatedAt=new Date().toISOString();persistGoals()}
+document.getElementById('goalForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('goalName').value.trim(),target=Number(document.getElementById('goalTarget').value),current=Number(document.getElementById('goalCurrent').value)||0;if(!name||!Number.isFinite(target)||target<=0||current<0)return;const isMain=document.getElementById('goalIsMain').checked;goals.unshift({id:String(Date.now()),name,area:document.getElementById('goalArea').value,unit:document.getElementById('goalUnit').value,target,current,deadline:document.getElementById('goalDeadline').value,isMain:isMain||!goals.some(g=>!g.archived&&g.isMain),archived:false,updatedAt:new Date().toISOString()});e.target.reset();document.getElementById('goalCurrent').value=0;persistGoals()});
+renderTraining();renderGoals();
+
 function renderHomeDashboard(){
 const today=localDateString(new Date()),month=today.slice(0,7),now=new Date(today+'T12:00:00'),weekStart=new Date(now);weekStart.setDate(now.getDate()-((now.getDay()+6)%7));
 const weekDates=Array.from({length:7},(_,i)=>{const d=new Date(weekStart);d.setDate(weekStart.getDate()+i);return localDateString(d)});
