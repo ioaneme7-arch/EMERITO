@@ -603,11 +603,33 @@
 </section>
 
 <section class="view" id="training">
-<div class="hero"><div class="eyebrow">ACTIVIDAD · ENTRENAMIENTO</div><h2>Registra tu progreso.</h2><p>Guarda tus entrenamientos, duración e intensidad y consulta tu actividad semanal y mensual.</p></div>
-<div class="grid training-stats"><div class="card"><div class="muted">SESIONES ESTE MES</div><div class="stat" id="trainingMonthSessions">0</div><div class="muted">Entrenamientos realizados</div></div><div class="card"><div class="muted">TIEMPO ESTE MES</div><div class="stat" id="trainingMonthMinutes">0 h</div><div class="muted">Tiempo acumulado</div></div><div class="card"><div class="muted">SESIONES ESTA SEMANA</div><div class="stat" id="trainingWeekSessions">0</div><div class="muted">De lunes a domingo</div></div><div class="card"><div class="muted">TIEMPO ESTA SEMANA</div><div class="stat" id="trainingWeekMinutes">0 min</div><div class="muted">Minutos entrenados</div></div></div>
-<div class="training-layout"><div class="card training-panel"><div class="section inner-section"><h2>Registrar entrenamiento</h2></div><form id="trainingForm" class="training-form"><label>Actividad<select id="trainingType"><option>Gimnasio</option><option>Cardio</option><option>Correr</option><option>Caminar</option><option>Deporte</option><option>Movilidad / estiramientos</option><option>Otro</option></select></label><div class="training-form-grid"><label>Fecha<input id="trainingDate" type="date" required></label><label>Duración (minutos)<input id="trainingMinutes" type="number" min="5" max="600" step="5" value="60" required></label></div><label>Intensidad<select id="trainingIntensity"><option>Moderada</option><option>Ligera</option><option>Alta</option></select></label><label>Notas (opcional)<textarea id="trainingNotes" maxlength="300" placeholder="Ejercicios, distancia, pesos o sensaciones..."></textarea></label><button class="btn" type="submit">+ Guardar entrenamiento</button></form></div>
-<div class="card training-panel"><div class="section inner-section"><h2>Progreso semanal</h2><span class="muted">Minutos por día</span></div><div class="training-week" id="trainingWeekChart"><div class="training-empty">Todavía no hay entrenamientos esta semana.</div></div></div></div>
-<div class="section"><h2>Historial de entrenamientos</h2><span class="muted" id="trainingHistoryCount">0 sesiones</span></div><div class="card training-panel"><div class="training-history" id="trainingHistory"><div class="training-empty">Todavía no has registrado sesiones.</div></div></div>
+<div class="hero"><div class="eyebrow">ACTIVIDAD · FUERZA · CARDIO</div><h2>Entrena con datos. Mejora con constancia.</h2><p>Registra tus sesiones, ejercicios, series, repeticiones y pesos. Controla el volumen de entrenamiento y tu constancia semanal.</p></div>
+<div class="grid training-stats">
+<div class="card"><div class="muted">SESIONES ESTE MES</div><div class="stat" id="trainingMonthSessions">0</div><div class="muted">Entrenamientos realizados</div></div>
+<div class="card"><div class="muted">TIEMPO ESTE MES</div><div class="stat" id="trainingMonthMinutes">0 h</div><div class="muted">Tiempo acumulado</div></div>
+<div class="card"><div class="muted">SESIONES ESTA SEMANA</div><div class="stat" id="trainingWeekSessions">0/4</div><div class="muted">Objetivo: 4 sesiones</div></div>
+<div class="card"><div class="muted">VOLUMEN ESTE MES</div><div class="stat" id="trainingMonthVolume">0 kg</div><div class="muted">Series × repeticiones × peso</div></div>
+</div>
+<div class="training-layout">
+<div class="card training-panel">
+<div class="section inner-section"><h2>Registrar entrenamiento</h2><span class="muted">Guarda cada sesión</span></div>
+<form id="trainingForm" class="training-form">
+<label>Tipo de actividad<select id="trainingType"><option>Gimnasio</option><option>Cardio</option><option>Correr</option><option>Caminar</option><option>Deporte</option><option>Movilidad / estiramientos</option><option>Otro</option></select></label>
+<div class="training-form-grid"><label>Fecha<input id="trainingDate" type="date" required></label><label>Duración (minutos)<input id="trainingMinutes" type="number" min="5" max="600" step="5" value="60" required></label></div>
+<label>Intensidad<select id="trainingIntensity"><option>Moderada</option><option>Ligera</option><option>Alta</option></select></label>
+<div class="training-exercises-heading"><div><h3>Ejercicios realizados</h3><p>Opcional para cardio y actividades sin pesas.</p></div><button type="button" class="training-add-exercise" id="trainingAddExercise">+ Añadir ejercicio</button></div>
+<div class="training-exercise-list" id="trainingExerciseList"></div>
+<label>Notas de la sesión (opcional)<textarea id="trainingNotes" maxlength="300" placeholder="Sensaciones, distancia, ritmo o comentarios..."></textarea></label>
+<button class="btn" type="submit">+ Guardar entrenamiento</button>
+</form>
+</div>
+<div class="training-side-stack">
+<div class="card training-panel"><div class="section inner-section"><div><h2>Constancia semanal</h2><span class="muted">Objetivo de 4 sesiones</span></div><strong class="training-target-label" id="trainingWeeklyTargetLabel">0/4</strong></div><div class="training-week-target"><div class="training-target-track"><span id="trainingTargetFill"></span></div><div class="training-target-caption" id="trainingTargetCaption">Completa tu primera sesión esta semana.</div></div><div class="training-week" id="trainingWeekChart"><div class="training-empty">Todavía no hay entrenamientos esta semana.</div></div></div>
+<div class="card training-panel"><div class="section inner-section"><h2>Grupos musculares</h2><span class="muted">Series este mes</span></div><div class="training-muscles" id="trainingMuscleBreakdown"><div class="training-empty">Añade ejercicios para ver el desglose.</div></div></div>
+</div>
+</div>
+<div class="section"><h2>Historial de entrenamientos</h2><span class="muted" id="trainingHistoryCount">0 sesiones</span></div>
+<div class="card training-panel"><div class="training-history" id="trainingHistory"><div class="training-empty">Todavía no has registrado sesiones.</div></div></div>
 </section>
 <section class="view" id="goals">
 <div class="hero"><div class="eyebrow">OBJETIVOS · PROGRESO PERSONAL</div><h2>Convierte tus metas en avances.</h2><p>Define objetivos medibles, establece una fecha y actualiza tu progreso cuando consigas avanzar.</p></div>
@@ -674,23 +696,45 @@ function openHomeCalendarDate(date){selectCalendarDate(date);go('calendar')}
 
 function goalValueLabel(value,unit){const number=Number(value||0),formatted=number.toLocaleString('es-ES',{maximumFractionDigits:2});return unit==='€'?money(number):formatted+(unit?' '+unit:'')}
 function persistTraining(){localStorage.setItem('emerito_training_sessions',JSON.stringify(trainingSessions));renderTraining();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function trainingExerciseRow(exercise={}){
+const muscles=['Pecho','Espalda','Hombros','Bíceps','Tríceps','Piernas','Glúteos','Abdomen','Full body','Otro'];
+return '<div class="training-exercise-row" data-exercise-row><label>Grupo<select data-field="muscle">'+muscles.map(m=>'<option '+((exercise.muscle||'Pecho')===m?'selected':'')+'>'+m+'</option>').join('')+'</select></label><label>Ejercicio<input data-field="name" maxlength="60" value="'+escapeHtml(exercise.name||'')+'" placeholder="Ej. Press banca"></label><label>Series<input data-field="sets" type="number" min="1" max="30" value="'+(exercise.sets??3)+'"></label><label>Reps<input data-field="reps" type="number" min="1" max="100" value="'+(exercise.reps??10)+'"></label><label>Kg<input data-field="weight" type="number" min="0" max="1000" step="0.5" value="'+(exercise.weight??0)+'"></label><button type="button" class="training-remove-exercise" aria-label="Quitar ejercicio">×</button></div>';
+}
+function addTrainingExercise(exercise={}){
+const list=document.getElementById('trainingExerciseList');list.insertAdjacentHTML('beforeend',trainingExerciseRow(exercise));
+const row=list.lastElementChild;row.querySelector('.training-remove-exercise').addEventListener('click',()=>{row.remove();if(!list.children.length)addTrainingExercise()});
+}
+document.getElementById('trainingAddExercise').addEventListener('click',()=>addTrainingExercise());
+addTrainingExercise();
 function renderTraining(){
 const today=localDateString(new Date()),month=today.slice(0,7),start=new Date(today+'T12:00:00');start.setDate(start.getDate()-((start.getDay()+6)%7));const weekStart=localDateString(start);
-const live=trainingSessions.filter(s=>!s.archived),monthRows=live.filter(s=>s.date&&s.date.slice(0,7)===month),weekRows=live.filter(s=>s.date>=weekStart&&s.date<=today),monthMinutes=monthRows.reduce((sum,s)=>sum+(Number(s.minutes)||0),0),weekMinutes=weekRows.reduce((sum,s)=>sum+(Number(s.minutes)||0),0);
+const live=trainingSessions.filter(s=>!s.archived),monthRows=live.filter(s=>s.date&&s.date.slice(0,7)===month),weekRows=live.filter(s=>s.date>=weekStart&&s.date<=today),monthMinutes=monthRows.reduce((sum,s)=>sum+(Number(s.minutes)||0),0);
+const volumeOf=s=>(s.exercises||[]).reduce((sum,x)=>sum+(Number(x.sets)||0)*(Number(x.reps)||0)*(Number(x.weight)||0),0),monthVolume=monthRows.reduce((sum,s)=>sum+volumeOf(s),0);
 document.getElementById('trainingMonthSessions').textContent=monthRows.length;
 document.getElementById('trainingMonthMinutes').textContent=(monthMinutes/60).toLocaleString('es-ES',{maximumFractionDigits:1})+' h';
-document.getElementById('trainingWeekSessions').textContent=weekRows.length;
-document.getElementById('trainingWeekMinutes').textContent=weekMinutes+' min';
+document.getElementById('trainingWeekSessions').textContent=weekRows.length+'/4';
+document.getElementById('trainingMonthVolume').textContent=Math.round(monthVolume).toLocaleString('es-ES')+' kg';
+document.getElementById('trainingWeeklyTargetLabel').textContent=weekRows.length+'/4';
+document.getElementById('trainingTargetFill').style.width=Math.min(100,weekRows.length/4*100)+'%';
+document.getElementById('trainingTargetCaption').textContent=weekRows.length>=4?'Objetivo semanal completado.':(4-weekRows.length)+' '+(4-weekRows.length===1?'sesión':'sesiones')+' para alcanzar tu objetivo semanal.';
 const days=Array.from({length:7},(_,i)=>{const d=new Date(start);d.setDate(start.getDate()+i);const date=localDateString(d),rows=live.filter(s=>s.date===date);return {label:new Intl.DateTimeFormat('es-ES',{weekday:'short'}).format(d).replace('.',''),minutes:rows.reduce((sum,s)=>sum+(Number(s.minutes)||0),0)}});
 const max=Math.max(30,...days.map(x=>x.minutes));
 document.getElementById('trainingWeekChart').innerHTML=days.some(x=>x.minutes)?days.map(x=>'<div class="training-day"><span class="training-day-name">'+x.label+'</span><div class="training-day-track"><span style="width:'+Math.round(x.minutes/max*100)+'%"></span></div><span class="training-day-min">'+x.minutes+' min</span></div>').join(''):'<div class="training-empty">Todavía no hay entrenamientos esta semana.</div>';
+const muscleTotals={};monthRows.forEach(s=>(s.exercises||[]).forEach(x=>{const muscle=x.muscle||'Otro';muscleTotals[muscle]=(muscleTotals[muscle]||0)+(Number(x.sets)||0)}));
+const muscles=Object.entries(muscleTotals).sort((a,b)=>b[1]-a[1]),maxSets=Math.max(1,...muscles.map(x=>x[1]));
+document.getElementById('trainingMuscleBreakdown').innerHTML=muscles.length?muscles.map(([muscle,sets])=>'<div class="training-muscle-row"><strong>'+escapeHtml(muscle)+'</strong><div class="training-muscle-track"><span style="width:'+Math.round(sets/maxSets*100)+'%"></span></div><span class="training-muscle-count">'+sets+' s</span></div>').join(''):'<div class="training-empty">Añade ejercicios para ver el desglose.</div>';
 const sorted=[...live].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||String(b.id).localeCompare(String(a.id)));
 document.getElementById('trainingHistoryCount').textContent=sorted.length+' '+(sorted.length===1?'sesión':'sesiones');
-document.getElementById('trainingHistory').innerHTML=sorted.length?sorted.slice(0,30).map(s=>'<article class="training-entry"><div class="training-entry-top"><div><strong>'+escapeHtml(s.type)+'</strong><div class="meta">'+studyDateLabel(s.date)+' · '+Number(s.minutes)+' min</div></div><button class="training-delete" type="button" data-training-delete="'+escapeHtml(String(s.id))+'" aria-label="Eliminar entrenamiento">×</button></div><div class="training-badges"><span class="training-badge">Intensidad '+escapeHtml(s.intensity||'Moderada')+'</span>'+(s.notes?'<span class="training-badge">'+escapeHtml(s.notes)+'</span>':'')+'</div></article>').join(''):'<div class="training-empty">Todavía no has registrado sesiones.</div>';
+document.getElementById('trainingHistory').innerHTML=sorted.length?sorted.slice(0,30).map(s=>'<article class="training-entry"><div class="training-entry-top"><div><strong>'+escapeHtml(s.type)+'</strong><div class="meta">'+studyDateLabel(s.date)+' · '+Number(s.minutes)+' min</div></div><button class="training-delete" type="button" data-training-delete="'+escapeHtml(String(s.id))+'" aria-label="Eliminar entrenamiento">×</button></div><div class="training-badges"><span class="training-badge">Intensidad '+escapeHtml(s.intensity||'Moderada')+'</span>'+(s.exercises&&s.exercises.length?'<span class="training-badge">'+s.exercises.length+' ejercicios</span>':'')+(s.notes?'<span class="training-badge">'+escapeHtml(s.notes)+'</span>':'')+'</div>'+(s.exercises&&s.exercises.length?'<div class="training-entry-exercises">'+s.exercises.map(x=>'<div class="training-entry-exercise"><strong>'+escapeHtml(x.name)+'</strong> <span>· '+escapeHtml(x.muscle||'')+' · '+Number(x.sets)+' × '+Number(x.reps)+' · '+Number(x.weight)+' kg</span></div>').join('')+'</div>':'')+'</article>').join(''):'<div class="training-empty">Todavía no has registrado sesiones.</div>';
 document.querySelectorAll('[data-training-delete]').forEach(button=>button.addEventListener('click',()=>deleteTrainingSession(button.dataset.trainingDelete)));
 }
 function deleteTrainingSession(id){const session=trainingSessions.find(s=>String(s.id)===String(id));if(!session)return;session.archived=true;session.updatedAt=new Date().toISOString();persistTraining()}
-document.getElementById('trainingForm').addEventListener('submit',e=>{e.preventDefault();const minutes=Number(document.getElementById('trainingMinutes').value);if(!Number.isFinite(minutes)||minutes<5||minutes>600)return;trainingSessions.unshift({id:String(Date.now()),type:document.getElementById('trainingType').value,date:document.getElementById('trainingDate').value,minutes,intensity:document.getElementById('trainingIntensity').value,notes:document.getElementById('trainingNotes').value.trim(),archived:false,updatedAt:new Date().toISOString()});e.target.reset();document.getElementById('trainingDate').value=localDateString(new Date());document.getElementById('trainingMinutes').value=60;persistTraining()});
+document.getElementById('trainingForm').addEventListener('submit',e=>{
+e.preventDefault();const minutes=Number(document.getElementById('trainingMinutes').value);if(!Number.isFinite(minutes)||minutes<5||minutes>600)return;
+const exercises=[...document.querySelectorAll('#trainingExerciseList [data-exercise-row]')].map(row=>({muscle:row.querySelector('[data-field="muscle"]').value,name:row.querySelector('[data-field="name"]').value.trim(),sets:Number(row.querySelector('[data-field="sets"]').value)||0,reps:Number(row.querySelector('[data-field="reps"]').value)||0,weight:Number(row.querySelector('[data-field="weight"]').value)||0})).filter(x=>x.name);
+trainingSessions.unshift({id:String(Date.now()),type:document.getElementById('trainingType').value,date:document.getElementById('trainingDate').value,minutes,intensity:document.getElementById('trainingIntensity').value,notes:document.getElementById('trainingNotes').value.trim(),exercises,archived:false,updatedAt:new Date().toISOString()});
+e.target.reset();document.getElementById('trainingDate').value=localDateString(new Date());document.getElementById('trainingMinutes').value=60;document.getElementById('trainingExerciseList').innerHTML='';addTrainingExercise();persistTraining()
+});
 document.getElementById('trainingDate').value=localDateString(new Date());
 function persistGoals(){localStorage.setItem('emerito_goals',JSON.stringify(goals));renderGoals();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function renderGoals(){
@@ -759,7 +803,7 @@ if(mainGoal){const target=Number(mainGoal.target)||0,current=Number(mainGoal.cur
 else{document.getElementById('homeGoalTitle').textContent=goal?'Objetivo de ahorro mensual':'Define un objetivo desde Objetivos';document.getElementById('homeGoalPercent').textContent=goal?Math.min(100,goalPct)+'%':'—';document.getElementById('homeGoalProgress').style.width=(goal?Math.min(100,goalPct):0)+'%';document.getElementById('homeGoalTotals').textContent=goal?money(achieved)+' / '+money(goal)+' ahorrados':'Todavía no tienes una meta principal.';}
 const weekStartDate=new Date(now);weekStartDate.setDate(now.getDate()-((now.getDay()+6)%7));const weekEndDate=new Date(weekStartDate);weekEndDate.setDate(weekStartDate.getDate()+6);
 const trainingThisWeek=trainingSessions.filter(s=>!s.archived&&s.date>=localDateString(weekStartDate)&&s.date<=localDateString(weekEndDate)),trainingMinutes=trainingThisWeek.reduce((sum,s)=>sum+(Number(s.minutes)||0),0);
-document.getElementById('homeTrainingSessions').textContent=trainingThisWeek.length+' '+(trainingThisWeek.length===1?'sesión':'sesiones');
+document.getElementById('homeTrainingSessions').textContent=trainingThisWeek.length+'/4 sesiones';
 document.getElementById('homeTrainingMinutes').textContent=trainingMinutes+' min';
 const lastTraining=[...trainingSessions].filter(s=>!s.archived).sort((a,b)=>(b.date||'').localeCompare(a.date||''))[0];
 document.getElementById('homeTrainingLast').textContent=lastTraining?'Último: '+lastTraining.type+' · '+studyDateLabel(lastTraining.date):'Registra tu primera sesión.';
