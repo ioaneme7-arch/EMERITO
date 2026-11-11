@@ -187,7 +187,7 @@ document.getElementById('accountStatus').textContent=connected?'Nube · '+curren
 document.getElementById('accountToggle').textContent=connected?'Cuenta conectada':'Conectar cuenta';
 document.getElementById('authForm').hidden=connected;
 document.getElementById('cloudAccount').hidden=!connected;
-document.getElementById('authPanel').hidden=connected;
+document.getElementById('authPanel').hidden=false;
 if(connected){document.getElementById('cloudEmail').textContent=currentUser.email||'Cuenta conectada';document.getElementById('cloudMessage').textContent='Sincronización privada activa';}
 }
 function collectAppData(){return {tasks,financeTransactions,financeBudgets,fixedExpenses,monthlySavingGoal};}
