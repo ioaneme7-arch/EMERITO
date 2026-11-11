@@ -19,9 +19,12 @@
 .finance-trend-card{padding:18px 20px}.trend-legend{display:flex;gap:18px;justify-content:flex-end;color:var(--muted);font-size:12px;margin-bottom:14px}.trend-legend span{display:flex;align-items:center;gap:7px}.legend-dot{display:inline-block;width:8px;height:8px;border-radius:50%}.income-dot{background:#61c995}.expense-dot{background:#ff666d}.trend-chart{display:grid;gap:15px}.trend-month{display:grid;grid-template-columns:82px minmax(0,1fr) 138px;gap:12px;align-items:center}.trend-month-label{font-size:12px;color:#c9c9d0;text-transform:capitalize}.trend-bars{display:grid;gap:5px}.trend-bar-row{display:grid;grid-template-columns:56px minmax(0,1fr);gap:7px;align-items:center;font-size:10px;color:var(--muted)}.trend-bar-track{height:8px;border-radius:99px;background:#2d2d34;overflow:hidden}.trend-bar{height:100%;border-radius:99px;min-width:0}.trend-bar.income{background:#61c995}.trend-bar.expense{background:#ff666d}.trend-net{text-align:right;font-size:12px;font-weight:750;white-space:nowrap}.trend-net.positive{color:#61c995}.trend-net.negative{color:#ff666d}.trend-note{color:var(--muted);font-size:11px;margin-top:16px}.trend-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}.trend-summary .item{min-width:0}.trend-summary .value{font-size:17px;font-weight:800;margin-top:3px;overflow-wrap:anywhere}
 
 
+
+.account-head{display:flex;align-items:center;gap:10px;margin-left:auto}.account-head .muted{max-width:190px;text-align:right}.account-toggle{font-size:12px;padding:8px 11px;white-space:nowrap}
+.auth-panel{margin:-7px 0 23px;padding:19px 20px;border-color:#4b272c;background:linear-gradient(120deg,#1b1115,#121216);display:block}.auth-panel[hidden]{display:none}.auth-heading{display:flex;justify-content:space-between;gap:20px;align-items:start}.auth-heading h2{font-size:18px;margin:5px 0}.auth-heading p{margin:0;max-width:640px}.auth-lock{font-size:25px;color:var(--red2);padding:8px 12px;background:#2c1116;border-radius:12px}.auth-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.auth-form label{display:grid;gap:6px;color:#ccc;font-size:12px}.auth-form input{background:#0d0d11;color:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-width:0}.auth-actions{display:flex;align-items:center;gap:14px;grid-column:1/-1}.auth-link{border:0;background:none;color:#ff777d;font-size:13px}.auth-feedback{font-size:12px;color:var(--muted);margin-top:11px}.auth-feedback.error{color:#ff797f}.auth-feedback.success{color:#61c995}.cloud-account{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:13px;padding-top:13px;border-top:1px solid var(--line)}.cloud-account strong{font-size:14px}.cloud-account[hidden]{display:none}
 .mobile-nav{display:none}
-@media(max-width:850px){.shell{display:block}.sidebar{display:none}.content{padding:18px 15px 95px}.mobilebar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.mobilebar .logo{padding:0;font-size:23px}.top{margin-bottom:18px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:14px}.shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.shortcut{padding:13px}.shortcut .icon{width:35px;height:35px}.mobile-nav{display:flex;position:fixed;z-index:5;bottom:0;left:0;right:0;justify-content:space-around;background:#111116ed;border-top:1px solid var(--line);padding:8px 4px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(14px)}.mobile-nav button{border:0;background:none;color:#888;display:grid;justify-items:center;gap:2px;font-size:10px}.mobile-nav button.active{color:#ff444b}.mobile-nav b{font-size:18px}}
-@media(max-width:850px){.finance-columns,.finance-extra{grid-template-columns:1fr}.finance-extra .distribution-panel{grid-column:auto}.goal-form{grid-template-columns:1fr auto}.budget-form{grid-template-columns:1fr 1fr}.budget-form button{grid-column:1/-1}}\n@media(max-width:440px){.trend-month{grid-template-columns:65px minmax(0,1fr);gap:8px}.trend-net{grid-column:2;text-align:left}.trend-summary{grid-template-columns:1fr 1fr}.finance-form-row,.fixed-form-row{grid-template-columns:1fr}.goal-form,.budget-form{grid-template-columns:1fr}.budget-form button{grid-column:auto}.goal-form{grid-template-columns:1fr}.finance-row{gap:8px;grid-template-columns:minmax(0,1fr) auto auto}.finance-row .meta{font-size:11px}.fixed-item{grid-template-columns:1fr}.fixed-controls{justify-content:space-between}.taskform{flex-direction:column}.taskform .btn{width:100%}.hero{border-radius:16px}}
+@media(max-width:850px){.account-head{margin-left:0;flex-wrap:wrap;justify-content:flex-end}.account-head .muted{max-width:140px;font-size:11px}.auth-form{grid-template-columns:1fr}.auth-actions{grid-column:auto}.shell{display:block}.sidebar{display:none}.content{padding:18px 15px 95px}.mobilebar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.mobilebar .logo{padding:0;font-size:23px}.top{margin-bottom:18px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:14px}.shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.shortcut{padding:13px}.shortcut .icon{width:35px;height:35px}.mobile-nav{display:flex;position:fixed;z-index:5;bottom:0;left:0;right:0;justify-content:space-around;background:#111116ed;border-top:1px solid var(--line);padding:8px 4px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(14px)}.mobile-nav button{border:0;background:none;color:#888;display:grid;justify-items:center;gap:2px;font-size:10px}.mobile-nav button.active{color:#ff444b}.mobile-nav b{font-size:18px}}
+@media(max-width:850px){.finance-columns,.finance-extra{grid-template-columns:1fr}.finance-extra .distribution-panel{grid-column:auto}.goal-form{grid-template-columns:1fr auto}.budget-form{grid-template-columns:1fr 1fr}.budget-form button{grid-column:1/-1}}\n@media(max-width:440px){.account-head{gap:6px}.account-head .muted{max-width:120px}.account-toggle{padding:7px 9px}.auth-panel{padding:15px}.auth-actions{flex-wrap:wrap}.cloud-account{align-items:flex-start;flex-direction:column}.trend-month{grid-template-columns:65px minmax(0,1fr);gap:8px}.trend-net{grid-column:2;text-align:left}.trend-summary{grid-template-columns:1fr 1fr}.finance-form-row,.fixed-form-row{grid-template-columns:1fr}.goal-form,.budget-form{grid-template-columns:1fr}.budget-form button{grid-column:auto}.goal-form{grid-template-columns:1fr}.finance-row{gap:8px;grid-template-columns:minmax(0,1fr) auto auto}.finance-row .meta{font-size:11px}.fixed-item{grid-template-columns:1fr}.fixed-controls{justify-content:space-between}.taskform{flex-direction:column}.taskform .btn{width:100%}.hero{border-radius:16px}}
 </style>
 </head>
 <body>
@@ -29,7 +32,17 @@
 <aside class="sidebar"><div class="logo">EMERITO<small>ORGANIZA TU VIDA</small></div><nav class="nav" id="sideNav"></nav></aside>
 <main class="content">
 <div class="mobilebar"><div class="logo">EMERITO<small>ORGANIZA TU VIDA</small></div><span class="muted" id="shortDate"></span></div>
-<header class="top"><div><div class="eyebrow">PANEL PERSONAL</div><h1 id="pageTitle">Inicio</h1></div><div class="muted" id="today"></div></header>
+<header class="top"><div><div class="eyebrow">PANEL PERSONAL</div><h1 id="pageTitle">Inicio</h1></div><div class="account-head"><div class="muted" id="accountStatus">Datos guardados en este dispositivo</div><button class="btn secondary account-toggle" id="accountToggle" type="button">Conectar cuenta</button></div><div class="muted date-desktop" id="today"></div></header>
+<section id="authPanel" class="card auth-panel">
+<div class="auth-heading"><div><div class="eyebrow">SINCRONIZACIÓN PRIVADA</div><h2>Tu EMERITO en todos tus dispositivos</h2><p class="muted">Inicia sesión para guardar tus finanzas y tareas en la nube y acceder a ellas desde el ordenador y el iPhone.</p></div><span class="auth-lock">◆</span></div>
+<form id="authForm" class="auth-form">
+<label>Correo electrónico<input id="authEmail" type="email" autocomplete="email" placeholder="tu@correo.com" required></label>
+<label>Contraseña<input id="authPassword" type="password" autocomplete="current-password" minlength="8" placeholder="Mínimo 8 caracteres" required></label>
+<div class="auth-actions"><button class="btn" id="authSubmit" type="submit">Iniciar sesión</button><button class="auth-link" id="authModeToggle" type="button">Crear una cuenta</button></div>
+</form>
+<div id="authFeedback" class="auth-feedback" aria-live="polite">Tus datos locales se conservan. Al conectar, se copiarán de forma segura a tu cuenta.</div>
+<div id="cloudAccount" class="cloud-account" hidden><div><strong id="cloudEmail"></strong><div class="muted" id="cloudMessage">Sincronización activa</div></div><button class="btn secondary" id="signOutButton" type="button">Cerrar sesión</button></div>
+</section>
 <section class="view active" id="home">
 <div class="hero"><div class="eyebrow">TU CENTRO DE CONTROL</div><h2>Un paso cada día.<br>Todo bajo control.</h2><p>Organiza tus tareas, estudios, finanzas y objetivos desde un único lugar.</p></div>
 <div class="grid">
@@ -88,6 +101,7 @@
 <section class="view" id="studies"><div class="hero"><div class="eyebrow">APRENDIZAJE</div><h2>Estudios</h2><p>Asignaturas, trabajos, exámenes y progreso.</p></div></section>
 <section class="view" id="habits"><div class="hero"><div class="eyebrow">RUTINAS</div><h2>Hábitos</h2><p>Hábitos diarios y seguimiento de objetivos.</p></div></section>
 </main></div><nav class="mobile-nav" id="bottomNav"></nav>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0"></script>
 <script>
 const items=[['home','⌂','Inicio'],['tasks','✓','Tareas'],['calendar','▦','Calendario'],['finance','€','Finanzas'],['car','♧','Mi coche'],['studies','▤','Estudios'],['habits','◷','Hábitos']];
 let tasks=JSON.parse(localStorage.getItem('emerito_tasks')||'[]');
@@ -100,7 +114,7 @@ function go(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle
 function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function taskRow(t){return '<div class="task '+(t.done?'done':'')+'"><input type="checkbox" '+(t.done?'checked':'')+' onchange="toggleTask('+t.id+')"><span>'+escapeHtml(t.name)+'</span><button onclick="deleteTask('+t.id+')">×</button></div>'}
 function render(){const pending=tasks.filter(t=>!t.done).length,done=tasks.length-pending;document.getElementById('pending').textContent=pending;document.getElementById('completed').textContent=done;document.getElementById('summary').textContent=pending+' pendientes · '+done+' completadas';document.getElementById('allTasks').innerHTML=tasks.length?tasks.map(taskRow).join(''):'<div class="empty">Todavía no tienes tareas. Añade la primera arriba.</div>';document.getElementById('homeTasks').innerHTML=tasks.length?tasks.slice(0,4).map(taskRow).join(''):'<div class="empty">No hay tareas por ahora.</div>'}
-function save(){localStorage.setItem('emerito_tasks',JSON.stringify(tasks));render()}
+function save(){localStorage.setItem('emerito_tasks',JSON.stringify(tasks));render();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function toggleTask(id){const t=tasks.find(x=>x.id===id);if(t)t.done=!t.done;save()}
 function deleteTask(id){tasks=tasks.filter(x=>x.id!==id);save()}
 document.getElementById('taskForm').addEventListener('submit',e=>{e.preventDefault();const input=document.getElementById('taskName'),name=input.value.trim();if(!name)return;tasks.unshift({id:Date.now(),name,done:false});input.value='';save()});
@@ -131,7 +145,7 @@ const totalIncome=months.reduce((s,m)=>s+m.income,0),totalExpenses=months.reduce
 document.getElementById('financeTrendSummary').innerHTML='<div class="item"><div class="muted">INGRESOS · 6 MESES</div><div class="value positive">'+money(totalIncome)+'</div></div><div class="item"><div class="muted">GASTOS · 6 MESES</div><div class="value negative">'+money(totalExpenses)+'</div></div><div class="item"><div class="muted">BALANCE NETO</div><div class="value '+(net<0?'negative':'positive')+'">'+money(net)+'</div></div>';
 }
 
-function persistFinance(){localStorage.setItem('emerito_finance',JSON.stringify(financeTransactions));renderFinance()}
+function persistFinance(){localStorage.setItem('emerito_finance',JSON.stringify(financeTransactions));renderFinance();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function deleteFinance(id){financeTransactions=financeTransactions.filter(t=>t.id!==id);persistFinance()}
 let financeBudgets=JSON.parse(localStorage.getItem('emerito_finance_budgets')||'{}');
 let fixedExpenses=JSON.parse(localStorage.getItem('emerito_fixed_expenses')||'[]');
@@ -144,21 +158,177 @@ document.getElementById('budgetList').innerHTML=budgetEntries.length?budgetEntri
 const entries=Object.entries(spentByCategory).sort((a,b)=>b[1]-a[1]),total=entries.reduce((s,x)=>s+x[1],0);
 document.getElementById('expenseDistribution').innerHTML=entries.length?entries.map(([cat,value])=>'<div class="distribution-item"><div class="distribution-top"><strong>'+escapeHtml(cat)+'</strong><strong>'+money(value)+'</strong></div><div class="budget-numbers">'+(total?Math.round(value/total*100):0)+'% del gasto mensual</div><div class="distribution-track"><div class="distribution-fill" style="width:'+(total?value/total*100:0)+'%"></div></div></div>').join(''):'<div class="finance-empty">Añade gastos para ver el resumen.</div>';
 }
-function deleteBudget(month,category){if(financeBudgets[month]){delete financeBudgets[month][category];localStorage.setItem('emerito_finance_budgets',JSON.stringify(financeBudgets));renderFinance()}}
+function deleteBudget(month,category){if(financeBudgets[month]){delete financeBudgets[month][category];localStorage.setItem('emerito_finance_budgets',JSON.stringify(financeBudgets));renderFinance();scheduleCloudSave()}}
 function renderFixedExpenses(){
 const month=selectedMonth();
 document.getElementById('fixedExpenseList').innerHTML=fixedExpenses.length?fixedExpenses.map(x=>{const already=financeTransactions.some(t=>t.sourceFixedId===x.id&&t.date.slice(0,7)===month);return '<div class="fixed-item"><div><strong>'+escapeHtml(x.name)+' · '+money(x.amount)+'</strong><div class="meta">'+escapeHtml(x.category)+' · Día '+x.day+' de cada mes</div></div><div class="fixed-controls"><button class="fixed-register" '+(already?'disabled':'')+' onclick="registerFixedExpense('+x.id+')">'+(already?'Registrado este mes':'Registrar este mes')+'</button><button class="fixed-delete" aria-label="Eliminar gasto fijo" onclick="deleteFixedExpense('+x.id+')">×</button></div></div>'}).join(''):'<div class="finance-empty">Todavía no has guardado gastos fijos.</div>';
 }
 function registerFixedExpense(id){const x=fixedExpenses.find(v=>v.id===id);if(!x)return;const month=selectedMonth();if(financeTransactions.some(t=>t.sourceFixedId===x.id&&t.date.slice(0,7)===month))return;const [year,m]=month.split('-').map(Number),lastDay=new Date(year,m,0).getDate(),day=Math.min(x.day,lastDay);financeTransactions.push({id:Date.now(),type:'gasto',amount:x.amount,date:year+'-'+String(m).padStart(2,'0')+'-'+String(day).padStart(2,'0'),category:x.category,concept:x.name,sourceFixedId:x.id});persistFinance()}
-function deleteFixedExpense(id){fixedExpenses=fixedExpenses.filter(x=>x.id!==id);localStorage.setItem('emerito_fixed_expenses',JSON.stringify(fixedExpenses));renderFixedExpenses()}
-document.getElementById('categoryBudgetForm').addEventListener('submit',e=>{e.preventDefault();const category=document.getElementById('budgetCategory').value,amount=Number(document.getElementById('budgetAmount').value),month=selectedMonth();if(!Number.isFinite(amount)||amount<=0)return;if(!financeBudgets[month])financeBudgets[month]={};financeBudgets[month][category]=Math.round(amount*100)/100;localStorage.setItem('emerito_finance_budgets',JSON.stringify(financeBudgets));document.getElementById('budgetAmount').value='';renderFinance()});
-document.getElementById('fixedExpenseForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('fixedName').value.trim(),amount=Number(document.getElementById('fixedAmount').value),day=Number(document.getElementById('fixedDay').value);if(!name||!Number.isFinite(amount)||amount<=0||day<1||day>31)return;fixedExpenses.push({id:Date.now(),name,amount:Math.round(amount*100)/100,day,category:document.getElementById('fixedCategory').value});localStorage.setItem('emerito_fixed_expenses',JSON.stringify(fixedExpenses));e.target.reset();document.getElementById('fixedDay').value=1;renderFixedExpenses()});
+function deleteFixedExpense(id){fixedExpenses=fixedExpenses.filter(x=>x.id!==id);localStorage.setItem('emerito_fixed_expenses',JSON.stringify(fixedExpenses));renderFixedExpenses();scheduleCloudSave()}
+document.getElementById('categoryBudgetForm').addEventListener('submit',e=>{e.preventDefault();const category=document.getElementById('budgetCategory').value,amount=Number(document.getElementById('budgetAmount').value),month=selectedMonth();if(!Number.isFinite(amount)||amount<=0)return;if(!financeBudgets[month])financeBudgets[month]={};financeBudgets[month][category]=Math.round(amount*100)/100;localStorage.setItem('emerito_finance_budgets',JSON.stringify(financeBudgets));document.getElementById('budgetAmount').value='';renderFinance();scheduleCloudSave()});
+document.getElementById('fixedExpenseForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('fixedName').value.trim(),amount=Number(document.getElementById('fixedAmount').value),day=Number(document.getElementById('fixedDay').value);if(!name||!Number.isFinite(amount)||amount<=0||day<1||day>31)return;fixedExpenses.push({id:Date.now(),name,amount:Math.round(amount*100)/100,day,category:document.getElementById('fixedCategory').value});localStorage.setItem('emerito_fixed_expenses',JSON.stringify(fixedExpenses));e.target.reset();document.getElementById('fixedDay').value=1;renderFixedExpenses();scheduleCloudSave()});
 
 document.getElementById('financeType').addEventListener('change',refreshFinanceCategories);
 document.getElementById('financeMonth').addEventListener('change',renderFinance);
 document.getElementById('financeForm').addEventListener('submit',e=>{e.preventDefault();const amount=Number(document.getElementById('financeAmount').value);if(!Number.isFinite(amount)||amount<=0)return;financeTransactions.push({id:Date.now(),type:document.getElementById('financeType').value,amount:Math.round(amount*100)/100,date:document.getElementById('financeDate').value,category:document.getElementById('financeCategory').value,concept:document.getElementById('financeConcept').value.trim()});e.target.reset();document.getElementById('financeType').value='gasto';document.getElementById('financeDate').value=localDateString(new Date());refreshFinanceCategories();persistFinance()});
-document.getElementById('savingGoalForm').addEventListener('submit',e=>{e.preventDefault();monthlySavingGoal=Math.max(0,Number(document.getElementById('savingGoal').value)||0);localStorage.setItem('emerito_saving_goal',String(monthlySavingGoal));renderFinance()});
+document.getElementById('savingGoalForm').addEventListener('submit',e=>{e.preventDefault();monthlySavingGoal=Math.max(0,Number(document.getElementById('savingGoal').value)||0);localStorage.setItem('emerito_saving_goal',String(monthlySavingGoal));renderFinance();scheduleCloudSave()});
 document.getElementById('financeMonth').value=localDateString(new Date()).slice(0,7);document.getElementById('financeDate').value=localDateString(new Date());document.getElementById('savingGoal').value=monthlySavingGoal||'';refreshFinanceCategories();populateFinanceCategorySelects();renderFinance();
+
+
+const SUPABASE_URL='https://fkvftyryfzxpjtisqyrq.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY='sb_publishable_xt5RiJou4JXd8WVmiSQLtQ_9tQLVdzf';
+const cloudClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+let currentUser=null,cloudChannel=null,cloudSaveTimer=null,cloudLoading=false,authMode='signin',syncPromise=null;
+const authPanel=document.getElementById('authPanel'),authFeedback=document.getElementById('authFeedback');
+function setAuthFeedback(message,type=''){authFeedback.textContent=message;authFeedback.className='auth-feedback'+(type?' '+type:'')}
+function updateAccountUI(){
+const connected=!!currentUser;
+document.getElementById('accountStatus').textContent=connected?'Nube · '+currentUser.email:'Datos guardados en este dispositivo';
+document.getElementById('accountToggle').textContent=connected?'Cuenta conectada':'Conectar cuenta';
+document.getElementById('authForm').hidden=connected;
+document.getElementById('cloudAccount').hidden=!connected;
+document.getElementById('authPanel').hidden=connected;
+if(connected){document.getElementById('cloudEmail').textContent=currentUser.email||'Cuenta conectada';document.getElementById('cloudMessage').textContent='Sincronización privada activa';}
+}
+function collectAppData(){return {tasks,financeTransactions,financeBudgets,fixedExpenses,monthlySavingGoal};}
+function saveLocalAppData(data){
+tasks=Array.isArray(data.tasks)?data.tasks:[];
+financeTransactions=Array.isArray(data.financeTransactions)?data.financeTransactions:[];
+financeBudgets=data.financeBudgets&&typeof data.financeBudgets==='object'?data.financeBudgets:{};
+fixedExpenses=Array.isArray(data.fixedExpenses)?data.fixedExpenses:[];
+monthlySavingGoal=Number(data.monthlySavingGoal)||0;
+localStorage.setItem('emerito_tasks',JSON.stringify(tasks));
+localStorage.setItem('emerito_finance',JSON.stringify(financeTransactions));
+localStorage.setItem('emerito_finance_budgets',JSON.stringify(financeBudgets));
+localStorage.setItem('emerito_fixed_expenses',JSON.stringify(fixedExpenses));
+localStorage.setItem('emerito_saving_goal',String(monthlySavingGoal));
+render();renderFinance();
+}
+function mergeItems(remoteItems,localItems){
+const map=new Map();
+(remoteItems||[]).forEach(x=>map.set(String(x.id),x));
+(localItems||[]).forEach(x=>{if(!map.has(String(x.id)))map.set(String(x.id),x)});
+return Array.from(map.values());
+}
+function mergeAppData(remote,local){
+const rb=remote.financeBudgets||{},lb=local.financeBudgets||{},budgets={...lb,...rb};
+Object.keys({...lb,...rb}).forEach(month=>{budgets[month]={...(lb[month]||{}),...(rb[month]||{})}});
+return {
+tasks:mergeItems(remote.tasks,local.tasks),
+financeTransactions:mergeItems(remote.financeTransactions,local.financeTransactions),
+fixedExpenses:mergeItems(remote.fixedExpenses,local.fixedExpenses),
+financeBudgets:budgets,
+monthlySavingGoal:remote.monthlySavingGoal!==undefined?remote.monthlySavingGoal:local.monthlySavingGoal
+};
+}
+let cloudSaveQueue=Promise.resolve();
+async function writeCloudSnapshot(){
+if(!currentUser||cloudLoading)return;
+const owner=currentUser.id,snapshot=collectAppData();
+document.getElementById('cloudMessage').textContent='Guardando cambios…';
+cloudSaveQueue=cloudSaveQueue.then(async()=>{
+if(!currentUser||currentUser.id!==owner)return;
+const {error}=await cloudClient.from('user_app_data').upsert({user_id:owner,data:snapshot,updated_at:new Date().toISOString()},{onConflict:'user_id'});
+if(error)throw error;
+if(currentUser&&currentUser.id===owner)document.getElementById('cloudMessage').textContent='Sincronizado · '+new Intl.DateTimeFormat('es-ES',{hour:'2-digit',minute:'2-digit'}).format(new Date());
+}).catch(error=>{console.error('EMERITO cloud sync:',error);if(currentUser&&currentUser.id===owner)document.getElementById('cloudMessage').textContent='Error al sincronizar: '+error.message;});
+return cloudSaveQueue;
+}
+function scheduleCloudSave(){
+if(!currentUser||cloudLoading)return;
+clearTimeout(cloudSaveTimer);
+document.getElementById('cloudMessage').textContent='Cambios pendientes de sincronizar…';
+cloudSaveTimer=setTimeout(()=>writeCloudSnapshot(),500);
+}
+async function fetchAndApplyCloudData(user,mergeLocal=true){
+const {data:row,error}=await cloudClient.from('user_app_data').select('data').eq('user_id',user.id).maybeSingle();
+if(error)throw error;
+const local=collectAppData();
+const next=row&&row.data?(mergeLocal?mergeAppData(row.data,local):row.data):local;
+cloudLoading=true;
+saveLocalAppData(next);
+cloudLoading=false;
+await writeCloudSnapshot();
+}
+async function loadUserCloud(user){
+if(currentUser&&currentUser.id===user.id&&syncPromise)return syncPromise;
+currentUser=user;updateAccountUI();cloudLoading=true;
+syncPromise=(async()=>{
+try{
+const {data:row,error}=await cloudClient.from('user_app_data').select('data').eq('user_id',user.id).maybeSingle();
+if(error)throw error;
+const local=collectAppData();
+const next=row&&row.data?mergeAppData(row.data,local):local;
+saveLocalAppData(next);
+cloudLoading=false;
+await writeCloudSnapshot();
+if(cloudChannel)await cloudClient.removeChannel(cloudChannel);
+cloudChannel=cloudClient.channel('emerito-user-data-'+user.id).on('postgres_changes',{event:'*',schema:'public',table:'user_app_data',filter:'user_id=eq.'+user.id},async payload=>{
+if(!currentUser||currentUser.id!==user.id||cloudLoading)return;
+try{
+const remote=payload.new&&payload.new.data?payload.new.data:null;
+if(!remote)return;
+const current=collectAppData();
+if(JSON.stringify(remote)===JSON.stringify(current))return;
+cloudLoading=true;saveLocalAppData(remote);cloudLoading=false;
+document.getElementById('cloudMessage').textContent='Actualizado desde otro dispositivo';
+}catch(err){cloudLoading=false;console.error(err);}
+}).subscribe(status=>{if(status==='SUBSCRIBED'&&currentUser&&currentUser.id===user.id)document.getElementById('cloudMessage').textContent='Sincronización en tiempo real activa';});
+setAuthFeedback('Cuenta conectada. Tus datos se sincronizarán entre dispositivos.','success');
+}catch(error){cloudLoading=false;setAuthFeedback('No se pudo sincronizar: '+error.message,'error');document.getElementById('cloudMessage').textContent='Error de sincronización';}
+})();
+return syncPromise;
+}
+function clearUserCloudState(){
+currentUser=null;syncPromise=null;
+if(cloudSaveTimer)clearTimeout(cloudSaveTimer);
+if(cloudChannel){cloudClient.removeChannel(cloudChannel);cloudChannel=null;}
+updateAccountUI();setAuthFeedback('Has cerrado sesión. Los datos guardados en este dispositivo permanecen disponibles.');
+}
+cloudClient.auth.onAuthStateChange((event,session)=>{
+setTimeout(()=>{
+if(session&&session.user){loadUserCloud(session.user)}
+else if(event==='SIGNED_OUT'){clearUserCloudState()}
+},0);
+});
+cloudClient.auth.getSession().then(({data,error})=>{
+if(error){setAuthFeedback('No se pudo comprobar la sesión: '+error.message,'error');return;}
+if(data.session&&data.session.user)loadUserCloud(data.session.user);
+}).catch(error=>setAuthFeedback('Error al iniciar la sincronización: '+error.message,'error'));
+document.getElementById('authForm').addEventListener('submit',async e=>{
+e.preventDefault();const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value,submit=document.getElementById('authSubmit');
+submit.disabled=true;submit.textContent='Conectando…';setAuthFeedback('Conectando con Supabase…');
+try{
+if(authMode==='signup'){
+const {data,error}=await cloudClient.auth.signUp({email,password,options:{emailRedirectTo:window.location.origin+window.location.pathname}});
+if(error)throw error;
+if(data.session&&data.user){await loadUserCloud(data.user);setAuthFeedback('Cuenta creada y conectada.','success');}
+else setAuthFeedback('Cuenta creada. Revisa tu correo y confirma la dirección para activar el inicio de sesión.','success');
+}else{
+const {data,error}=await cloudClient.auth.signInWithPassword({email,password});
+if(error)throw error;
+if(data.user)await loadUserCloud(data.user);
+setAuthFeedback('Sesión iniciada correctamente.','success');
+}
+}catch(error){setAuthFeedback(error.message||'No se pudo conectar la cuenta.','error');}
+finally{submit.disabled=false;submit.textContent=authMode==='signup'?'Crear cuenta':'Iniciar sesión';}
+});
+document.getElementById('authModeToggle').addEventListener('click',()=>{
+authMode=authMode==='signin'?'signup':'signin';
+document.getElementById('authSubmit').textContent=authMode==='signup'?'Crear cuenta':'Iniciar sesión';
+document.getElementById('authPassword').autocomplete=authMode==='signup'?'new-password':'current-password';
+document.getElementById('authModeToggle').textContent=authMode==='signup'?'Ya tengo cuenta':'Crear una cuenta';
+setAuthFeedback(authMode==='signup'?'Crea una cuenta con tu correo y una contraseña de al menos 8 caracteres. Recibirás un correo para confirmar la dirección.':'Introduce tus datos para acceder a EMERITO.');
+});
+document.getElementById('accountToggle').addEventListener('click',()=>{
+if(currentUser){document.getElementById('cloudAccount').scrollIntoView({behavior:'smooth',block:'center'});return;}
+authPanel.hidden=!authPanel.hidden;
+if(!authPanel.hidden)authPanel.scrollIntoView({behavior:'smooth',block:'center'});
+});
+document.getElementById('signOutButton').addEventListener('click',async()=>{
+const {error}=await cloudClient.auth.signOut();
+if(error)setAuthFeedback('No se pudo cerrar sesión: '+error.message,'error');
+});
 
 const now=new Date();document.getElementById('today').textContent=new Intl.DateTimeFormat('es-ES',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);document.getElementById('shortDate').textContent=new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short'}).format(now);render();
 </script>
