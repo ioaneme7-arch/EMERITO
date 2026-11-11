@@ -597,9 +597,10 @@ title.textContent=new Intl.DateTimeFormat('es-ES',{month:'long',year:'numeric'})
 const monthKey=year+'-'+String(month+1).padStart(2,'0');
 const visibleManual=calendarEvents.filter(x=>!x.archived&&x.date&&x.date.slice(0,7)===monthKey);
 const visibleStudy=studyItems.filter(x=>x.date&&x.date.slice(0,7)===monthKey&&x.status!=='done');
-document.getElementById('calendarMonthStat').textContent=visibleManual.length+visibleStudy.length;
+const visibleTasks=tasks.filter(x=>!x.done&&x.dueDate&&x.dueDate.slice(0,7)===monthKey);
+document.getElementById('calendarMonthStat').textContent=visibleManual.length+visibleStudy.length+visibleTasks.length;
 const future=new Date(today+'T12:00:00');future.setDate(future.getDate()+6);const limit=localDateString(future);
-let upcoming=calendarEvents.filter(x=>!x.archived&&x.date>=today&&x.date<=limit).length+studyItems.filter(x=>x.status!=='done'&&x.date>=today&&x.date<=limit).length;
+let upcoming=calendarEvents.filter(x=>!x.archived&&x.date>=today&&x.date<=limit).length+studyItems.filter(x=>x.status!=='done'&&x.date>=today&&x.date<=limit).length+tasks.filter(x=>!x.done&&x.dueDate>=today&&x.dueDate<=limit).length;
 document.getElementById('calendarUpcomingStat').textContent=upcoming;
 document.getElementById('calendarTodayStat').textContent=calendarEventsForDate(today).length;
 let cells='';
