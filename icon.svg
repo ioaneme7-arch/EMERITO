@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="104" fill="#09090b"/>
+<rect x="28" y="28" width="456" height="456" rx="92" fill="#121015" stroke="#4c1c25" stroke-width="5"/>
+<path d="M137 99h240v70H216v60h142v64H216v61h161v70H137z" fill="#ff2638"/>
+<path d="M137 99h240" stroke="#ff7b83" stroke-width="5" opacity=".75"/>
+<text x="256" y="461" font-family="Arial,sans-serif" font-size="36" font-weight="800" letter-spacing="4" text-anchor="middle" fill="#f5f5f7">EMERITO</text>
+</svg>
