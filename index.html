@@ -191,6 +191,45 @@
 @media(max-width:850px){.task-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.task-create-form{grid-template-columns:1fr}.task-create-form .btn{grid-column:auto}.task-tools{align-items:flex-start;flex-direction:column}.task-filters{width:100%}.task-filter{flex:1}.task-filter select{max-width:none}.task-item{grid-template-columns:20px minmax(0,1fr) auto;gap:9px;padding:11px}.task-item-main strong{font-size:13px}}
 
+
+.home-stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+.home-dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:15px}
+.home-panel{padding:17px;min-width:0}
+.home-panel-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 13px}
+.home-panel-heading h2{font-size:17px;margin:0}
+.home-panel-heading .muted{font-size:11px}
+.home-link{border:0;background:none;color:#ff858b;font-size:11px;white-space:nowrap;padding:4px}
+.home-link:hover{text-decoration:underline}
+.home-list{display:grid;gap:8px}
+.home-task-row,.home-agenda-row{display:grid;grid-template-columns:4px minmax(0,1fr) auto;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);background:var(--panel2);border-radius:10px}
+.home-row-bar{height:100%;min-height:34px;border-radius:9px;background:#999}
+.home-row-bar.high{background:#ed454d}.home-row-bar.work{background:#b99aff}.home-row-bar.study{background:#ff7077}.home-row-bar.personal{background:#60c995}.home-row-bar.appointment{background:#f0c36b}.home-row-bar.class{background:#75a9ff}
+.home-task-row strong,.home-agenda-row strong{display:block;font-size:12px;overflow-wrap:anywhere}
+.home-task-row .meta,.home-agenda-row .meta{font-size:10px;color:var(--muted);margin-top:3px;overflow-wrap:anywhere}
+.home-row-end{font-size:10px;color:#ccc;text-align:right;white-space:nowrap}
+.home-empty{border:1px dashed var(--line);border-radius:10px;padding:17px;text-align:center;color:var(--muted);font-size:12px}
+.home-habit-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.home-habit-row:last-child{border-bottom:0}
+.home-habit-row strong{font-size:12px}
+.home-habit-toggle{border:1px solid var(--line);background:#202026;color:#ddd;border-radius:8px;padding:7px 10px;font-size:10px;white-space:nowrap}
+.home-habit-toggle.done{background:#14261e;border-color:#28543c;color:#8ce0ae}
+.home-finance-numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0 14px}
+.home-finance-numbers .item{min-width:0}
+.home-finance-numbers .value{font-size:16px;font-weight:800;overflow-wrap:anywhere;margin-top:3px}
+.home-finance-numbers .label{font-size:10px;color:var(--muted)}
+.home-value-positive{color:#61c995}.home-value-negative{color:#ff666d}
+.home-progress-label{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted);margin:10px 0 6px}
+.home-mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.home-mini-stats .mini{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:11px}
+.home-mini-stats strong{display:block;font-size:20px;margin-top:3px}
+.home-reminder{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border:1px solid var(--line);background:var(--panel2);border-radius:10px}
+.home-reminder strong{font-size:13px;display:block}
+.home-reminder .meta{font-size:11px;color:var(--muted);margin-top:3px}
+.home-reminder-date{font-size:11px;font-weight:750;color:#ff9297;white-space:nowrap}
+.home-stats .stat{font-size:clamp(22px,2.5vw,29px)}
+@media(max-width:1000px){.home-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.home-dashboard-grid{grid-template-columns:1fr}}
+@media(max-width:440px){.home-panel{padding:13px}.home-finance-numbers{grid-template-columns:1fr 1fr}.home-finance-numbers .item:last-child{grid-column:1/-1}.home-task-row,.home-agenda-row{gap:7px;padding:9px}.home-row-end{font-size:9px}.home-panel-heading h2{font-size:15px}}
+
 </style>
 </head>
 <body>
@@ -213,14 +252,25 @@
 </div>
 </section>
 <section class="view active" id="home">
-<div class="hero"><div class="eyebrow">TU CENTRO DE CONTROL</div><h2>Un paso cada día.<br>Todo bajo control.</h2><p>Organiza tus tareas, estudios, finanzas y objetivos desde un único lugar.</p></div>
-<div class="grid">
+<div class="hero"><div class="eyebrow">TU CENTRO DE CONTROL</div><h2>Un paso cada día.<br>Todo bajo control.</h2><p>Este es tu resumen personal: lo que tienes pendiente, lo que viene y cómo avanzan tus objetivos.</p></div>
+<div class="grid home-stats">
 <div class="card"><div class="muted">TAREAS PENDIENTES</div><div class="stat" id="pending">0</div><div class="muted">Por completar</div></div>
 <div class="card"><div class="muted">COMPLETADAS</div><div class="stat" id="completed">0</div><div class="muted">Tareas realizadas</div></div>
-<div class="card"><div class="muted">OBJETIVO DEL MES</div><div class="stat">—</div><div class="muted">Lo definiremos juntos</div></div>
+<div class="card"><div class="muted">AGENDA · 7 DÍAS</div><div class="stat" id="homeUpcomingStat">0</div><div class="muted">Próximos compromisos</div></div>
+<div class="card"><div class="muted">HÁBITOS DE HOY</div><div class="stat" id="homeHabitStat">0/0</div><div class="muted">Rutinas realizadas</div></div>
 </div>
 <div class="section"><h2>Accesos rápidos</h2></div><div class="shortcuts" id="shortcuts"></div>
-<div class="section"><h2>Tareas de hoy</h2><button class="btn secondary" onclick="go('tasks')">Ver tareas →</button></div><div class="tasks" id="homeTasks"></div>
+<div class="home-dashboard-grid">
+<div class="card home-panel"><div class="home-panel-heading"><h2>Prioridades pendientes</h2><button class="home-link" onclick="go('tasks')">Ver tareas →</button></div><div class="home-list" id="homeTasks"><div class="home-empty">No hay tareas pendientes.</div></div></div>
+<div class="card home-panel"><div class="home-panel-heading"><h2>Próximos compromisos</h2><button class="home-link" onclick="go('calendar')">Abrir agenda →</button></div><div class="home-list" id="homeAgenda"><div class="home-empty">No tienes eventos próximos.</div></div></div>
+<div class="card home-panel"><div class="home-panel-heading"><h2>Hábitos de hoy</h2><button class="home-link" onclick="go('habits')">Ver hábitos →</button></div><div id="homeHabits"><div class="home-empty">Todavía no has configurado hábitos.</div></div></div>
+<div class="card home-panel"><div class="home-panel-heading"><h2>Finanzas del mes</h2><button class="home-link" onclick="go('finance')">Ver finanzas →</button></div>
+<div class="home-finance-numbers"><div class="item"><div class="label">INGRESOS</div><div class="value home-value-positive" id="homeIncome">0,00 €</div></div><div class="item"><div class="label">GASTOS</div><div class="value home-value-negative" id="homeExpenses">0,00 €</div></div><div class="item"><div class="label">BALANCE</div><div class="value" id="homeBalance">0,00 €</div></div></div>
+<div class="home-progress-label"><span id="homeSavingLabel">Objetivo de ahorro</span><strong id="homeSavingPercent">Sin objetivo</strong></div><div class="progress-track"><div class="progress-fill" id="homeSavingProgress" style="width:0%"></div></div>
+</div>
+<div class="card home-panel"><div class="home-panel-heading"><h2>Estudios</h2><button class="home-link" onclick="go('studies')">Ver estudios →</button></div><div class="home-mini-stats"><div class="mini"><div class="muted">HORAS ESTE MES</div><strong id="homeStudyHours">0 h</strong></div><div class="mini"><div class="muted">PENDIENTES</div><strong id="homeStudyPending">0</strong></div></div><p class="muted" id="homeStudyNote" style="margin:12px 0 0">Registra tus sesiones y entregas para ver tu progreso.</p></div>
+<div class="card home-panel"><div class="home-panel-heading"><h2>Mi coche</h2><button class="home-link" onclick="go('car')">Ver vehículo →</button></div><div id="homeCarReminder"><div class="home-empty">No hay fechas de mantenimiento registradas.</div></div></div>
+</div>
 </section>
 <section class="view" id="tasks">
 <div class="hero"><div class="eyebrow">ORGANIZACIÓN · PRODUCTIVIDAD</div><h2>Avanza tarea a tarea.</h2><p>Organiza lo que tienes pendiente, decide qué es prioritario y controla las fechas límite. Las tareas con fecha aparecerán también en tu Calendario.</p></div>
@@ -482,8 +532,46 @@ document.getElementById('summary').textContent=visible.length+' mostradas · '+p
 document.getElementById('allTasks').innerHTML=visible.length?visible.map(t=>taskRow(t)).join(''):'<div class="task-empty">'+(tasks.length?'No hay tareas que coincidan con esos filtros.':'Todavía no tienes tareas. Añade la primera arriba.')+'</div>';
 const homeTasks=[...tasks].filter(t=>!t.done).sort((a,b)=>{if(taskOverdue(a)!==taskOverdue(b))return taskOverdue(a)?-1:1;return (a.dueDate||'9999').localeCompare(b.dueDate||'9999')}).slice(0,4);
 document.getElementById('homeTasks').innerHTML=homeTasks.length?homeTasks.map(t=>taskRow(t,true)).join(''):'<div class="empty">No hay tareas pendientes.</div>';
+renderHomeDashboard();
 }
-function save(){localStorage.setItem('emerito_tasks',JSON.stringify(tasks));render();if(typeof renderCalendar==='function'&&document.getElementById('calendarDays'))renderCalendar();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+
+function openHomeCalendarDate(date){selectCalendarDate(date);go('calendar')}
+function renderHomeDashboard(){
+const today=localDateString(new Date()),month=today.slice(0,7),future=new Date(today+'T12:00:00');future.setDate(future.getDate()+6);const limit=localDateString(future);
+const pendingTasks=tasks.filter(t=>!t.done),todayHabits=habits.filter(h=>!h.archived&&habitIsScheduled(h,today)),doneHabits=todayHabits.filter(h=>habitIsDone(h.id,today)).length;
+const nextTasks=pendingTasks.filter(t=>t.dueDate&&t.dueDate>=today&&t.dueDate<=limit),manualEvents=calendarEvents.filter(e=>!e.archived&&e.date>=today&&e.date<=limit),studyEvents=studyItems.filter(x=>x.status!=='done'&&x.date&&x.date>=today&&x.date<=limit);
+document.getElementById('homeUpcomingStat').textContent=nextTasks.length+manualEvents.length+studyEvents.length;
+document.getElementById('homeHabitStat').textContent=doneHabits+'/'+todayHabits.length;
+const priorityRank={high:0,normal:1,low:2};
+const topTasks=[...pendingTasks].sort((a,b)=>{
+if(taskOverdue(a)!==taskOverdue(b))return taskOverdue(a)?-1:1;
+const p=(priorityRank[a.priority||'normal']??1)-(priorityRank[b.priority||'normal']??1);if(p)return p;
+return (a.dueDate||'9999').localeCompare(b.dueDate||'9999');
+}).slice(0,5);
+document.getElementById('homeTasks').innerHTML=topTasks.length?topTasks.map(t=>{
+const overdue=taskOverdue(t),due=t.dueDate?(overdue?'Atrasada · ':t.dueDate===today?'Vence hoy · ':'Límite · ')+taskDateLabel(t.dueDate):'Sin fecha límite';
+return '<div class="home-task-row"><span class="home-row-bar '+(t.priority==='high'?'high':'')+'"></span><div><strong>'+escapeHtml(t.name)+'</strong><div class="meta">'+taskCategoryLabel(t.category)+' · Prioridad '+taskPriorityLabel(t.priority)+' · '+due+'</div></div><span class="home-row-end">'+(overdue?'Atrasada':t.priority==='high'?'Alta':'Pendiente')+'</span></div>';
+}).join(''):'<div class="home-empty">No tienes tareas pendientes. Puedes añadir una desde Tareas.</div>';
+const agenda=[
+...manualEvents.map(e=>({...e,source:'calendar',kind:e.category||'other'})),
+...studyEvents.map(e=>({...e,source:'study',kind:'study',notes:studySubjectName(e.subjectId)+' · '+e.type})),
+...nextTasks.map(t=>({id:'task-'+t.id,title:t.name,date:t.dueDate,category:t.category||'otros',source:'task',kind:t.category==='trabajo'?'work':t.category==='personal'?'personal':t.category==='estudios'?'study':'other',notes:'Tarea · Prioridad '+taskPriorityLabel(t.priority)}))
+].sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999')||(a.time||'99:99').localeCompare(b.time||'99:99')||String(a.title).localeCompare(String(b.title),'es')).slice(0,6);
+document.getElementById('homeAgenda').innerHTML=agenda.length?agenda.map(e=>'<button type="button" class="home-agenda-row" style="text-align:left;color:inherit" onclick="openHomeCalendarDate(\''+e.date+'\')"><span class="home-row-bar '+(e.kind||'other')+'"></span><div><strong>'+escapeHtml(e.title)+'</strong><div class="meta">'+studyDateLabel(e.date)+(e.time?' · '+e.time:'')+' · '+(e.source==='task'?'Tareas':e.source==='study'?'Estudios':({class:'Clases',work:'Trabajo',study:'Estudios',personal:'Personal',appointment:'Cita',other:'Evento'}[e.kind]||'Evento'))+'</div></div><span class="home-row-end">›</span></button>').join(''):'<div class="home-empty">No tienes compromisos durante los próximos 7 días.</div>';
+document.getElementById('homeHabits').innerHTML=todayHabits.length?todayHabits.map(h=>{const done=habitIsDone(h.id,today);return '<div class="home-habit-row"><div><strong>'+escapeHtml(h.name)+'</strong><div class="meta">'+habitFrequencyLabel(h.frequency)+'</div></div><button type="button" class="home-habit-toggle '+(done?'done':'')+'" onclick="toggleHabitDay(\''+String(h.id)+'\',\''+today+'\')">'+(done?'✓ Completado':'Marcar hecho')+'</button></div>'}).join(''):'<div class="home-empty">No tienes hábitos programados para hoy.</div>';
+const transactions=financeTransactions.filter(t=>t.date&&t.date.slice(0,7)===month),income=transactions.filter(t=>t.type==='ingreso').reduce((s,t)=>s+(Number(t.amount)||0),0),expenses=transactions.filter(t=>t.type==='gasto').reduce((s,t)=>s+(Number(t.amount)||0),0),balance=income-expenses;
+document.getElementById('homeIncome').textContent=money(income);document.getElementById('homeExpenses').textContent=money(expenses);document.getElementById('homeBalance').textContent=(balance<0?'−':'')+money(Math.abs(balance));document.getElementById('homeBalance').className='value '+(balance<0?'home-value-negative':'home-value-positive');
+const saving=monthlySavingGoal||0,savingPct=saving>0?Math.min(100,Math.max(0,balance)/saving*100):0;
+document.getElementById('homeSavingLabel').textContent=saving>0?'Objetivo · '+money(saving):'Objetivo de ahorro sin configurar';document.getElementById('homeSavingPercent').textContent=saving>0?Math.round(savingPct)+'%':'Sin objetivo';document.getElementById('homeSavingProgress').style.width=savingPct+'%';
+const studyMonth=studySessions.filter(s=>s.date&&s.date.slice(0,7)===month),studyMinutes=studyMonth.reduce((sum,s)=>sum+(Number(s.minutes)||0),0),studyPending=studyItems.filter(x=>x.status!=='done').length;
+document.getElementById('homeStudyHours').textContent=(studyMinutes/60).toLocaleString('es-ES',{maximumFractionDigits:1})+' h';document.getElementById('homeStudyPending').textContent=studyPending;
+document.getElementById('homeStudyNote').textContent=studyMonth.length+' sesiones registradas este mes · '+studyItems.filter(x=>x.type==='Examen'&&x.status!=='done'&&x.date&&x.date>=today).length+' exámenes próximos';
+const carDates=[['ITV',carProfile.itvDate],['Seguro',carProfile.insuranceDate],['Próximo mantenimiento',carProfile.nextServiceDate]].filter(x=>x[1]).map(([label,date])=>({label,date,delta:Math.ceil((new Date(date+'T12:00:00')-new Date(today+'T12:00:00'))/86400000)})).sort((a,b)=>a.date.localeCompare(b.date));
+const carNext=carDates[0];
+document.getElementById('homeCarReminder').innerHTML=carNext?'<div class="home-reminder"><div><strong>'+carNext.label+'</strong><div class="meta">'+studyDateLabel(carNext.date)+'</div></div><span class="home-reminder-date">'+(carNext.delta<0?'Vencido hace '+Math.abs(carNext.delta)+' d':carNext.delta===0?'Vence hoy':'En '+carNext.delta+' días')+'</span></div>':'<div class="home-empty">Añade las fechas de ITV, seguro o mantenimiento en Mi coche.</div>';
+}
+
+function save(){localStorage.setItem('emerito_tasks',JSON.stringify(tasks));render();if(typeof renderCalendar==='function'&&document.getElementById('calendarDays'))renderCalendar();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function toggleTask(id){const t=tasks.find(x=>Number(x.id)===Number(id));if(t)t.done=!t.done;save()}
 function deleteTask(id){tasks=tasks.filter(x=>Number(x.id)!==Number(id));save()}
 document.getElementById('taskForm').addEventListener('submit',e=>{
@@ -499,7 +587,7 @@ document.getElementById('taskCategoryFilter').addEventListener('change',render);
 function persistStudies(){localStorage.setItem('emerito_study_subjects',JSON.stringify(studySubjects));localStorage.setItem('emerito_study_items',JSON.stringify(studyItems));localStorage.setItem('emerito_study_sessions',JSON.stringify(studySessions));
 localStorage.setItem('emerito_habits',JSON.stringify(habits));
 localStorage.setItem('emerito_habit_checks',JSON.stringify(habitChecks));
-localStorage.setItem('emerito_calendar_events',JSON.stringify(calendarEvents));renderStudies();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+localStorage.setItem('emerito_calendar_events',JSON.stringify(calendarEvents));renderStudies();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function studySubjectName(id){const subject=studySubjects.find(x=>String(x.id)===String(id));return subject?subject.name:'Sin asignatura'}
 function populateStudySubjects(selectId){const select=document.getElementById(selectId),previous=select.value;select.innerHTML='<option value="">Sin asignatura</option>'+studySubjects.map(s=>'<option value="'+escapeHtml(String(s.id))+'">'+escapeHtml(s.name)+'</option>').join('');if([...select.options].some(o=>o.value===previous))select.value=previous;else select.value=''}
 function studyDateLabel(value){if(!value)return 'Sin fecha';return new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short',year:'numeric'}).format(new Date(value+'T12:00:00'))}
@@ -533,7 +621,7 @@ document.getElementById('studySessionDate').value=localDateString(new Date());
 renderStudies();
 
 
-function persistHabits(){localStorage.setItem('emerito_habits',JSON.stringify(habits));localStorage.setItem('emerito_habit_checks',JSON.stringify(habitChecks));renderHabits();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function persistHabits(){localStorage.setItem('emerito_habits',JSON.stringify(habits));localStorage.setItem('emerito_habit_checks',JSON.stringify(habitChecks));renderHabits();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function habitIsScheduled(habit,date){const day=new Date(date+'T12:00:00').getDay();if(habit.frequency==='weekdays')return day>=1&&day<=5;if(habit.frequency==='weekends')return day===0||day===6;return true}
 function habitIsDone(habitId,date){const item=habitChecks.find(x=>String(x.habitId)===String(habitId)&&x.date===date);return !!(item&&item.done)}
 function habitFrequencyLabel(value){return value==='weekdays'?'De lunes a viernes':value==='weekends'?'Sábados y domingos':'Todos los días'}
@@ -660,7 +748,7 @@ const totalIncome=months.reduce((s,m)=>s+m.income,0),totalExpenses=months.reduce
 document.getElementById('financeTrendSummary').innerHTML='<div class="item"><div class="muted">INGRESOS · 6 MESES</div><div class="value positive">'+money(totalIncome)+'</div></div><div class="item"><div class="muted">GASTOS · 6 MESES</div><div class="value negative">'+money(totalExpenses)+'</div></div><div class="item"><div class="muted">BALANCE NETO</div><div class="value '+(net<0?'negative':'positive')+'">'+money(net)+'</div></div>';
 }
 
-function persistFinance(){localStorage.setItem('emerito_finance',JSON.stringify(financeTransactions));renderFinance();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function persistFinance(){localStorage.setItem('emerito_finance',JSON.stringify(financeTransactions));renderFinance();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function deleteFinance(id){financeTransactions=financeTransactions.filter(t=>t.id!==id);persistFinance()}
 let financeBudgets=JSON.parse(localStorage.getItem('emerito_finance_budgets')||'{}');
 let fixedExpenses=JSON.parse(localStorage.getItem('emerito_fixed_expenses')||'[]');
@@ -686,7 +774,7 @@ document.getElementById('fixedExpenseForm').addEventListener('submit',e=>{e.prev
 document.getElementById('financeType').addEventListener('change',refreshFinanceCategories);
 document.getElementById('financeMonth').addEventListener('change',renderFinance);
 document.getElementById('financeForm').addEventListener('submit',e=>{e.preventDefault();const amount=Number(document.getElementById('financeAmount').value);if(!Number.isFinite(amount)||amount<=0)return;financeTransactions.push({id:Date.now(),type:document.getElementById('financeType').value,amount:Math.round(amount*100)/100,date:document.getElementById('financeDate').value,category:document.getElementById('financeCategory').value,concept:document.getElementById('financeConcept').value.trim()});e.target.reset();document.getElementById('financeType').value='gasto';document.getElementById('financeDate').value=localDateString(new Date());refreshFinanceCategories();persistFinance()});
-document.getElementById('savingGoalForm').addEventListener('submit',e=>{e.preventDefault();monthlySavingGoal=Math.max(0,Number(document.getElementById('savingGoal').value)||0);localStorage.setItem('emerito_saving_goal',String(monthlySavingGoal));renderFinance();scheduleCloudSave()});
+document.getElementById('savingGoalForm').addEventListener('submit',e=>{e.preventDefault();monthlySavingGoal=Math.max(0,Number(document.getElementById('savingGoal').value)||0);localStorage.setItem('emerito_saving_goal',String(monthlySavingGoal));renderFinance();renderHomeDashboard();scheduleCloudSave()});
 document.getElementById('financeMonth').value=localDateString(new Date()).slice(0,7);document.getElementById('financeDate').value=localDateString(new Date());document.getElementById('savingGoal').value=monthlySavingGoal||'';refreshFinanceCategories();populateFinanceCategorySelects();renderFinance();
 
 
@@ -694,7 +782,7 @@ document.getElementById('financeMonth').value=localDateString(new Date()).slice(
 function persistCar(){localStorage.setItem('emerito_car_profile',JSON.stringify(carProfile));localStorage.setItem('emerito_car_records',JSON.stringify(carRecords));
 localStorage.setItem('emerito_study_subjects',JSON.stringify(studySubjects));
 localStorage.setItem('emerito_study_items',JSON.stringify(studyItems));
-localStorage.setItem('emerito_study_sessions',JSON.stringify(studySessions));renderCar();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+localStorage.setItem('emerito_study_sessions',JSON.stringify(studySessions));renderCar();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function renderCar(){
 const mileage=carProfile.mileage!==''&&carProfile.mileage!==null&&carProfile.mileage!==undefined?Number(carProfile.mileage):null;
 document.getElementById('carMileageStat').textContent=mileage!==null&&Number.isFinite(mileage)?new Intl.NumberFormat('es-ES').format(mileage)+' km':'Sin indicar';
@@ -761,7 +849,7 @@ localStorage.setItem('emerito_finance',JSON.stringify(financeTransactions));
 localStorage.setItem('emerito_finance_budgets',JSON.stringify(financeBudgets));
 localStorage.setItem('emerito_fixed_expenses',JSON.stringify(fixedExpenses));
 localStorage.setItem('emerito_saving_goal',String(monthlySavingGoal));
-render();renderFinance();renderCar();renderStudies();renderHabits();renderCalendar();
+render();renderFinance();renderCar();renderStudies();renderHabits();renderCalendar();renderHomeDashboard();
 }
 function mergeItems(remoteItems,localItems){
 const map=new Map();
