@@ -632,10 +632,44 @@
 <div class="card training-panel"><div class="training-history" id="trainingHistory"><div class="training-empty">Todavía no has registrado sesiones.</div></div></div>
 </section>
 <section class="view" id="goals">
-<div class="hero"><div class="eyebrow">OBJETIVOS · PROGRESO PERSONAL</div><h2>Convierte tus metas en avances.</h2><p>Define objetivos medibles, establece una fecha y actualiza tu progreso cuando consigas avanzar.</p></div>
-<div class="grid goal-stats"><div class="card"><div class="muted">METAS ACTIVAS</div><div class="stat" id="goalsActiveStat">0</div><div class="muted">En seguimiento</div></div><div class="card"><div class="muted">COMPLETADAS</div><div class="stat" id="goalsDoneStat">0</div><div class="muted">Objetivos alcanzados</div></div><div class="card"><div class="muted">PROGRESO MEDIO</div><div class="stat" id="goalsAverageStat">0%</div><div class="muted">Metas activas</div></div><div class="card"><div class="muted">PRÓXIMA FECHA</div><div class="stat" id="goalsNextDateStat">—</div><div class="muted">Fecha objetivo</div></div></div>
-<div class="goal-layout"><div class="card goal-panel"><div class="section inner-section"><h2>Crear objetivo</h2></div><form id="goalForm" class="goal-form-full"><label>Nombre del objetivo<input id="goalName" maxlength="80" placeholder="Ej. Ahorrar para un viaje" required></label><div class="goal-form-grid"><label>Área<select id="goalArea"><option>Personal</option><option>Finanzas</option><option>Fitness</option><option>Estudios</option><option>Trabajo</option></select></label><label>Unidad<select id="goalUnit"><option value="€">Euros (€)</option><option value="kg">kg</option><option value="km">km</option><option value="horas">Horas</option><option value="sesiones">Sesiones</option><option value="libros">Libros</option><option value="unidades">Unidades</option></select></label></div><div class="goal-form-grid"><label>Valor objetivo<input id="newGoalTarget" type="number" min="0.01" step="0.01" placeholder="Ej. 5000" required></label><label>Progreso actual<input id="newGoalCurrent" type="number" min="0" step="0.01" value="0" required></label></div><label>Fecha objetivo (opcional)<input id="goalDeadline" type="date"></label><label class="goal-main-check"><input id="goalIsMain" type="checkbox"> Marcar como objetivo principal en Inicio</label><button class="btn" type="submit">+ Crear objetivo</button></form></div>
-<div class="card goal-panel"><div class="section inner-section"><h2>Mis objetivos</h2><span class="muted" id="goalListCount">0 metas</span></div><div class="goal-list" id="goalList"><div class="goal-empty">Todavía no tienes objetivos. Crea el primero para empezar.</div></div></div></div>
+<div class="hero"><div class="eyebrow">OBJETIVOS · PROGRESO PERSONAL</div><h2>Convierte tus metas en avances.</h2><p>Define objetivos medibles, organiza tus prioridades y registra cada avance hasta conseguirlos.</p></div>
+<div class="grid goal-stats">
+<div class="card"><div class="muted">METAS ACTIVAS</div><div class="stat" id="goalsActiveStat">0</div><div class="muted">En seguimiento</div></div>
+<div class="card"><div class="muted">COMPLETADAS</div><div class="stat" id="goalsDoneStat">0</div><div class="muted">Objetivos alcanzados</div></div>
+<div class="card"><div class="muted">PROGRESO MEDIO</div><div class="stat" id="goalsAverageStat">0%</div><div class="muted">Metas activas</div></div>
+<div class="card"><div class="muted">ATRASADAS</div><div class="stat" id="goalsOverdueStat">0</div><div class="muted">Fuera de fecha</div></div>
+</div>
+<div class="goal-layout">
+<div class="card goal-panel">
+<div class="section inner-section"><div><h2>Crear objetivo</h2><span class="muted">Define qué quieres conseguir</span></div></div>
+<form id="goalForm" class="goal-form-full">
+<label>Nombre del objetivo<input id="goalName" maxlength="80" placeholder="Ej. Ahorrar para un viaje" required></label>
+<label>Descripción (opcional)<textarea id="goalDescription" maxlength="240" rows="2" placeholder="¿Por qué es importante esta meta?"></textarea></label>
+<div class="goal-form-grid">
+<label>Área<select id="goalArea"><option>Personal</option><option>Finanzas</option><option>Fitness</option><option>Estudios</option><option>Trabajo</option><option>Salud</option><option>Ocio</option></select></label>
+<label>Prioridad<select id="goalPriority"><option value="high">Alta</option><option value="normal" selected>Normal</option><option value="low">Baja</option></select></label>
+</div>
+<div class="goal-form-grid">
+<label>Unidad<select id="goalUnit"><option value="€">Euros (€)</option><option value="kg">kg</option><option value="km">km</option><option value="horas">Horas</option><option value="sesiones">Sesiones</option><option value="libros">Libros</option><option value="unidades">Unidades</option></select></label>
+<label>Fecha objetivo (opcional)<input id="goalDeadline" type="date"></label>
+</div>
+<div class="goal-form-grid">
+<label>Valor objetivo<input id="newGoalTarget" type="number" min="0.01" step="0.01" placeholder="Ej. 5000" required></label>
+<label>Progreso actual<input id="newGoalCurrent" type="number" min="0" step="0.01" value="0" required></label>
+</div>
+<label class="goal-main-check"><input id="goalIsMain" type="checkbox"> Marcar como objetivo principal en Inicio</label>
+<button class="btn" type="submit">+ Crear objetivo</button>
+</form>
+</div>
+<div class="card goal-panel">
+<div class="section inner-section"><div><h2>Mis objetivos</h2><span class="muted" id="goalListCount">0 metas</span></div><span class="muted" id="goalListSummary">Sin metas creadas</span></div>
+<div class="goal-filter-bar">
+<label class="goal-filter"><span>Estado</span><select id="goalStatusFilter"><option value="all">Todos</option><option value="active">En curso</option><option value="completed">Completados</option><option value="overdue">Atrasados</option></select></label>
+<label class="goal-filter"><span>Área</span><select id="goalAreaFilter"><option value="all">Todas las áreas</option><option>Personal</option><option>Finanzas</option><option>Fitness</option><option>Estudios</option><option>Trabajo</option><option>Salud</option><option>Ocio</option></select></label>
+</div>
+<div class="goal-list" id="goalList"><div class="goal-empty">Todavía no tienes objetivos. Crea el primero para empezar.</div></div>
+</div>
+</div>
 </section>
 </main></div><nav class="mobile-nav" id="bottomNav"></nav>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0"></script>
@@ -737,25 +771,72 @@ e.target.reset();document.getElementById('trainingDate').value=localDateString(n
 });
 document.getElementById('trainingDate').value=localDateString(new Date());
 function persistGoals(){localStorage.setItem('emerito_goals',JSON.stringify(goals));renderGoals();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function goalStatus(goal,today=localDateString(new Date())){
+const complete=Number(goal.target)>0&&Number(goal.current)>=Number(goal.target);
+const overdue=!complete&&!!goal.deadline&&goal.deadline<today;
+const days=goal.deadline?Math.ceil((new Date(goal.deadline+'T12:00:00')-new Date(today+'T12:00:00'))/86400000):null;
+return {complete,overdue,days,soon:!complete&&!overdue&&days!==null&&days<=7};
+}
+function goalValueLabel(value,unit){const number=Number(value||0),formatted=number.toLocaleString('es-ES',{maximumFractionDigits:2});return unit==='€'?money(number):formatted+(unit?' '+unit:'')}
+function goalLog(goal,delta,kind='avance'){
+if(!Array.isArray(goal.history))goal.history=[];
+goal.history.unshift({id:String(Date.now())+'-'+Math.random().toString(36).slice(2,7),date:localDateString(new Date()),delta:Number(delta)||0,total:Number(goal.current)||0,kind});
+goal.history=goal.history.slice(0,50);
+}
+function persistGoals(){localStorage.setItem('emerito_goals',JSON.stringify(goals));renderGoals();renderHomeDashboard();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function renderGoals(){
-const active=goals.filter(g=>!g.archived),done=active.filter(g=>Number(g.target)>0&&Number(g.current)>=Number(g.target)).length;
+const today=localDateString(new Date()),active=goals.filter(g=>!g.archived);
+const done=active.filter(g=>goalStatus(g,today).complete).length,overdue=active.filter(g=>goalStatus(g,today).overdue).length;
 const rates=active.map(g=>Number(g.target)>0?Math.min(100,Number(g.current||0)/Number(g.target)*100):0),average=rates.length?Math.round(rates.reduce((a,b)=>a+b,0)/rates.length):0;
-const next=active.filter(g=>g.deadline&&Number(g.current)<Number(g.target)).sort((a,b)=>a.deadline.localeCompare(b.deadline))[0];
-document.getElementById('goalsActiveStat').textContent=active.length;document.getElementById('goalsDoneStat').textContent=done;
+const next=active.filter(g=>g.deadline&&!goalStatus(g,today).complete&&g.deadline>=today).sort((a,b)=>a.deadline.localeCompare(b.deadline))[0];
+document.getElementById('goalsActiveStat').textContent=active.length;
+document.getElementById('goalsDoneStat').textContent=done;
 document.getElementById('goalsAverageStat').textContent=average+'%';
+document.getElementById('goalsOverdueStat').textContent=overdue;
 document.getElementById('goalsNextDateStat').textContent=next?new Date(next.deadline+'T12:00:00').toLocaleDateString('es-ES',{day:'2-digit',month:'short'}):'—';
-const sorted=[...active].sort((a,b)=>Number(!!b.isMain)-Number(!!a.isMain)||(a.deadline||'9999').localeCompare(b.deadline||'9999'));
+const statusFilter=document.getElementById('goalStatusFilter').value,areaFilter=document.getElementById('goalAreaFilter').value;
+const visible=active.filter(g=>{
+const status=goalStatus(g,today);
+const matchStatus=statusFilter==='all'||(statusFilter==='completed'?status.complete:statusFilter==='overdue'?status.overdue:!status.complete&&!status.overdue);
+return matchStatus&&(areaFilter==='all'||g.area===areaFilter);
+});
+const priorityRank={high:0,normal:1,low:2};
+visible.sort((a,b)=>Number(!!b.isMain)-Number(!!a.isMain)||(priorityRank[a.priority||'normal']??1)-(priorityRank[b.priority||'normal']??1)||(a.deadline||'9999').localeCompare(b.deadline||'9999'));
 document.getElementById('goalListCount').textContent=active.length+' '+(active.length===1?'meta':'metas');
-document.getElementById('goalList').innerHTML=sorted.length?sorted.map(g=>{const target=Number(g.target)||0,current=Number(g.current)||0,pct=target?Math.min(100,Math.round(current/target*100)):0,achieved=target>0&&current>=target;return '<article class="goal-entry '+(achieved?'achieved':'')+'"><div class="goal-entry-top"><div><strong>'+escapeHtml(g.name)+'</strong>'+(g.isMain?'<span class="goal-main-badge">PRINCIPAL</span>':'')+'<div class="meta">'+escapeHtml(g.area)+' · '+(g.deadline?'Fecha objetivo '+studyDateLabel(g.deadline):'Sin fecha objetivo')+'</div></div><button class="goal-delete" type="button" data-goal-archive="'+escapeHtml(String(g.id))+'" aria-label="Archivar objetivo">×</button></div><div class="goal-progress-row"><span>'+goalValueLabel(current,g.unit)+' / '+goalValueLabel(target,g.unit)+'</span><strong>'+pct+'%</strong></div><div class="progress-track"><div class="progress-fill" style="width:'+pct+'%"></div></div><div class="goal-entry-footer"><label>Actualizar progreso<input class="goal-update-input" type="number" min="0" step="0.01" id="goalProgressInput_'+escapeHtml(String(g.id))+'" value="'+current+'"></label><div class="goal-entry-actions"><button class="btn secondary" type="button" data-goal-update="'+escapeHtml(String(g.id))+'">Actualizar</button><button class="btn secondary" type="button" data-goal-main="'+escapeHtml(String(g.id))+'">'+(g.isMain?'Principal':'Hacer principal')+'</button></div></div></article>'}).join(''):'<div class="goal-empty">Todavía no tienes objetivos. Crea el primero para empezar.</div>';
+document.getElementById('goalListSummary').textContent=done+' completadas · '+overdue+' atrasadas';
+document.getElementById('goalList').innerHTML=visible.length?visible.map(g=>{
+const target=Number(g.target)||0,current=Number(g.current)||0,pct=target?Math.min(100,Math.round(current/target*100)):0,status=goalStatus(g,today);
+const priority=g.priority||'normal',priorityLabel=priority==='high'?'Prioridad alta':priority==='low'?'Prioridad baja':'Prioridad normal';
+const statusLabel=status.complete?'Completado':status.overdue?'Atrasado':status.soon?'Vence pronto':'En curso';
+const dueLabel=!g.deadline?'Sin fecha objetivo':status.complete?'Objetivo alcanzado':status.overdue?'Venció el '+studyDateLabel(g.deadline):status.days===0?'Vence hoy':status.days===1?'Queda 1 día':'Quedan '+status.days+' días';
+const remainder=Math.max(0,target-current),history=Array.isArray(g.history)?g.history:[];
+const milestones=[25,50,75,100].map(value=>'<span class="goal-milestone '+(pct>=value?'reached':'')+'"><i></i>'+value+'%</span>').join('');
+const historyHtml=history.length?'<details class="goal-history"><summary>Ver historial de avances ('+history.length+')</summary><div class="goal-history-list">'+history.slice(0,5).map(h=>'<div class="goal-history-row"><span>'+studyDateLabel(h.date)+'</span><strong>'+(Number(h.delta)>=0?'+':'')+goalValueLabel(h.delta,g.unit)+' · Total '+goalValueLabel(h.total,g.unit)+'</strong></div>').join('')+'</div></details>':'';
+const description=g.description?'<p class="goal-entry-description">'+escapeHtml(g.description)+'</p>':'';
+return '<article class="goal-entry '+(status.complete?'achieved':'')+' '+(status.overdue?'overdue':'')+'"><div class="goal-entry-top"><div class="goal-entry-title"><strong>'+escapeHtml(g.name)+'</strong>'+(g.isMain?'<span class="goal-main-badge">PRINCIPAL</span>':'')+'<div class="goal-meta-badges"><span class="goal-pill">'+escapeHtml(g.area)+'</span><span class="goal-pill '+(priority==='high'?'priority-high':priority==='low'?'priority-low':'')+'">'+priorityLabel+'</span><span class="goal-pill '+(status.complete?'status-complete':status.overdue?'status-overdue':status.soon?'status-soon':'')+'">'+statusLabel+'</span></div></div><button class="goal-delete" type="button" data-goal-archive="'+escapeHtml(String(g.id))+'" aria-label="Archivar objetivo" title="Archivar objetivo">×</button></div>'+description+'<div class="goal-deadline-line"><span>'+dueLabel+'</span><span>Meta: '+goalValueLabel(target,g.unit)+'</span></div><div class="goal-progress-row"><span>'+goalValueLabel(current,g.unit)+' conseguido</span><strong>'+pct+'%</strong></div><div class="progress-track"><div class="progress-fill" style="width:'+pct+'%"></div></div><div class="goal-milestones">'+milestones+'</div><div class="goal-remaining">'+(status.complete?'Has alcanzado esta meta.': 'Te faltan '+goalValueLabel(remainder,g.unit)+' para conseguirla.')+'</div><div class="goal-entry-footer"><label>Añadir avance ('+escapeHtml(g.unit)+')<input class="goal-update-input" type="number" min="0.01" step="0.01" placeholder="Ej. 50" id="goalProgressInput_'+escapeHtml(String(g.id))+'"></label><div class="goal-entry-actions"><button class="btn" type="button" data-goal-add="'+escapeHtml(String(g.id))+'">+ Añadir</button><button class="btn secondary" type="button" data-goal-main="'+escapeHtml(String(g.id))+'">'+(g.isMain?'Principal':'Fijar principal')+'</button></div></div>'+historyHtml+'</article>';
+}).join(''):'<div class="goal-empty">'+(active.length?'No hay objetivos que coincidan con estos filtros.':'Todavía no tienes objetivos. Crea el primero para empezar.')+'</div>';
 document.querySelectorAll('[data-goal-archive]').forEach(button=>button.addEventListener('click',()=>archiveGoal(button.dataset.goalArchive)));
-document.querySelectorAll('[data-goal-update]').forEach(button=>button.addEventListener('click',()=>updateGoalProgress(button.dataset.goalUpdate)));
+document.querySelectorAll('[data-goal-add]').forEach(button=>button.addEventListener('click',()=>addGoalProgress(button.dataset.goalAdd)));
 document.querySelectorAll('[data-goal-main]').forEach(button=>button.addEventListener('click',()=>setMainGoal(button.dataset.goalMain)));
 }
-function updateGoalProgress(id){const goal=goals.find(g=>String(g.id)===String(id)),input=document.getElementById('goalProgressInput_'+id);if(!goal||!input)return;const value=Number(input.value);if(!Number.isFinite(value)||value<0)return;goal.current=value;goal.updatedAt=new Date().toISOString();persistGoals()}
+function addGoalProgress(id){
+const goal=goals.find(g=>String(g.id)===String(id)),input=document.getElementById('goalProgressInput_'+id);
+if(!goal||!input)return;const amount=Number(input.value);if(!Number.isFinite(amount)||amount<=0)return;
+goal.current=Number(goal.current||0)+amount;goal.updatedAt=new Date().toISOString();goalLog(goal,amount,'avance');persistGoals();
+}
 function setMainGoal(id){goals.forEach(g=>{g.isMain=String(g.id)===String(id);g.updatedAt=new Date().toISOString()});persistGoals()}
 function archiveGoal(id){const goal=goals.find(g=>String(g.id)===String(id));if(!goal)return;goal.archived=true;goal.updatedAt=new Date().toISOString();persistGoals()}
-document.getElementById('goalForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('goalName').value.trim(),target=Number(document.getElementById('newGoalTarget').value),current=Number(document.getElementById('newGoalCurrent').value)||0;if(!name||!Number.isFinite(target)||target<=0||current<0)return;const isMain=document.getElementById('goalIsMain').checked;goals.unshift({id:String(Date.now()),name,area:document.getElementById('goalArea').value,unit:document.getElementById('goalUnit').value,target,current,deadline:document.getElementById('goalDeadline').value,isMain:isMain||!goals.some(g=>!g.archived&&g.isMain),archived:false,updatedAt:new Date().toISOString()});e.target.reset();document.getElementById('newGoalCurrent').value=0;persistGoals()});
-renderTraining();renderGoals();
+document.getElementById('goalStatusFilter').addEventListener('change',renderGoals);
+document.getElementById('goalAreaFilter').addEventListener('change',renderGoals);
+document.getElementById('goalForm').addEventListener('submit',e=>{
+e.preventDefault();const name=document.getElementById('goalName').value.trim(),target=Number(document.getElementById('newGoalTarget').value),current=Number(document.getElementById('newGoalCurrent').value)||0;
+if(!name||!Number.isFinite(target)||target<=0||current<0)return;
+const isMain=document.getElementById('goalIsMain').checked;
+const goal={id:String(Date.now()),name,description:document.getElementById('goalDescription').value.trim(),area:document.getElementById('goalArea').value,priority:document.getElementById('goalPriority').value,unit:document.getElementById('goalUnit').value,target,current,deadline:document.getElementById('goalDeadline').value,isMain:isMain||!goals.some(g=>!g.archived&&g.isMain),archived:false,history:[],updatedAt:new Date().toISOString()};
+if(current>0)goalLog(goal,current,'inicio');
+goals.unshift(goal);e.target.reset();document.getElementById('newGoalCurrent').value=0;document.getElementById('goalPriority').value='normal';persistGoals();
+});
+renderGoals();
 
 
 function renderNotifications(){
@@ -763,6 +844,7 @@ const today=localDateString(new Date()),end=new Date(today+'T12:00:00');end.setD
 tasks.filter(t=>!t.done&&t.dueDate&&t.dueDate<=endKey).forEach(t=>alerts.push({title:t.name,date:t.dueDate,kind:t.dueDate<today?'Tarea atrasada':'Tarea pendiente',time:'',priority:t.priority==='high'?0:1}));
 studyItems.filter(x=>x.status!=='done'&&x.date&&x.date<=endKey).forEach(x=>alerts.push({title:x.title,date:x.date,kind:'Examen o entrega',time:'',priority:0}));
 calendarEvents.filter(e=>!e.archived&&e.date&&e.date>=today&&e.date<=endKey).forEach(e=>alerts.push({title:e.title,date:e.date,kind:'Evento · '+(e.category||'Personal'),time:e.time||'',priority:1}));
+goals.filter(g=>!g.archived&&!goalStatus(g,today).complete&&g.deadline&&g.deadline>=today&&g.deadline<=endKey).forEach(g=>alerts.push({title:g.name,date:g.deadline,kind:'Fecha objetivo',time:'',priority:g.priority==='high'?0:1}));
 [['ITV',carProfile.itvDate],['Seguro',carProfile.insuranceDate],['Mantenimiento',carProfile.nextServiceDate]].filter(x=>x[1]&&x[1]<=endKey).forEach(([label,date])=>alerts.push({title:label,date,kind:'Fecha del vehículo',time:'',priority:0}));
 alerts.sort((a,b)=>(a.date||'').localeCompare(b.date||'')||a.priority-b.priority);
 const dot=document.getElementById('notificationDot');dot.hidden=!alerts.length;
