@@ -1051,6 +1051,14 @@ localStorage.setItem('emerito_finance',JSON.stringify(financeTransactions));
 localStorage.setItem('emerito_finance_budgets',JSON.stringify(financeBudgets));
 localStorage.setItem('emerito_fixed_expenses',JSON.stringify(fixedExpenses));
 localStorage.setItem('emerito_saving_goal',String(monthlySavingGoal));
+localStorage.setItem('emerito_study_subjects',JSON.stringify(studySubjects));
+localStorage.setItem('emerito_study_items',JSON.stringify(studyItems));
+localStorage.setItem('emerito_study_sessions',JSON.stringify(studySessions));
+localStorage.setItem('emerito_habits',JSON.stringify(habits));
+localStorage.setItem('emerito_habit_checks',JSON.stringify(habitChecks));
+localStorage.setItem('emerito_calendar_events',JSON.stringify(calendarEvents));
+localStorage.setItem('emerito_training_sessions',JSON.stringify(trainingSessions));
+localStorage.setItem('emerito_goals',JSON.stringify(goals));
 render();renderFinance();renderCar();renderStudies();renderHabits();renderCalendar();renderTraining();renderGoals();renderHomeDashboard();
 }
 function mergeItems(remoteItems,localItems){
