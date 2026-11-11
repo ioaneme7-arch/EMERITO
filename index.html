@@ -883,7 +883,7 @@ document.getElementById('goalsActiveStat').textContent=active.length;
 document.getElementById('goalsDoneStat').textContent=done;
 document.getElementById('goalsAverageStat').textContent=average+'%';
 document.getElementById('goalsOverdueStat').textContent=overdue;
-document.getElementById('goalsNextDateStat').textContent=next?new Date(next.deadline+'T12:00:00').toLocaleDateString('es-ES',{day:'2-digit',month:'short'}):'—';
+
 const statusFilter=document.getElementById('goalStatusFilter').value,areaFilter=document.getElementById('goalAreaFilter').value;
 const visible=active.filter(g=>{
 const status=goalStatus(g,today);
