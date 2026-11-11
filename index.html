@@ -105,6 +105,54 @@
 @media(max-width:850px){.habit-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.habit-form{grid-template-columns:1fr 1fr}.habit-form button{grid-column:1/-1}}
 @media(max-width:440px){.habit-form{grid-template-columns:1fr}.habit-form button{grid-column:auto}.habit-week{gap:4px}.habit-day{padding:7px 1px;border-radius:8px}.habit-day span{font-size:9px}.habit-card{padding:12px}.habit-card-bottom{align-items:flex-start;flex-direction:column}}
 
+
+.calendar-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+.calendar-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(320px,.85fr);gap:14px;margin-top:15px;align-items:start}
+.calendar-panel{padding:18px;min-width:0}
+.calendar-month-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.calendar-month-head h2{font-size:20px;margin:0;text-transform:capitalize}
+.calendar-month-actions{display:flex;align-items:center;gap:7px}
+.calendar-icon-btn{border:1px solid var(--line);background:#202026;color:#ddd;border-radius:9px;padding:7px 11px;font-size:15px}
+.calendar-icon-btn:hover{border-color:#713037;color:#fff}
+.calendar-today-btn{font-size:11px;padding:8px 10px}
+.calendar-weekdays,.calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.calendar-weekdays{margin-bottom:6px}
+.calendar-weekdays span{text-align:center;color:var(--muted);font-size:10px;text-transform:uppercase;padding:6px 1px}
+.calendar-day{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:5px;min-width:0;min-height:72px;padding:9px 3px 6px;border:1px solid transparent;border-radius:10px;background:#17171c;color:#eee}
+.calendar-day:hover{background:#21191c;border-color:#58282e}
+.calendar-day .number{font-size:13px;font-weight:750}
+.calendar-day.other-month{opacity:.34}
+.calendar-day.selected{background:#321318;border-color:var(--red)}
+.calendar-day.today:not(.selected){border-color:#794047}
+.calendar-day-dots{display:flex;align-items:center;justify-content:center;gap:3px;min-height:6px;flex-wrap:wrap;max-width:100%}
+.calendar-event-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:#aaa}
+.calendar-event-dot.class{background:#75a9ff}.calendar-event-dot.work{background:#b99aff}.calendar-event-dot.study{background:#ff7077}.calendar-event-dot.personal{background:#60c995}.calendar-event-dot.appointment{background:#f0c36b}.calendar-event-dot.other{background:#aaa}
+.calendar-month-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px;padding-top:13px;border-top:1px solid var(--line)}
+.calendar-month-legend span{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:10px}
+.calendar-side-title{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin:0 0 13px}
+.calendar-side-title h2{font-size:18px;margin:0;text-transform:capitalize}
+.calendar-side-title .muted{font-size:11px}
+.calendar-events-list{display:grid;gap:8px;margin-bottom:17px}
+.calendar-event{display:grid;grid-template-columns:4px minmax(0,1fr) auto;gap:10px;align-items:stretch;border:1px solid var(--line);background:var(--panel2);border-radius:11px;padding:11px}
+.calendar-event-bar{border-radius:10px;background:#aaa}
+.calendar-event-bar.class{background:#75a9ff}.calendar-event-bar.work{background:#b99aff}.calendar-event-bar.study{background:#ff7077}.calendar-event-bar.personal{background:#60c995}.calendar-event-bar.appointment{background:#f0c36b}.calendar-event-bar.other{background:#aaa}
+.calendar-event strong{display:block;font-size:13px;overflow-wrap:anywhere}
+.calendar-event .meta{font-size:11px;color:var(--muted);margin-top:3px;overflow-wrap:anywhere}
+.calendar-event-time{font-size:11px;color:#ddd;white-space:nowrap}
+.calendar-event-delete{border:0;background:none;color:#888;font-size:17px;padding:0 3px}
+.calendar-event-delete:hover{color:var(--red2)}
+.calendar-event-source{display:inline-block;font-size:9px;color:#ff9ba0;border:1px solid #633039;background:#2c1116;border-radius:5px;padding:2px 5px;margin-top:5px}
+.calendar-form{display:grid;gap:10px;padding-top:16px;border-top:1px solid var(--line)}
+.calendar-form h3{font-size:15px;margin:0}
+.calendar-form label{display:grid;gap:5px;color:#c9c9d0;font-size:11px}
+.calendar-form input,.calendar-form select,.calendar-form textarea{width:100%;min-width:0;background:#111115;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:10px 11px;font:inherit}
+.calendar-form textarea{min-height:65px;resize:vertical}
+.calendar-form-row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.calendar-empty{border:1px dashed var(--line);border-radius:10px;padding:17px;text-align:center;color:var(--muted);font-size:12px}
+.calendar-hint{color:var(--muted);font-size:10px;line-height:1.5;margin:0}
+@media(max-width:1050px){.calendar-layout{grid-template-columns:1fr}.calendar-day{min-height:65px}}
+@media(max-width:440px){.calendar-stats{grid-template-columns:1fr 1fr}.calendar-stats .card:last-child{grid-column:1/-1}.calendar-panel{padding:12px}.calendar-month-head{align-items:flex-start}.calendar-month-head h2{font-size:17px}.calendar-icon-btn{padding:6px 9px}.calendar-today-btn{font-size:10px}.calendar-weekdays,.calendar-days{gap:3px}.calendar-day{min-height:53px;padding:7px 1px 4px;border-radius:7px}.calendar-day .number{font-size:12px}.calendar-day-dots{gap:2px}.calendar-event-dot{width:4px;height:4px}.calendar-form-row{grid-template-columns:1fr}.calendar-side-title{flex-direction:column;gap:3px}}
+
 </style>
 </head>
 <body>
@@ -137,7 +185,35 @@
 <div class="section"><h2>Tareas de hoy</h2><button class="btn secondary" onclick="go('tasks')">Ver tareas →</button></div><div class="tasks" id="homeTasks"></div>
 </section>
 <section class="view" id="tasks"><div class="hero"><div class="eyebrow">ORGANIZACIÓN</div><h2>Tus tareas</h2><p>Añade tareas y marca las que hayas completado.</p></div><form class="taskform" id="taskForm"><input id="taskName" maxlength="120" placeholder="¿Qué tienes que hacer?" required><button class="btn">+ Añadir tarea</button></form><div class="section"><h2>Lista de tareas</h2><span class="muted" id="summary"></span></div><div class="tasks" id="allTasks"></div></section>
-<section class="view" id="calendar"><div class="hero"><div class="eyebrow">PLANIFICACIÓN</div><h2>Calendario</h2><p>Próximamente: exámenes, entregas y eventos importantes.</p></div></section>
+<section class="view" id="calendar">
+<div class="hero"><div class="eyebrow">PLANIFICACIÓN · AGENDA PERSONAL</div><h2>Organiza tus días.</h2><p>Clases, trabajo, exámenes, entregas y planes personales en un calendario único. Las fechas de Estudios también aparecerán aquí.</p></div>
+<div class="grid calendar-stats">
+<div class="card"><div class="muted">EVENTOS ESTE MES</div><div class="stat" id="calendarMonthStat">0</div><div class="muted">En tu agenda</div></div>
+<div class="card"><div class="muted">PRÓXIMOS 7 DÍAS</div><div class="stat" id="calendarUpcomingStat">0</div><div class="muted">Fechas pendientes</div></div>
+<div class="card"><div class="muted">EVENTOS DE HOY</div><div class="stat" id="calendarTodayStat">0</div><div class="muted">Para hoy</div></div>
+</div>
+<div class="calendar-layout">
+<div class="card calendar-panel">
+<div class="calendar-month-head"><h2 id="calendarMonthTitle">Mes y año</h2><div class="calendar-month-actions"><button type="button" class="calendar-icon-btn" id="calendarPrev" aria-label="Mes anterior">‹</button><button type="button" class="calendar-icon-btn calendar-today-btn" id="calendarToday">Hoy</button><button type="button" class="calendar-icon-btn" id="calendarNext" aria-label="Mes siguiente">›</button></div></div>
+<div class="calendar-weekdays"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span></div>
+<div class="calendar-days" id="calendarDays"></div>
+<div class="calendar-month-legend"><span><i class="calendar-event-dot class"></i>Clases</span><span><i class="calendar-event-dot work"></i>Trabajo</span><span><i class="calendar-event-dot study"></i>Estudios</span><span><i class="calendar-event-dot personal"></i>Personal</span><span><i class="calendar-event-dot appointment"></i>Citas</span></div>
+</div>
+<div class="card calendar-panel">
+<div class="calendar-side-title"><h2 id="calendarSelectedTitle">Agenda del día</h2><span class="muted" id="calendarSelectedCount">0 eventos</span></div>
+<div class="calendar-events-list" id="calendarEventsList"><div class="calendar-empty">Selecciona un día para consultar tu agenda.</div></div>
+<form id="calendarEventForm" class="calendar-form">
+<h3>Añadir evento</h3>
+<label>Nombre del evento<input id="calendarEventTitle" type="text" maxlength="100" placeholder="Ej. Clase de programación" required></label>
+<div class="calendar-form-row"><label>Fecha<input id="calendarEventDate" type="date" required></label><label>Hora (opcional)<input id="calendarEventTime" type="time"></label></div>
+<label>Categoría<select id="calendarEventCategory"><option value="class">Clases</option><option value="work">Trabajo</option><option value="study">Estudios</option><option value="personal">Personal</option><option value="appointment">Cita</option><option value="other">Otro</option></select></label>
+<label>Notas (opcional)<textarea id="calendarEventNotes" maxlength="220" placeholder="Lugar, detalles o recordatorio..."></textarea></label>
+<button class="btn" type="submit">+ Guardar evento</button>
+<p class="calendar-hint">Los eventos se guardan y sincronizan en tu cuenta. Se muestran dentro de EMERITO; no envían notificaciones externas.</p>
+</form>
+</div>
+</div>
+</section>
 <section class="view" id="finance">
 <div class="hero"><div class="eyebrow">CONTROL DEL DINERO</div><h2>Tus finanzas, bajo control.</h2><p>Registra lo que entra y sale, consulta tu balance mensual y sigue tu objetivo de ahorro. Los datos se guardan en este dispositivo.</p></div>
 <div class="section"><h2>Resumen mensual</h2><input class="month-picker" type="month" id="financeMonth" aria-label="Mes del resumen"></div>
@@ -306,6 +382,9 @@ let studyItems=JSON.parse(localStorage.getItem('emerito_study_items')||'[]');
 let studySessions=JSON.parse(localStorage.getItem('emerito_study_sessions')||'[]');
 let habits=JSON.parse(localStorage.getItem('emerito_habits')||'[]');
 let habitChecks=JSON.parse(localStorage.getItem('emerito_habit_checks')||'[]');
+let calendarEvents=JSON.parse(localStorage.getItem('emerito_calendar_events')||'[]');
+let calendarViewDate=new Date(new Date().getFullYear(),new Date().getMonth(),1);
+let selectedCalendarDate=localDateString(new Date());
 
 function navButton(x){return '<button data-view="'+x[0]+'"><b>'+x[1]+'</b>'+x[2]+'</button>'}
 document.getElementById('sideNav').innerHTML=items.map(navButton).join('');
@@ -324,7 +403,8 @@ document.getElementById('taskForm').addEventListener('submit',e=>{e.preventDefau
 
 function persistStudies(){localStorage.setItem('emerito_study_subjects',JSON.stringify(studySubjects));localStorage.setItem('emerito_study_items',JSON.stringify(studyItems));localStorage.setItem('emerito_study_sessions',JSON.stringify(studySessions));
 localStorage.setItem('emerito_habits',JSON.stringify(habits));
-localStorage.setItem('emerito_habit_checks',JSON.stringify(habitChecks));renderStudies();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+localStorage.setItem('emerito_habit_checks',JSON.stringify(habitChecks));
+localStorage.setItem('emerito_calendar_events',JSON.stringify(calendarEvents));renderStudies();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function studySubjectName(id){const subject=studySubjects.find(x=>String(x.id)===String(id));return subject?subject.name:'Sin asignatura'}
 function populateStudySubjects(selectId){const select=document.getElementById(selectId),previous=select.value;select.innerHTML='<option value="">Sin asignatura</option>'+studySubjects.map(s=>'<option value="'+escapeHtml(String(s.id))+'">'+escapeHtml(s.name)+'</option>').join('');if([...select.options].some(o=>o.value===previous))select.value=previous;else select.value=''}
 function studyDateLabel(value){if(!value)return 'Sin fecha';return new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short',year:'numeric'}).format(new Date(value+'T12:00:00'))}
@@ -391,6 +471,69 @@ persistHabits();
 function archiveHabit(id){const habit=habits.find(h=>String(h.id)===String(id));if(!habit)return;habit.archived=true;habit.updatedAt=new Date().toISOString();persistHabits()}
 document.getElementById('habitForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('habitName').value.trim(),frequency=document.getElementById('habitFrequency').value;if(!name)return;if(habits.some(h=>!h.archived&&h.name.toLocaleLowerCase('es')===name.toLocaleLowerCase('es'))){alert('Ese hábito ya está en tu lista.');return}habits.unshift({id:String(Date.now()),name,frequency,archived:false,updatedAt:new Date().toISOString()});e.target.reset();persistHabits()});
 renderHabits();
+
+
+function calendarLabel(date,options){return new Intl.DateTimeFormat('es-ES',options).format(new Date(date+'T12:00:00'))}
+function calendarEventsForDate(date){
+const manual=calendarEvents.filter(x=>!x.archived&&x.date===date).map(x=>({...x,source:'manual'}));
+const linked=studyItems.filter(x=>x.date===date&&x.status!=='done').map(x=>({id:'study-'+x.id,title:x.title,date:x.date,time:'',category:'study',notes:studySubjectName(x.subjectId)+' · '+x.type,source:'study'}));
+return [...manual,...linked].sort((a,b)=>(a.time||'99:99').localeCompare(b.time||'99:99')||a.title.localeCompare(b.title,'es'));
+}
+function calendarChangeMonth(delta){
+const year=calendarViewDate.getFullYear(),month=calendarViewDate.getMonth()+delta,day=Number(selectedCalendarDate.slice(8,10));
+calendarViewDate=new Date(year,month,1);
+const last=new Date(year,month+1,0).getDate();
+selectedCalendarDate=localDateString(new Date(year,month,Math.min(day,last)));
+document.getElementById('calendarEventDate').value=selectedCalendarDate;
+renderCalendar();
+}
+function selectCalendarDate(date){
+selectedCalendarDate=date;
+const d=new Date(date+'T12:00:00');calendarViewDate=new Date(d.getFullYear(),d.getMonth(),1);
+document.getElementById('calendarEventDate').value=date;
+renderCalendar();
+}
+function renderCalendar(){
+const title=document.getElementById('calendarMonthTitle'),days=document.getElementById('calendarDays');
+if(!title||!days)return;
+const year=calendarViewDate.getFullYear(),month=calendarViewDate.getMonth(),first=new Date(year,month,1),offset=(first.getDay()+6)%7,start=new Date(year,month,1-offset),today=localDateString(new Date());
+title.textContent=new Intl.DateTimeFormat('es-ES',{month:'long',year:'numeric'}).format(first);
+const monthKey=year+'-'+String(month+1).padStart(2,'0');
+const visibleManual=calendarEvents.filter(x=>!x.archived&&x.date&&x.date.slice(0,7)===monthKey);
+const visibleStudy=studyItems.filter(x=>x.date&&x.date.slice(0,7)===monthKey&&x.status!=='done');
+document.getElementById('calendarMonthStat').textContent=visibleManual.length+visibleStudy.length;
+const future=new Date(today+'T12:00:00');future.setDate(future.getDate()+6);const limit=localDateString(future);
+let upcoming=calendarEvents.filter(x=>!x.archived&&x.date>=today&&x.date<=limit).length+studyItems.filter(x=>x.status!=='done'&&x.date>=today&&x.date<=limit).length;
+document.getElementById('calendarUpcomingStat').textContent=upcoming;
+document.getElementById('calendarTodayStat').textContent=calendarEventsForDate(today).length;
+let cells='';
+for(let i=0;i<42;i++){
+const d=new Date(start);d.setDate(start.getDate()+i);const key=localDateString(d),sameMonth=d.getMonth()===month,events=calendarEventsForDate(key),classes=['calendar-day'];if(!sameMonth)classes.push('other-month');if(key===selectedCalendarDate)classes.push('selected');if(key===today)classes.push('today');
+const dots=events.slice(0,4).map(e=>'<i class="calendar-event-dot '+(e.category||'other')+'"></i>').join('');
+cells+='<button type="button" class="'+classes.join(' ')+'" data-calendar-date="'+key+'" aria-label="'+calendarLabel(key,{weekday:'long',day:'numeric',month:'long'})+'"><span class="number">'+d.getDate()+'</span><span class="calendar-day-dots">'+dots+'</span></button>';
+}
+days.innerHTML=cells;
+days.querySelectorAll('[data-calendar-date]').forEach(button=>button.addEventListener('click',()=>selectCalendarDate(button.dataset.calendarDate)));
+document.getElementById('calendarSelectedTitle').textContent=calendarLabel(selectedCalendarDate,{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+const events=calendarEventsForDate(selectedCalendarDate);
+document.getElementById('calendarSelectedCount').textContent=events.length+' '+(events.length===1?'evento':'eventos');
+document.getElementById('calendarEventsList').innerHTML=events.length?events.map(e=>'<div class="calendar-event"><span class="calendar-event-bar '+(e.category||'other')+'"></span><div><strong>'+escapeHtml(e.title)+'</strong><div class="meta">'+(e.time?e.time+' · ':'')+({class:'Clase',work:'Trabajo',study:'Estudios',personal:'Personal',appointment:'Cita',other:'Otro'}[e.category]||'Evento')+(e.notes?' · '+escapeHtml(e.notes):'')+'</div>'+(e.source==='study'?'<span class="calendar-event-source">Vinculado a Estudios</span>':'')+'</div>'+(e.source==='manual'?'<button type="button" class="calendar-event-delete" aria-label="Eliminar evento" onclick="archiveCalendarEvent(\''+String(e.id)+'\')">×</button>':'<span class="calendar-event-time">'+(e.time||'')+'</span>')+'</div>').join(''):'<div class="calendar-empty">No tienes eventos para este día. Puedes añadir uno con el formulario.</div>';
+}
+function persistCalendarEvents(){localStorage.setItem('emerito_calendar_events',JSON.stringify(calendarEvents));renderCalendar();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function archiveCalendarEvent(id){const event=calendarEvents.find(x=>String(x.id)===String(id));if(!event)return;event.archived=true;event.updatedAt=new Date().toISOString();persistCalendarEvents()}
+document.getElementById('calendarPrev').addEventListener('click',()=>calendarChangeMonth(-1));
+document.getElementById('calendarNext').addEventListener('click',()=>calendarChangeMonth(1));
+document.getElementById('calendarToday').addEventListener('click',()=>selectCalendarDate(localDateString(new Date())));
+document.getElementById('calendarEventForm').addEventListener('submit',e=>{
+e.preventDefault();const title=document.getElementById('calendarEventTitle').value.trim(),date=document.getElementById('calendarEventDate').value;
+if(!title||!date)return;
+calendarEvents.unshift({id:String(Date.now()),title,date,time:document.getElementById('calendarEventTime').value,category:document.getElementById('calendarEventCategory').value,notes:document.getElementById('calendarEventNotes').value.trim(),archived:false,updatedAt:new Date().toISOString()});
+selectedCalendarDate=date;const d=new Date(date+'T12:00:00');calendarViewDate=new Date(d.getFullYear(),d.getMonth(),1);
+e.target.reset();document.getElementById('calendarEventDate').value=date;
+persistCalendarEvents();
+});
+document.getElementById('calendarEventDate').value=selectedCalendarDate;
+renderCalendar();
 
 let carProfile=JSON.parse(localStorage.getItem('emerito_car_profile')||'null')||{brand:'Hyundai',model:'i30',year:2014,fuel:'Diésel',transmission:'Manual',mileage:'',registration:'',itvDate:'',insuranceDate:'',nextServiceDate:''};
 let carRecords=JSON.parse(localStorage.getItem('emerito_car_records')||'[]');
@@ -499,7 +642,7 @@ authPanel.hidden=true;
 document.body.style.overflow='';
 document.getElementById('accountToggle').focus();
 }
-function collectAppData(){return {tasks,financeTransactions,financeBudgets,fixedExpenses,monthlySavingGoal,carProfile,carRecords,studySubjects,studyItems,studySessions,habits,habitChecks};}
+function collectAppData(){return {tasks,financeTransactions,financeBudgets,fixedExpenses,monthlySavingGoal,carProfile,carRecords,studySubjects,studyItems,studySessions,habits,habitChecks,calendarEvents};}
 function saveLocalAppData(data){
 tasks=Array.isArray(data.tasks)?data.tasks:[];
 financeTransactions=Array.isArray(data.financeTransactions)?data.financeTransactions:[];
@@ -513,6 +656,7 @@ studyItems=Array.isArray(data.studyItems)?data.studyItems:studyItems;
 studySessions=Array.isArray(data.studySessions)?data.studySessions:studySessions;
 habits=Array.isArray(data.habits)?data.habits:habits;
 habitChecks=Array.isArray(data.habitChecks)?data.habitChecks:habitChecks;
+calendarEvents=Array.isArray(data.calendarEvents)?data.calendarEvents:calendarEvents;
 localStorage.setItem('emerito_car_profile',JSON.stringify(carProfile));
 localStorage.setItem('emerito_car_records',JSON.stringify(carRecords));
 localStorage.setItem('emerito_tasks',JSON.stringify(tasks));
@@ -520,7 +664,7 @@ localStorage.setItem('emerito_finance',JSON.stringify(financeTransactions));
 localStorage.setItem('emerito_finance_budgets',JSON.stringify(financeBudgets));
 localStorage.setItem('emerito_fixed_expenses',JSON.stringify(fixedExpenses));
 localStorage.setItem('emerito_saving_goal',String(monthlySavingGoal));
-render();renderFinance();renderCar();renderStudies();renderHabits();
+render();renderFinance();renderCar();renderStudies();renderHabits();renderCalendar();
 }
 function mergeItems(remoteItems,localItems){
 const map=new Map();
@@ -544,7 +688,8 @@ studySubjects:mergeItems(remote.studySubjects,local.studySubjects),
 studyItems:mergeItems(remote.studyItems,local.studyItems),
 studySessions:mergeItems(remote.studySessions,local.studySessions),
 habits:mergeLatestItems(remote.habits,local.habits),
-habitChecks:mergeLatestItems(remote.habitChecks,local.habitChecks)
+habitChecks:mergeLatestItems(remote.habitChecks,local.habitChecks),
+calendarEvents:mergeLatestItems(remote.calendarEvents,local.calendarEvents)
 };
 }
 let cloudSaveQueue=Promise.resolve();
