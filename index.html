@@ -977,8 +977,6 @@ const weekStartDate=new Date(now);weekStartDate.setDate(now.getDate()-((now.getD
 const trainingThisWeek=trainingSessions.filter(s=>!s.archived&&s.date>=localDateString(weekStartDate)&&s.date<=localDateString(weekEndDate)),trainingMinutes=trainingThisWeek.reduce((sum,s)=>sum+(Number(s.minutes)||0),0);
 document.getElementById('homeFeatureTraining').textContent=trainingThisWeek.length+'/4 sesiones';
 document.getElementById('homeFeatureTrainingMeta').textContent=trainingMinutes+' min esta semana';
-const lastTraining=[...trainingSessions].filter(s=>!s.archived).sort((a,b)=>(b.date||'').localeCompare(a.date||''))[0];
-document.getElementById('homeTrainingLast').textContent=lastTraining?'Último: '+lastTraining.type+' · '+studyDateLabel(lastTraining.date):'Registra tu primera sesión.';
 const activeGoals=goals.filter(g=>!g.archived),goalPcts=activeGoals.map(g=>Number(g.target)>0?Math.min(100,Number(g.current||0)/Number(g.target)*100):0),averageGoal=goalPcts.length?Math.round(goalPcts.reduce((a,b)=>a+b,0)/goalPcts.length):0;
 document.getElementById('homeFeatureGoals').textContent=activeGoals.length+' '+(activeGoals.length===1?'meta activa':'metas activas');
 document.getElementById('homeFeatureGoalsMeta').textContent=averageGoal+'% progreso medio';
