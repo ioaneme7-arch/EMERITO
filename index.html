@@ -358,6 +358,85 @@
 .mobile-nav .mobile-add{display:none}
 }
 
+
+/* Home iPhone: composition aligned with the reference dashboard */
+.home-content-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:15px;align-items:stretch}
+.home-feature-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:850px){
+.home-mode .content{padding:13px 12px calc(94px + env(safe-area-inset-bottom))}
+.home-welcome{padding:16px 14px;min-height:102px;margin-bottom:10px}
+.home-welcome h2{font-size:22px}.home-welcome p{font-size:11px}
+.home-welcome-actions{gap:8px}
+.home-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
+.home-feature{min-height:92px;padding:10px 25px 10px 10px;gap:8px;border-radius:12px;align-items:center}
+.home-feature-icon{width:32px;height:32px;flex:none}
+.home-feature-icon svg{width:19px;height:19px}
+.home-feature-copy strong{font-size:12px;line-height:1.2}
+.home-feature-copy .value{font-size:12px;line-height:1.25;margin-top:3px}
+.home-feature-copy .meta{font-size:9px;line-height:1.25}
+.home-feature-arrow{right:7px;font-size:19px}
+.home-content-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:9px}
+.home-card{padding:11px;border-radius:13px;min-width:0}
+.home-card-head{gap:5px;margin-bottom:9px;align-items:center}
+.home-card-head h2{font-size:12px;line-height:1.25}
+.home-card-head .muted{font-size:9px}
+.home-progress-card{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) 70px;grid-template-areas:"head ring" "label ring";align-items:center;min-height:88px;padding:10px 13px}
+.home-progress-card .home-card-head{grid-area:head;margin:0}
+.home-progress-area{display:contents}
+.home-progress-card .home-ring{grid-area:ring;width:66px;height:66px;justify-self:end}
+.home-progress-card .home-ring:before{inset:7px}
+.home-progress-card .home-ring-inner strong{font-size:18px}
+.home-progress-card .home-ring-inner span{font-size:8px;margin-top:2px}
+.home-progress-card .home-progress-label{grid-area:label;text-align:left;font-size:9px;margin:2px 0 0}
+.home-tasks-card{grid-column:1/-1}
+.home-tasks-card .home-card-head{margin-bottom:4px}
+.home-tasks-card .home-card-head h2{font-size:14px}
+.home-tasks-card .home-today-row{grid-template-columns:19px minmax(0,1fr) auto;gap:8px;padding:8px 1px}
+.home-tasks-card .home-today-row strong{font-size:11px}
+.home-tasks-card .home-today-row .meta{font-size:9px;margin-top:2px}
+.home-tasks-card .home-today-row input{width:16px;height:16px}
+.home-events-card,.home-habits-card,.home-finance-card,.home-goal-card{grid-column:auto;min-height:150px}
+.home-events-card .home-card-head h2,.home-habits-card .home-card-head h2{font-size:11px}
+.home-events-card .home-card-head .home-card-link,.home-habits-card .home-card-link,.home-finance-card .home-card-link,.home-goal-card .home-card-link{font-size:9px;padding:2px}
+.home-events-card .home-agenda-row{grid-template-columns:31px 2px minmax(0,1fr);gap:5px;padding:7px 0}
+.home-events-card .home-agenda-date{min-height:35px;border-radius:7px}
+.home-events-card .home-agenda-date span{font-size:8px}
+.home-events-card .home-agenda-date strong{font-size:12px}
+.home-events-card .home-agenda-bar{width:2px;height:27px}
+.home-events-card .home-agenda-copy strong{font-size:9px;line-height:1.3}
+.home-events-card .home-agenda-copy .meta{font-size:8px;margin-top:2px}
+.home-events-card .home-empty-inline,.home-habits-card .home-empty-inline{font-size:9px;padding:9px 5px}
+.home-habits-card .home-card-head{margin-bottom:12px}
+.home-habits-card .home-card-head>strong{font-size:11px}
+.home-habits-card .home-week-grid{grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;margin-top:8px}
+.home-habits-card .home-week-day{gap:5px}
+.home-habits-card .home-week-day .day-name{font-size:8px}
+.home-habits-card .home-week-circle{width:21px;height:21px;font-size:9px}
+.home-habits-card .home-week-day .day-progress{font-size:7px}
+.home-habits-card .home-week-summary{display:grid;gap:5px;margin-top:9px;padding-top:7px;font-size:8px}
+.home-finance-card .home-card-head,.home-goal-card .home-card-head{align-items:flex-start}
+.home-finance-card .home-card-head h2,.home-goal-card .home-card-head h2{font-size:11px}
+.home-finance-card .home-goal-percent,.home-goal-card .home-goal-percent{font-size:10px}
+.home-finance-card .progress-track,.home-goal-card .progress-track{height:7px;margin:8px 0}
+.home-budget-number,.home-goal-total{font-size:9px;line-height:1.35;margin-top:7px;overflow-wrap:anywhere}
+.home-budget-percent{font-size:8px;line-height:1.3;margin-top:5px}
+.home-goal-title{font-size:10px;line-height:1.35;margin:4px 0 5px;min-height:25px}
+.home-finance-card .home-card-link,.home-goal-card .home-card-link{margin-top:5px}
+}
+@media(max-width:390px){
+.home-mode .content{padding-left:10px;padding-right:10px}
+.home-feature{min-height:86px;padding-left:8px;padding-right:22px;gap:6px}
+.home-feature-icon{width:29px;height:29px}
+.home-feature-copy strong{font-size:11px}
+.home-feature-copy .value{font-size:11px}
+.home-feature-copy .meta{font-size:8px}
+.home-feature-arrow{font-size:17px;right:5px}
+.home-content-grid{gap:7px}
+.home-card{padding:9px}
+.home-events-card .home-agenda-row{grid-template-columns:28px 2px minmax(0,1fr);gap:4px}
+.home-habits-card .home-week-circle{width:19px;height:19px}
+}
+
 </style>
 </head>
 <body class="home-mode">
@@ -387,18 +466,17 @@
 <button type="button" class="home-feature" onclick="go('finance')" aria-label="Abrir Finanzas"><span class="home-feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="15" rx="3"/><path d="M3 9h18M16 14h2"/></svg></span><div class="home-feature-copy"><strong>Finanzas</strong><span class="value" id="homeFeatureFinance">0,00 €</span><span class="meta">Balance del mes</span></div><span class="home-feature-arrow">›</span></button>
 <button type="button" class="home-feature" onclick="go('studies')" aria-label="Abrir Estudios"><span class="home-feature-icon"><svg viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 3 9 3 12 0v-5M22 9v6"/></svg></span><div class="home-feature-copy"><strong>Estudios</strong><span class="value" id="homeFeatureStudies">Sin fechas próximas</span><span class="meta" id="homeFeatureStudiesMeta">Trabajos y exámenes</span></div><span class="home-feature-arrow">›</span></button>
 <button type="button" class="home-feature" onclick="go('car')" aria-label="Abrir Mi coche"><span class="home-feature-icon"><svg viewBox="0 0 24 24"><path d="m5 11 2-5h10l2 5 2 2v5H3v-5z"/><path d="M5 11h14M7 18v2m10-2v2M7 14h2m6 0h2"/></svg></span><div class="home-feature-copy"><strong>Mi coche</strong><span class="value" id="homeFeatureCar">Sin indicar</span><span class="meta">Kilometraje actual</span></div><span class="home-feature-arrow">›</span></button>
+<button type="button" class="home-feature" onclick="go('training')" aria-label="Abrir Entrenamiento"><span class="home-feature-icon"><svg viewBox="0 0 24 24"><path d="M6 9v6m-3-4v2m18-2v2m-3-4v6M6 12h12"/></svg></span><div class="home-feature-copy"><strong>Entrenamiento</strong><span class="value" id="homeFeatureTraining">0/4 sesiones</span><span class="meta" id="homeFeatureTrainingMeta">Esta semana</span></div><span class="home-feature-arrow">›</span></button>
+<button type="button" class="home-feature" onclick="go('goals')" aria-label="Abrir Objetivos"><span class="home-feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><div class="home-feature-copy"><strong>Objetivos</strong><span class="value" id="homeFeatureGoals">0 metas activas</span><span class="meta" id="homeFeatureGoalsMeta">0% progreso medio</span></div><span class="home-feature-arrow">›</span></button>
 </div>
-<div class="home-middle-grid">
-<div class="home-card"><div class="home-card-head"><div><h2>Progreso semanal</h2><span class="muted">Tu constancia esta semana</span></div></div><div class="home-progress-area"><div class="home-ring" id="homeWeeklyRing"><div class="home-ring-inner"><strong id="homeWeeklyPercent">0%</strong><span>completado</span></div></div><div class="home-progress-label" id="homeWeeklyLabel">Registra tus hábitos</div></div></div>
-<div class="home-card"><div class="home-card-head"><h2>Tareas de hoy</h2><button class="home-today-add" type="button" id="homeAddTask" aria-label="Añadir tarea">+</button></div><div class="home-today-list" id="homeTodayTasks"><div class="home-empty-inline">No tienes tareas pendientes.</div></div></div>
-<div class="home-card"><div class="home-card-head"><h2>Próximos eventos</h2><button class="home-card-link" type="button" onclick="go('calendar')">Ver calendario →</button></div><div class="home-upcoming-list" id="homeUpcomingEvents"><div class="home-empty-inline">No tienes eventos próximos.</div></div></div>
+<div class="home-content-grid">
+<div class="home-card home-progress-card"><div class="home-card-head"><div><h2>Progreso semanal</h2><span class="muted">Tu constancia esta semana</span></div></div><div class="home-progress-area"><div class="home-ring" id="homeWeeklyRing"><div class="home-ring-inner"><strong id="homeWeeklyPercent">0%</strong><span>completado</span></div></div><div class="home-progress-label" id="homeWeeklyLabel">Registra tus hábitos</div></div></div>
+<div class="home-card home-tasks-card"><div class="home-card-head"><h2>Tareas de hoy</h2><button class="home-today-add" type="button" id="homeAddTask" aria-label="Añadir tarea">+</button></div><div class="home-today-list" id="homeTodayTasks"><div class="home-empty-inline">No tienes tareas pendientes.</div></div></div>
+<div class="home-card home-events-card"><div class="home-card-head"><h2>Próximos eventos</h2><button class="home-card-link" type="button" onclick="go('calendar')">Ver →</button></div><div class="home-upcoming-list" id="homeUpcomingEvents"><div class="home-empty-inline">No tienes eventos próximos.</div></div></div>
+<div class="home-card home-habits-card"><div class="home-card-head"><div><h2>Hábitos</h2><span class="muted">Esta semana</span></div><strong id="homeHabitWeekSummary">0 / 0</strong></div><div class="home-week-grid" id="homeHabitWeek"></div><div class="home-week-summary"><span id="homeHabitWeekLabel">Seguimiento semanal</span><button class="home-card-link" type="button" onclick="go('habits')">Ver →</button></div></div>
+<div class="home-card home-finance-card"><div class="home-card-head"><div><h2>Finanzas del mes</h2><span class="muted">Gastos / Presupuesto</span></div><strong class="home-goal-percent" id="homeBudgetPercent">0%</strong></div><div class="progress-track"><div class="progress-fill" id="homeBudgetProgress" style="width:0%"></div></div><div class="home-budget-number" id="homeBudgetNumbers">0,00 € / Sin presupuesto</div><div class="home-budget-percent" id="homeBudgetNote">Configura presupuestos en Finanzas.</div></div>
+<div class="home-card home-goal-card"><div class="home-card-head"><div><h2>Objetivo principal</h2><span class="muted">Tu meta personal</span></div><strong class="home-goal-percent" id="homeGoalPercent">—</strong></div><div class="home-goal-title" id="homeGoalTitle">Define un objetivo desde Objetivos</div><div class="progress-track"><div class="progress-fill" id="homeGoalProgress" style="width:0%"></div></div><div class="home-goal-total" id="homeGoalTotals">Todavía no tienes una meta principal.</div><button class="home-card-link" type="button" onclick="go('goals')">Ver →</button></div>
 </div>
-<div class="home-bottom-grid">
-<div class="home-card"><div class="home-card-head"><div><h2>Hábitos</h2><span class="muted">Esta semana</span></div><strong id="homeHabitWeekSummary">0 / 0</strong></div><div class="home-week-grid" id="homeHabitWeek"></div><div class="home-week-summary"><span id="homeHabitWeekLabel">Seguimiento semanal</span><button class="home-card-link" type="button" onclick="go('habits')">Ver hábitos →</button></div></div>
-<div class="home-card"><div class="home-card-head"><div><h2>Finanzas del mes</h2><span class="muted">Gastos / Presupuesto</span></div><strong class="home-goal-percent" id="homeBudgetPercent">0%</strong></div><div class="progress-track"><div class="progress-fill" id="homeBudgetProgress" style="width:0%"></div></div><div class="home-budget-number" id="homeBudgetNumbers">0,00 € / Sin presupuesto</div><div class="home-budget-percent" id="homeBudgetNote">Configura presupuestos en Finanzas.</div></div>
-<div class="home-card"><div class="home-card-head"><div><h2>Objetivo principal</h2><span class="muted">Tu meta personal</span></div><strong class="home-goal-percent" id="homeGoalPercent">—</strong></div><div class="home-goal-title" id="homeGoalTitle">Define un objetivo desde Objetivos</div><div class="progress-track"><div class="progress-fill" id="homeGoalProgress" style="width:0%"></div></div><div class="home-goal-total" id="homeGoalTotals">Todavía no tienes una meta principal.</div><button class="home-card-link" type="button" onclick="go('goals')">Ver objetivos →</button></div>
-</div>
-<div class="home-bottom-grid home-extra-grid"><div class="home-card"><div class="home-card-head"><div><h2>Entrenamiento</h2><span class="muted">Tu actividad esta semana</span></div><button class="home-card-link" type="button" onclick="go('training')">Ver entrenamiento →</button></div><div class="home-training-summary"><strong id="homeTrainingSessions">0 sesiones</strong><span id="homeTrainingMinutes">0 min</span></div><div class="home-training-last" id="homeTrainingLast">Registra tu primera sesión.</div></div><div class="home-card"><div class="home-card-head"><div><h2>Objetivos</h2><span class="muted">Tus metas activas</span></div><button class="home-card-link" type="button" onclick="go('goals')">Gestionar →</button></div><div class="home-training-summary"><strong id="homeGoalsCount">0 metas activas</strong><span id="homeGoalsProgress">0% medio</span></div><div class="home-training-last" id="homeGoalsNext">Crea una meta para empezar.</div></div></div>
 <div id="shortcuts" class="home-shortcuts-hidden" aria-hidden="true"></div><div id="homeTasks" class="home-shortcuts-hidden" aria-hidden="true"></div><span id="pending" hidden>0</span><span id="completed" hidden>0</span>
 </section>
 <section class="view" id="tasks">
@@ -897,14 +975,14 @@ if(mainGoal){const target=Number(mainGoal.target)||0,current=Number(mainGoal.cur
 else{document.getElementById('homeGoalTitle').textContent=goal?'Objetivo de ahorro mensual':'Define un objetivo desde Objetivos';document.getElementById('homeGoalPercent').textContent=goal?Math.min(100,goalPct)+'%':'—';document.getElementById('homeGoalProgress').style.width=(goal?Math.min(100,goalPct):0)+'%';document.getElementById('homeGoalTotals').textContent=goal?money(achieved)+' / '+money(goal)+' ahorrados':'Todavía no tienes una meta principal.';}
 const weekStartDate=new Date(now);weekStartDate.setDate(now.getDate()-((now.getDay()+6)%7));const weekEndDate=new Date(weekStartDate);weekEndDate.setDate(weekStartDate.getDate()+6);
 const trainingThisWeek=trainingSessions.filter(s=>!s.archived&&s.date>=localDateString(weekStartDate)&&s.date<=localDateString(weekEndDate)),trainingMinutes=trainingThisWeek.reduce((sum,s)=>sum+(Number(s.minutes)||0),0);
-document.getElementById('homeTrainingSessions').textContent=trainingThisWeek.length+'/4 sesiones';
-document.getElementById('homeTrainingMinutes').textContent=trainingMinutes+' min';
+document.getElementById('homeFeatureTraining').textContent=trainingThisWeek.length+'/4 sesiones';
+document.getElementById('homeFeatureTrainingMeta').textContent=trainingMinutes+' min esta semana';
 const lastTraining=[...trainingSessions].filter(s=>!s.archived).sort((a,b)=>(b.date||'').localeCompare(a.date||''))[0];
 document.getElementById('homeTrainingLast').textContent=lastTraining?'Último: '+lastTraining.type+' · '+studyDateLabel(lastTraining.date):'Registra tu primera sesión.';
 const activeGoals=goals.filter(g=>!g.archived),goalPcts=activeGoals.map(g=>Number(g.target)>0?Math.min(100,Number(g.current||0)/Number(g.target)*100):0),averageGoal=goalPcts.length?Math.round(goalPcts.reduce((a,b)=>a+b,0)/goalPcts.length):0;
-document.getElementById('homeGoalsCount').textContent=activeGoals.length+' '+(activeGoals.length===1?'meta activa':'metas activas');
-document.getElementById('homeGoalsProgress').textContent=averageGoal+'% medio';
-document.getElementById('homeGoalsNext').textContent=activeGoals.length?(activeGoals.find(g=>g.isMain)||activeGoals[0]).name:'Crea una meta para empezar.';
+document.getElementById('homeFeatureGoals').textContent=activeGoals.length+' '+(activeGoals.length===1?'meta activa':'metas activas');
+document.getElementById('homeFeatureGoalsMeta').textContent=averageGoal+'% progreso medio';
+
 renderNotifications();
 }
 
