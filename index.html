@@ -20,13 +20,13 @@
 
 
 
-.account-head{display:flex;align-items:center;gap:10px;margin-left:auto}.account-head .muted{max-width:190px;text-align:right}.account-toggle{font-size:12px;padding:8px 11px;white-space:nowrap}
-.auth-panel{margin:-7px 0 23px;padding:19px 20px;border-color:#4b272c;background:linear-gradient(120deg,#1b1115,#121216);display:block}.auth-panel[hidden]{display:none}.auth-heading{display:flex;justify-content:space-between;gap:20px;align-items:start}.auth-heading h2{font-size:18px;margin:5px 0}.auth-heading p{margin:0;max-width:640px}.auth-lock{font-size:25px;color:var(--red2);padding:8px 12px;background:#2c1116;border-radius:12px}.auth-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.auth-form label{display:grid;gap:6px;color:#ccc;font-size:12px}.auth-form input{background:#0d0d11;color:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-width:0}.auth-actions{display:flex;align-items:center;gap:14px;grid-column:1/-1}.auth-link{border:0;background:none;color:#ff777d;font-size:13px}.auth-feedback{font-size:12px;color:var(--muted);margin-top:11px}.auth-feedback.error{color:#ff797f}.auth-feedback.success{color:#61c995}.cloud-account{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:13px;padding-top:13px;border-top:1px solid var(--line)}.cloud-account strong{font-size:14px}
+.top-actions{display:flex;align-items:center;justify-content:flex-end;gap:14px}.account-toggle{font-size:12px;padding:9px 14px;white-space:nowrap;box-shadow:0 5px 20px #ed1c2422}
+.auth-screen{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:22px;background:radial-gradient(ellipse at 75% 0%,#351116 0,transparent 42%),rgba(5,5,7,.97);backdrop-filter:blur(18px);overflow-y:auto}.auth-screen[hidden]{display:none}.auth-card{width:min(100%,520px);border:1px solid #55272d;border-radius:22px;background:linear-gradient(145deg,#1b1115,#111115 70%);padding:clamp(22px,4vw,34px);box-shadow:0 24px 90px #0009;margin:auto}.auth-back{display:inline-flex;align-items:center;gap:9px;border:0;background:transparent;color:#aaa;padding:5px 0 18px;font-size:13px}.auth-back:hover{color:#fff}.auth-back span{font-size:20px;color:var(--red2)}.auth-heading{display:flex;justify-content:space-between;gap:20px;align-items:start}.auth-heading h2{font-size:clamp(20px,4vw,26px);margin:7px 0}.auth-heading p{margin:0;max-width:400px;line-height:1.6}.auth-lock{font-size:25px;color:var(--red2);padding:8px 12px;background:#2c1116;border-radius:12px}.auth-form{display:grid;grid-template-columns:1fr;gap:14px;margin-top:23px}.auth-form label{display:grid;gap:7px;color:#ccc;font-size:13px}.auth-form input{background:#0d0d11;color:#fff;border:1px solid var(--line);border-radius:10px;padding:13px 14px;min-width:0;width:100%}.auth-form input:focus{outline:2px solid #ed1c2466;border-color:var(--red)}.auth-actions{display:flex;align-items:center;gap:17px;flex-wrap:wrap;margin-top:3px}.auth-actions .btn{min-width:145px}.auth-link{border:0;background:none;color:#ff777d;font-size:13px}.auth-link:hover{text-decoration:underline}.auth-feedback{font-size:12px;color:var(--muted);margin-top:15px;line-height:1.5}.auth-feedback.error{color:#ff797f}.auth-feedback.success{color:#61c995}.cloud-account{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}.cloud-account strong{font-size:14px}.cloud-account[hidden]{display:none}
 .car-stats .stat{font-size:clamp(22px,2.4vw,30px);overflow-wrap:anywhere}.car-panel{padding:18px}.car-profile-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.car-profile-form label,.car-record-form label{display:grid;gap:6px;color:#c9c9d0;font-size:12px}.car-profile-form input,.car-profile-form select,.car-record-form input,.car-record-form select{width:100%;min-width:0;background:#111115;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px}.car-form-actions{display:flex;align-items:center;gap:12px;grid-column:1/-1;flex-wrap:wrap}.car-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:15px}.car-record-form{display:grid;gap:12px}.car-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.car-reminders{display:grid;gap:9px}.car-reminder{display:flex;justify-content:space-between;gap:12px;align-items:center;border-top:1px solid var(--line);padding:12px 0}.car-reminder:first-child{border-top:0}.car-reminder strong{display:block;font-size:13px}.car-reminder .meta{font-size:12px;color:var(--muted)}.car-reminder .due{font-size:11px;padding:5px 8px;border-radius:8px;background:#2c1116;color:#ff9297;white-space:nowrap}.car-reminder .due.ok{background:#14261e;color:#77d7a6}.car-reminder .due.none{background:#202026;color:#a3a3ad}.car-hint{font-size:11px;color:var(--muted);margin:14px 0 0}.car-history-card{padding:8px 16px}.car-history{display:grid}.car-history-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:14px;padding:13px 2px;border-bottom:1px solid var(--line)}.car-history-row:last-child{border-bottom:0}.car-history-row strong{display:block;font-size:13px}.car-history-row .meta{font-size:12px;color:var(--muted)}.car-history-row .amount{font-weight:800;white-space:nowrap}.car-history-row .delete{border:0;background:none;color:#888;font-size:18px;padding:5px}.car-history-row .delete:hover{color:var(--red2)}.car-history-empty{padding:22px;text-align:center;color:var(--muted)}
 .cloud-account[hidden]{display:none}
 .mobile-nav{display:none}
-@media(max-width:850px){.car-profile-form{grid-template-columns:repeat(2,minmax(0,1fr))}.car-columns{grid-template-columns:1fr}.account-head{margin-left:0;flex-wrap:wrap;justify-content:flex-end}.account-head .muted{max-width:140px;font-size:11px}.auth-form{grid-template-columns:1fr}.auth-actions{grid-column:auto}.shell{display:block}.sidebar{display:none}.content{padding:18px 15px 95px}.mobilebar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.mobilebar .logo{padding:0;font-size:23px}.top{margin-bottom:18px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:14px}.shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.shortcut{padding:13px}.shortcut .icon{width:35px;height:35px}.mobile-nav{display:flex;position:fixed;z-index:5;bottom:0;left:0;right:0;justify-content:space-around;background:#111116ed;border-top:1px solid var(--line);padding:8px 4px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(14px)}.mobile-nav button{border:0;background:none;color:#888;display:grid;justify-items:center;gap:2px;font-size:10px}.mobile-nav button.active{color:#ff444b}.mobile-nav b{font-size:18px}}
-@media(max-width:850px){.finance-columns,.finance-extra{grid-template-columns:1fr}.finance-extra .distribution-panel{grid-column:auto}.goal-form{grid-template-columns:1fr auto}.budget-form{grid-template-columns:1fr 1fr}.budget-form button{grid-column:1/-1}}\n@media(max-width:440px){.car-profile-form{grid-template-columns:1fr}.car-form-row{grid-template-columns:1fr}.car-history-row{grid-template-columns:minmax(0,1fr) auto auto;gap:8px}.car-history-row .meta{font-size:11px}.account-head{gap:6px}.account-head .muted{max-width:120px}.account-toggle{padding:7px 9px}.auth-panel{padding:15px}.auth-actions{flex-wrap:wrap}.cloud-account{align-items:flex-start;flex-direction:column}.trend-month{grid-template-columns:65px minmax(0,1fr);gap:8px}.trend-net{grid-column:2;text-align:left}.trend-summary{grid-template-columns:1fr 1fr}.finance-form-row,.fixed-form-row{grid-template-columns:1fr}.goal-form,.budget-form{grid-template-columns:1fr}.budget-form button{grid-column:auto}.goal-form{grid-template-columns:1fr}.finance-row{gap:8px;grid-template-columns:minmax(0,1fr) auto auto}.finance-row .meta{font-size:11px}.fixed-item{grid-template-columns:1fr}.fixed-controls{justify-content:space-between}.taskform{flex-direction:column}.taskform .btn{width:100%}.hero{border-radius:16px}}
+@media(max-width:850px){.top-actions{gap:9px}.top-actions .date-desktop{display:none}.auth-screen{padding:16px}.car-profile-form{grid-template-columns:repeat(2,minmax(0,1fr))}.car-columns{grid-template-columns:1fr}.shell{display:block}.sidebar{display:none}.content{padding:18px 15px 95px}.mobilebar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.mobilebar .logo{padding:0;font-size:23px}.top{margin-bottom:18px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:14px}.shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.shortcut{padding:13px}.shortcut .icon{width:35px;height:35px}.mobile-nav{display:flex;position:fixed;z-index:5;bottom:0;left:0;right:0;justify-content:space-around;background:#111116ed;border-top:1px solid var(--line);padding:8px 4px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(14px)}.mobile-nav button{border:0;background:none;color:#888;display:grid;justify-items:center;gap:2px;font-size:10px}.mobile-nav button.active{color:#ff444b}.mobile-nav b{font-size:18px}}
+@media(max-width:850px){.finance-columns,.finance-extra{grid-template-columns:1fr}.finance-extra .distribution-panel{grid-column:auto}.goal-form{grid-template-columns:1fr auto}.budget-form{grid-template-columns:1fr 1fr}.budget-form button{grid-column:1/-1}}\n@media(max-width:440px){.top{gap:8px}.top-actions{gap:6px}.account-toggle{padding:8px 10px;font-size:11px}.auth-card{border-radius:17px;padding:20px}.auth-heading{gap:10px}.auth-lock{font-size:20px;padding:6px 9px}.auth-actions{align-items:stretch;flex-direction:column;gap:12px}.auth-actions .btn{width:100%}.cloud-account{align-items:flex-start;flex-direction:column}.car-profile-form{grid-template-columns:1fr}.car-form-row{grid-template-columns:1fr}.car-history-row{grid-template-columns:minmax(0,1fr) auto auto;gap:8px}.car-history-row .meta{font-size:11px}.trend-month{grid-template-columns:65px minmax(0,1fr);gap:8px}.trend-net{grid-column:2;text-align:left}.trend-summary{grid-template-columns:1fr 1fr}.finance-form-row,.fixed-form-row{grid-template-columns:1fr}.goal-form,.budget-form{grid-template-columns:1fr}.budget-form button{grid-column:auto}.goal-form{grid-template-columns:1fr}.finance-row{gap:8px;grid-template-columns:minmax(0,1fr) auto auto}.finance-row .meta{font-size:11px}.fixed-item{grid-template-columns:1fr}.fixed-controls{justify-content:space-between}.taskform{flex-direction:column}.taskform .btn{width:100%}.hero{border-radius:16px}}
 </style>
 </head>
 <body>
@@ -34,8 +34,10 @@
 <aside class="sidebar"><div class="logo">EMERITO<small>ORGANIZA TU VIDA</small></div><nav class="nav" id="sideNav"></nav></aside>
 <main class="content">
 <div class="mobilebar"><div class="logo">EMERITO<small>ORGANIZA TU VIDA</small></div><span class="muted" id="shortDate"></span></div>
-<header class="top"><div><div class="eyebrow">PANEL PERSONAL</div><h1 id="pageTitle">Inicio</h1></div><div class="account-head"><div class="muted" id="accountStatus">Datos guardados en este dispositivo</div><button class="btn secondary account-toggle" id="accountToggle" type="button">Conectar cuenta</button></div><div class="muted date-desktop" id="today"></div></header>
-<section id="authPanel" class="card auth-panel">
+<header class="top"><div><div class="eyebrow">PANEL PERSONAL</div><h1 id="pageTitle">Inicio</h1></div><div class="top-actions"><div class="muted date-desktop" id="today"></div><button class="btn account-toggle" id="accountToggle" type="button">Iniciar sesión</button></div></header>
+<section id="authPanel" class="auth-screen" hidden>
+<div class="auth-card">
+<button class="auth-back" id="authClose" type="button"><span aria-hidden="true">←</span> Volver a EMERITO</button>
 <div class="auth-heading"><div><div class="eyebrow">SINCRONIZACIÓN PRIVADA</div><h2>Tu EMERITO en todos tus dispositivos</h2><p class="muted">Inicia sesión para guardar tus finanzas y tareas en la nube y acceder a ellas desde el ordenador y el iPhone.</p></div><span class="auth-lock">◆</span></div>
 <form id="authForm" class="auth-form">
 <label>Correo electrónico<input id="authEmail" type="email" autocomplete="email" placeholder="tu@correo.com" required></label>
@@ -44,6 +46,7 @@
 </form>
 <div id="authFeedback" class="auth-feedback" aria-live="polite">Tus datos locales se conservan. Al conectar, se copiarán de forma segura a tu cuenta.</div>
 <div id="cloudAccount" class="cloud-account" hidden><div><strong id="cloudEmail"></strong><div class="muted" id="cloudMessage">Sincronización activa</div></div><button class="btn secondary" id="signOutButton" type="button">Cerrar sesión</button></div>
+</div>
 </section>
 <section class="view active" id="home">
 <div class="hero"><div class="eyebrow">TU CENTRO DE CONTROL</div><h2>Un paso cada día.<br>Todo bajo control.</h2><p>Organiza tus tareas, estudios, finanzas y objetivos desde un único lugar.</p></div>
@@ -247,12 +250,21 @@ const authPanel=document.getElementById('authPanel'),authFeedback=document.getEl
 function setAuthFeedback(message,type=''){authFeedback.textContent=message;authFeedback.className='auth-feedback'+(type?' '+type:'')}
 function updateAccountUI(){
 const connected=!!currentUser;
-document.getElementById('accountStatus').textContent=connected?'Nube · '+currentUser.email:'Datos guardados en este dispositivo';
-document.getElementById('accountToggle').textContent=connected?'Cuenta conectada':'Conectar cuenta';
+document.getElementById('accountToggle').textContent=connected?'Mi cuenta':'Iniciar sesión';
 document.getElementById('authForm').hidden=connected;
 document.getElementById('cloudAccount').hidden=!connected;
-document.getElementById('authPanel').hidden=false;
 if(connected){document.getElementById('cloudEmail').textContent=currentUser.email||'Cuenta conectada';document.getElementById('cloudMessage').textContent='Sincronización privada activa';}
+}
+function openAuthScreen(){
+authPanel.hidden=false;
+document.body.style.overflow='hidden';
+const focusTarget=currentUser?document.getElementById('signOutButton'):document.getElementById('authEmail');
+setTimeout(()=>focusTarget?.focus(),40);
+}
+function closeAuthScreen(){
+authPanel.hidden=true;
+document.body.style.overflow='';
+document.getElementById('accountToggle').focus();
 }
 function collectAppData(){return {tasks,financeTransactions,financeBudgets,fixedExpenses,monthlySavingGoal,carProfile,carRecords};}
 function saveLocalAppData(data){
@@ -379,6 +391,7 @@ const {data,error}=await cloudClient.auth.signInWithPassword({email,password});
 if(error)throw error;
 if(data.user)await loadUserCloud(data.user);
 setAuthFeedback('Sesión iniciada correctamente.','success');
+closeAuthScreen();
 }
 }catch(error){setAuthFeedback(error.message||'No se pudo conectar la cuenta.','error');}
 finally{submit.disabled=false;submit.textContent=authMode==='signup'?'Crear cuenta':'Iniciar sesión';}
@@ -390,11 +403,10 @@ document.getElementById('authPassword').autocomplete=authMode==='signup'?'new-pa
 document.getElementById('authModeToggle').textContent=authMode==='signup'?'Ya tengo cuenta':'Crear una cuenta';
 setAuthFeedback(authMode==='signup'?'Crea una cuenta con tu correo y una contraseña de al menos 8 caracteres. Recibirás un correo para confirmar la dirección.':'Introduce tus datos para acceder a EMERITO.');
 });
-document.getElementById('accountToggle').addEventListener('click',()=>{
-if(currentUser){document.getElementById('cloudAccount').scrollIntoView({behavior:'smooth',block:'center'});return;}
-authPanel.hidden=!authPanel.hidden;
-if(!authPanel.hidden)authPanel.scrollIntoView({behavior:'smooth',block:'center'});
-});
+document.getElementById('accountToggle').addEventListener('click',openAuthScreen);
+document.getElementById('authClose').addEventListener('click',closeAuthScreen);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!authPanel.hidden)closeAuthScreen()});
+authPanel.addEventListener('click',e=>{if(e.target===authPanel)closeAuthScreen()});
 document.getElementById('signOutButton').addEventListener('click',async()=>{
 const {error}=await cloudClient.auth.signOut();
 if(error)setAuthFeedback('No se pudo cerrar sesión: '+error.message,'error');
