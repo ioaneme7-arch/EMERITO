@@ -69,6 +69,42 @@
 .mobile-nav{display:none}
 @media(max-width:850px){.top-actions{gap:9px}.top-actions .date-desktop{display:none}.auth-screen{padding:16px}.car-profile-form{grid-template-columns:repeat(2,minmax(0,1fr))}.car-columns{grid-template-columns:1fr}.shell{display:block}.sidebar{display:none}.content{padding:18px 15px 95px}.mobilebar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.mobilebar .logo{padding:0;font-size:23px}.top{margin-bottom:18px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:14px}.shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.shortcut{padding:13px}.shortcut .icon{width:35px;height:35px}.mobile-nav{display:flex;position:fixed;z-index:5;bottom:0;left:0;right:0;justify-content:space-around;background:#111116ed;border-top:1px solid var(--line);padding:8px 4px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(14px)}.mobile-nav button{border:0;background:none;color:#888;display:grid;justify-items:center;gap:2px;font-size:10px}.mobile-nav button.active{color:#ff444b}.mobile-nav b{font-size:18px}}
 @media(max-width:850px){.finance-columns,.finance-extra{grid-template-columns:1fr}.finance-extra .distribution-panel{grid-column:auto}.goal-form{grid-template-columns:1fr auto}.budget-form{grid-template-columns:1fr 1fr}.budget-form button{grid-column:1/-1}}\n@media(max-width:440px){.top{gap:8px}.top-actions{gap:6px}.account-toggle{padding:8px 10px;font-size:11px}.auth-card{border-radius:17px;padding:20px}.auth-heading{gap:10px}.auth-lock{font-size:20px;padding:6px 9px}.auth-actions{align-items:stretch;flex-direction:column;gap:12px}.auth-actions .btn{width:100%}.cloud-account{align-items:flex-start;flex-direction:column}.car-profile-form{grid-template-columns:1fr}.car-form-row{grid-template-columns:1fr}.car-history-row{grid-template-columns:minmax(0,1fr) auto auto;gap:8px}.car-history-row .meta{font-size:11px}.trend-month{grid-template-columns:65px minmax(0,1fr);gap:8px}.trend-net{grid-column:2;text-align:left}.trend-summary{grid-template-columns:1fr 1fr}.finance-form-row,.fixed-form-row{grid-template-columns:1fr}.goal-form,.budget-form{grid-template-columns:1fr}.budget-form button{grid-column:auto}.goal-form{grid-template-columns:1fr}.finance-row{gap:8px;grid-template-columns:minmax(0,1fr) auto auto}.finance-row .meta{font-size:11px}.fixed-item{grid-template-columns:1fr}.fixed-controls{justify-content:space-between}.taskform{flex-direction:column}.taskform .btn{width:100%}.hero{border-radius:16px}}
+
+.habit-stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+.habit-main{display:grid;grid-template-columns:1fr;gap:14px;margin-top:15px}
+.habit-panel{padding:18px;min-width:0}
+.habit-form{display:grid;grid-template-columns:minmax(0,1fr) 190px auto;gap:10px;align-items:end;margin:15px 0 18px}
+.habit-form label{display:grid;gap:6px;color:#c9c9d0;font-size:12px}
+.habit-form input,.habit-form select{width:100%;min-width:0;background:#111115;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+.habit-list{display:grid;gap:11px}
+.habit-card{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:15px}
+.habit-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.habit-card-top strong{font-size:15px}
+.habit-card-top .meta{color:var(--muted);font-size:11px;margin-top:3px}
+.habit-remove{border:0;background:none;color:#888;font-size:19px;padding:0 3px}
+.habit-remove:hover{color:var(--red2)}
+.habit-week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-top:15px}
+.habit-day{display:grid;justify-items:center;gap:5px;min-width:0;border:1px solid var(--line);background:#15151a;color:#aaa;border-radius:10px;padding:8px 3px}
+.habit-day span{font-size:10px;text-transform:uppercase}
+.habit-day b{font-size:13px}
+.habit-day i{font-style:normal;font-size:11px;line-height:13px;height:13px;color:#aaa}
+.habit-day.today{border-color:#914047}
+.habit-day.done{background:#18271f;border-color:#315b42;color:#8ce0ae}
+.habit-day.done i{color:#8ce0ae}
+.habit-day.off{opacity:.32;cursor:default}
+.habit-day:disabled{cursor:default}
+.habit-card-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
+.habit-card-bottom .meta{font-size:11px;color:var(--muted)}
+.habit-streak{font-size:12px;font-weight:750;color:#ff9b9f;white-space:nowrap}
+.habit-progress{height:5px;background:#303038;border-radius:99px;overflow:hidden;margin-top:9px}
+.habit-progress>span{display:block;height:100%;background:linear-gradient(90deg,#a9141c,var(--red2));border-radius:99px}
+.habit-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 12px}
+.habit-summary h2{font-size:18px;margin:0}
+.habit-note{font-size:11px;color:var(--muted);margin-top:13px}
+.habit-empty{border:1px dashed var(--line);border-radius:12px;padding:22px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:850px){.habit-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.habit-form{grid-template-columns:1fr 1fr}.habit-form button{grid-column:1/-1}}
+@media(max-width:440px){.habit-form{grid-template-columns:1fr}.habit-form button{grid-column:auto}.habit-week{gap:4px}.habit-day{padding:7px 1px;border-radius:8px}.habit-day span{font-size:9px}.habit-card{padding:12px}.habit-card-bottom{align-items:flex-start;flex-direction:column}}
+
 </style>
 </head>
 <body>
@@ -238,7 +274,27 @@
 </div>
 </div>
 </section>
-<section class="view" id="habits"><div class="hero"><div class="eyebrow">RUTINAS</div><h2>Hábitos</h2><p>Hábitos diarios y seguimiento de objetivos.</p></div></section>
+<section class="view" id="habits">
+<div class="hero"><div class="eyebrow">RUTINAS · CONSTANCIA</div><h2>Pequeños hábitos, grandes avances.</h2><p>Construye una rutina a tu medida, marca tus avances cada día y comprueba tu constancia semana a semana.</p></div>
+<div class="grid habit-stats">
+<div class="card"><div class="muted">HÁBITOS ACTIVOS</div><div class="stat" id="habitTotalStat">0</div><div class="muted">Rutinas configuradas</div></div>
+<div class="card"><div class="muted">COMPLETADOS HOY</div><div class="stat" id="habitTodayStat">0/0</div><div class="muted">Rutinas realizadas</div></div>
+<div class="card"><div class="muted">CONSTANCIA SEMANAL</div><div class="stat" id="habitWeekStat">0%</div><div class="muted">Últimos 7 días</div></div>
+<div class="card"><div class="muted">MEJOR RACHA ACTUAL</div><div class="stat" id="habitStreakStat">0 días</div><div class="muted">Entre tus hábitos</div></div>
+</div>
+<div class="habit-main">
+<div class="card habit-panel">
+<div class="habit-summary"><h2>Mis hábitos</h2><span class="muted" id="habitCountLabel">0 rutinas</span></div>
+<form id="habitForm" class="habit-form">
+<label>Nombre del hábito<input id="habitName" maxlength="65" placeholder="Ej. Estudiar 30 minutos" required></label>
+<label>Frecuencia<select id="habitFrequency"><option value="daily">Todos los días</option><option value="weekdays">De lunes a viernes</option><option value="weekends">Sábados y domingos</option></select></label>
+<button class="btn" type="submit">+ Añadir hábito</button>
+</form>
+<div id="habitList" class="habit-list"><div class="habit-empty">Todavía no has creado hábitos. Añade el primero arriba para empezar a registrar tu constancia.</div></div>
+<p class="habit-note">Pulsa sobre cualquier día de la semana para marcarlo o corregirlo. Los días fuera de la frecuencia elegida no se contabilizan.</p>
+</div>
+</div>
+</section>
 </main></div><nav class="mobile-nav" id="bottomNav"></nav>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0"></script>
 <script>
@@ -248,6 +304,8 @@ let studySubjects=JSON.parse(localStorage.getItem('emerito_study_subjects')||'nu
 if(!Array.isArray(studySubjects))studySubjects=[{id:'dam-programacion',name:'Programación',teacher:''},{id:'dam-sistemas',name:'Sistemas informáticos',teacher:''}];
 let studyItems=JSON.parse(localStorage.getItem('emerito_study_items')||'[]');
 let studySessions=JSON.parse(localStorage.getItem('emerito_study_sessions')||'[]');
+let habits=JSON.parse(localStorage.getItem('emerito_habits')||'[]');
+let habitChecks=JSON.parse(localStorage.getItem('emerito_habit_checks')||'[]');
 
 function navButton(x){return '<button data-view="'+x[0]+'"><b>'+x[1]+'</b>'+x[2]+'</button>'}
 document.getElementById('sideNav').innerHTML=items.map(navButton).join('');
@@ -264,7 +322,9 @@ function deleteTask(id){tasks=tasks.filter(x=>x.id!==id);save()}
 document.getElementById('taskForm').addEventListener('submit',e=>{e.preventDefault();const input=document.getElementById('taskName'),name=input.value.trim();if(!name)return;tasks.unshift({id:Date.now(),name,done:false});input.value='';save()});
 
 
-function persistStudies(){localStorage.setItem('emerito_study_subjects',JSON.stringify(studySubjects));localStorage.setItem('emerito_study_items',JSON.stringify(studyItems));localStorage.setItem('emerito_study_sessions',JSON.stringify(studySessions));renderStudies();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function persistStudies(){localStorage.setItem('emerito_study_subjects',JSON.stringify(studySubjects));localStorage.setItem('emerito_study_items',JSON.stringify(studyItems));localStorage.setItem('emerito_study_sessions',JSON.stringify(studySessions));
+localStorage.setItem('emerito_habits',JSON.stringify(habits));
+localStorage.setItem('emerito_habit_checks',JSON.stringify(habitChecks));renderStudies();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
 function studySubjectName(id){const subject=studySubjects.find(x=>String(x.id)===String(id));return subject?subject.name:'Sin asignatura'}
 function populateStudySubjects(selectId){const select=document.getElementById(selectId),previous=select.value;select.innerHTML='<option value="">Sin asignatura</option>'+studySubjects.map(s=>'<option value="'+escapeHtml(String(s.id))+'">'+escapeHtml(s.name)+'</option>').join('');if([...select.options].some(o=>o.value===previous))select.value=previous;else select.value=''}
 function studyDateLabel(value){if(!value)return 'Sin fecha';return new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short',year:'numeric'}).format(new Date(value+'T12:00:00'))}
@@ -296,6 +356,41 @@ document.getElementById('studyItemForm').addEventListener('submit',e=>{e.prevent
 document.getElementById('studySessionForm').addEventListener('submit',e=>{e.preventDefault();const minutes=Number(document.getElementById('studySessionMinutes').value);if(!Number.isFinite(minutes)||minutes<5||minutes>600)return;studySessions.unshift({id:Date.now(),subjectId:document.getElementById('studySessionSubject').value,date:document.getElementById('studySessionDate').value,minutes,notes:document.getElementById('studySessionNotes').value.trim()});e.target.reset();document.getElementById('studySessionDate').value=localDateString(new Date());document.getElementById('studySessionMinutes').value=60;persistStudies()});
 document.getElementById('studySessionDate').value=localDateString(new Date());
 renderStudies();
+
+
+function persistHabits(){localStorage.setItem('emerito_habits',JSON.stringify(habits));localStorage.setItem('emerito_habit_checks',JSON.stringify(habitChecks));renderHabits();if(typeof scheduleCloudSave==='function')scheduleCloudSave()}
+function habitIsScheduled(habit,date){const day=new Date(date+'T12:00:00').getDay();if(habit.frequency==='weekdays')return day>=1&&day<=5;if(habit.frequency==='weekends')return day===0||day===6;return true}
+function habitIsDone(habitId,date){const item=habitChecks.find(x=>String(x.habitId)===String(habitId)&&x.date===date);return !!(item&&item.done)}
+function habitFrequencyLabel(value){return value==='weekdays'?'De lunes a viernes':value==='weekends'?'Sábados y domingos':'Todos los días'}
+function habitStreak(habit){let streak=0,day=new Date(localDateString(new Date())+'T12:00:00');for(let i=0;i<370;i++){const key=localDateString(day);if(habitIsScheduled(habit,key)){if(habitIsDone(habit.id,key))streak++;else if(i>0)break;}day.setDate(day.getDate()-1)}return streak}
+function renderHabits(){
+const active=habits.filter(h=>!h.archived),today=localDateString(new Date());
+const dueToday=active.filter(h=>habitIsScheduled(h,today)),doneToday=dueToday.filter(h=>habitIsDone(h.id,today)).length;
+let dueWeek=0,doneWeek=0;const lastSeven=Array.from({length:7},(_,i)=>{const d=new Date(today+'T12:00:00');d.setDate(d.getDate()-(6-i));return localDateString(d)});
+active.forEach(h=>lastSeven.forEach(date=>{if(habitIsScheduled(h,date)){dueWeek++;if(habitIsDone(h.id,date))doneWeek++}}));
+const percent=dueWeek?Math.round(doneWeek/dueWeek*100):0;
+const maxStreak=active.reduce((max,h)=>Math.max(max,habitStreak(h)),0);
+document.getElementById('habitTotalStat').textContent=active.length;
+document.getElementById('habitTodayStat').textContent=doneToday+'/'+dueToday.length;
+document.getElementById('habitWeekStat').textContent=percent+'%';
+document.getElementById('habitStreakStat').textContent=maxStreak+' '+(maxStreak===1?'día':'días');
+document.getElementById('habitCountLabel').textContent=active.length+' '+(active.length===1?'rutina':'rutinas');
+document.getElementById('habitList').innerHTML=active.length?active.map(h=>{
+const completed=lastSeven.filter(date=>habitIsScheduled(h,date)&&habitIsDone(h.id,date)).length,scheduled=lastSeven.filter(date=>habitIsScheduled(h,date)).length,pct=scheduled?Math.round(completed/scheduled*100):0;
+const dayButtons=lastSeven.map(date=>{const d=new Date(date+'T12:00:00'),done=habitIsDone(h.id,date),isDue=habitIsScheduled(h,date),weekday=new Intl.DateTimeFormat('es-ES',{weekday:'short'}).format(d).replace('.','').slice(0,2),dayNum=d.getDate();return '<button type="button" class="habit-day '+(done?'done ':'')+(date===today?'today ':'')+(!isDue?'off':'')+'" '+(!isDue?'disabled':'')+' aria-label="'+(isDue?'Marcar ':'No corresponde: ')+weekday+' '+dayNum+'" title="'+weekday+' '+dayNum+'" onclick="toggleHabitDay(\''+String(h.id)+'\',\''+date+'\')"><span>'+weekday+'</span><b>'+dayNum+'</b><i>'+(done?'✓':'·')+'</i></button>'}).join('');
+return '<article class="habit-card"><div class="habit-card-top"><div><strong>'+escapeHtml(h.name)+'</strong><div class="meta">'+habitFrequencyLabel(h.frequency)+'</div></div><button class="habit-remove" type="button" aria-label="Eliminar hábito" title="Eliminar hábito" onclick="archiveHabit(\''+String(h.id)+'\')">×</button></div><div class="habit-week">'+dayButtons+'</div><div class="habit-card-bottom"><span class="meta">'+completed+'/'+scheduled+' días completados esta semana</span><span class="habit-streak">Racha: '+habitStreak(h)+' '+(habitStreak(h)===1?'día':'días')+'</span></div><div class="habit-progress"><span style="width:'+pct+'%"></span></div></article>'
+}).join(''):'<div class="habit-empty">Todavía no has creado hábitos. Añade el primero arriba para empezar a registrar tu constancia.</div>';
+}
+function toggleHabitDay(habitId,date){
+const habit=habits.find(h=>String(h.id)===String(habitId)&&!h.archived);if(!habit||!habitIsScheduled(habit,date)||date>localDateString(new Date()))return;
+let check=habitChecks.find(x=>String(x.habitId)===String(habitId)&&x.date===date);
+if(!check){check={id:String(habitId)+'_'+date,habitId:String(habitId),date,done:true,updatedAt:new Date().toISOString()};habitChecks.push(check)}
+else{check.done=!check.done;check.updatedAt=new Date().toISOString()}
+persistHabits();
+}
+function archiveHabit(id){const habit=habits.find(h=>String(h.id)===String(id));if(!habit)return;habit.archived=true;habit.updatedAt=new Date().toISOString();persistHabits()}
+document.getElementById('habitForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('habitName').value.trim(),frequency=document.getElementById('habitFrequency').value;if(!name)return;if(habits.some(h=>!h.archived&&h.name.toLocaleLowerCase('es')===name.toLocaleLowerCase('es'))){alert('Ese hábito ya está en tu lista.');return}habits.unshift({id:String(Date.now()),name,frequency,archived:false,updatedAt:new Date().toISOString()});e.target.reset();persistHabits()});
+renderHabits();
 
 let carProfile=JSON.parse(localStorage.getItem('emerito_car_profile')||'null')||{brand:'Hyundai',model:'i30',year:2014,fuel:'Diésel',transmission:'Manual',mileage:'',registration:'',itvDate:'',insuranceDate:'',nextServiceDate:''};
 let carRecords=JSON.parse(localStorage.getItem('emerito_car_records')||'[]');
@@ -404,7 +499,7 @@ authPanel.hidden=true;
 document.body.style.overflow='';
 document.getElementById('accountToggle').focus();
 }
-function collectAppData(){return {tasks,financeTransactions,financeBudgets,fixedExpenses,monthlySavingGoal,carProfile,carRecords,studySubjects,studyItems,studySessions};}
+function collectAppData(){return {tasks,financeTransactions,financeBudgets,fixedExpenses,monthlySavingGoal,carProfile,carRecords,studySubjects,studyItems,studySessions,habits,habitChecks};}
 function saveLocalAppData(data){
 tasks=Array.isArray(data.tasks)?data.tasks:[];
 financeTransactions=Array.isArray(data.financeTransactions)?data.financeTransactions:[];
@@ -416,6 +511,8 @@ carRecords=Array.isArray(data.carRecords)?data.carRecords:carRecords;
 studySubjects=Array.isArray(data.studySubjects)?data.studySubjects:studySubjects;
 studyItems=Array.isArray(data.studyItems)?data.studyItems:studyItems;
 studySessions=Array.isArray(data.studySessions)?data.studySessions:studySessions;
+habits=Array.isArray(data.habits)?data.habits:habits;
+habitChecks=Array.isArray(data.habitChecks)?data.habitChecks:habitChecks;
 localStorage.setItem('emerito_car_profile',JSON.stringify(carProfile));
 localStorage.setItem('emerito_car_records',JSON.stringify(carRecords));
 localStorage.setItem('emerito_tasks',JSON.stringify(tasks));
@@ -423,7 +520,7 @@ localStorage.setItem('emerito_finance',JSON.stringify(financeTransactions));
 localStorage.setItem('emerito_finance_budgets',JSON.stringify(financeBudgets));
 localStorage.setItem('emerito_fixed_expenses',JSON.stringify(fixedExpenses));
 localStorage.setItem('emerito_saving_goal',String(monthlySavingGoal));
-render();renderFinance();renderCar();renderStudies();
+render();renderFinance();renderCar();renderStudies();renderHabits();
 }
 function mergeItems(remoteItems,localItems){
 const map=new Map();
@@ -431,6 +528,7 @@ const map=new Map();
 (localItems||[]).forEach(x=>{if(!map.has(String(x.id)))map.set(String(x.id),x)});
 return Array.from(map.values());
 }
+function mergeLatestItems(remoteItems,localItems){const map=new Map();(remoteItems||[]).forEach(x=>map.set(String(x.id),x));(localItems||[]).forEach(x=>{const key=String(x.id),old=map.get(key);if(!old||Date.parse(x.updatedAt||0)>Date.parse(old.updatedAt||0))map.set(key,x)});return Array.from(map.values())}
 function mergeAppData(remote,local){
 const rb=remote.financeBudgets||{},lb=local.financeBudgets||{},budgets={...lb,...rb};
 Object.keys({...lb,...rb}).forEach(month=>{budgets[month]={...(lb[month]||{}),...(rb[month]||{})}});
@@ -444,7 +542,9 @@ carProfile:{...(local.carProfile||{}),...(remote.carProfile||{})},
 carRecords:mergeItems(remote.carRecords,local.carRecords),
 studySubjects:mergeItems(remote.studySubjects,local.studySubjects),
 studyItems:mergeItems(remote.studyItems,local.studyItems),
-studySessions:mergeItems(remote.studySessions,local.studySessions)
+studySessions:mergeItems(remote.studySessions,local.studySessions),
+habits:mergeLatestItems(remote.habits,local.habits),
+habitChecks:mergeLatestItems(remote.habitChecks,local.habitChecks)
 };
 }
 let cloudSaveQueue=Promise.resolve();
